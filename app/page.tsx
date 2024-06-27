@@ -6,6 +6,7 @@ import Services from "../components/ui/home/services";
 import Footer from "../components/ui/layout/footer";
 import Cta from "../components/ui/cta";
 
+
 export default function Main() {
   return (
     <div className="bg-neutral-950">
