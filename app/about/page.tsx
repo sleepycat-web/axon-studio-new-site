@@ -8,7 +8,7 @@ import Footer from "../../components/ui/layout/footer";
 
 export default function Main() {
   return (
-    <div>
+    <div className="bg-neutral-950">
       <Navbar />
       <Mission />
       <Values />

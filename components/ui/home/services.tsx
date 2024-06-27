@@ -25,7 +25,7 @@ const services: Service[] = [
 const Services: React.FC = () => {
   return (
     <section>
-      <section className="  py-16 sm:py-20">
+      <section className=" text-white    py-16 sm:py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="flex flex-col gap-12 sm:gap-16">
             <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
@@ -53,7 +53,7 @@ const Services: React.FC = () => {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
-            <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
+            <h2 className="text-white text-3xl font-medium tracking-tight sm:text-4xl">
               About
             </h2>
             <div className="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">

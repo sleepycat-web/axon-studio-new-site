@@ -8,7 +8,7 @@ import Cta from "../components/ui/cta";
 
 export default function Main() {
   return (
-    <div>
+    <div className="bg-neutral-950">
       <HeroParallaxDemo />
       <FloatingNavDemo />
       <Services />

@@ -48,7 +48,7 @@ export const FlipWords = ({
         transition={{
           duration: 0.4,
           ease: "easeInOut",
-          type: "spring",
+          // type: "spring",
           stiffness: 100,
           damping: 10,
         }}
@@ -90,15 +90,22 @@ export function FlipWordsDemo() {
   const words = ["modern", "phenomenal", "exceptional", "remarkable"];
 
     return (
-      <section>
-        <div className="flex justify-center items-center px-4">
-          <div className="text-4xl mx-auto font-normal text-neutral-400">
-            Build
-            <FlipWords words={words} /> <br />
-            websites with Axon Studio
-          </div>
+      // <section>
+      //   <div className="flex justify-center items-center pt-4 pb-8 px-4">
+      //     <div className="text-4xl mx-auto font-normal text-neutral-400">
+      //       Build
+      //       <FlipWords words={words} /> <br />
+      //       websites with Axon Studio
+      //     </div>
+      //   </div>
+
+      // </section>
+      <div className=" pt-6 flex justify-center items-center px-4">
+        <div className="text-4xl mx-auto font-normal text-neutral-400">
+          Build
+          <FlipWords words={words} /> <br />
+          websites with Axon Studio
         </div>
-        
-      </section>
+      </div>
     );
 }

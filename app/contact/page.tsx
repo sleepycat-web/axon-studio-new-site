@@ -9,11 +9,11 @@ import { GlobeDemo } from "@/components/ui/aceternity/globeadd";
 
 export default function Main() {
   return (
-    <div>
+    <div className="bg-neutral-950">
       <Navbar />
-      
       <GlobeDemo />
 
+      {/* <FlipWordsDemo /> */}
       <Calendly />
       <Details />
 

@@ -35,7 +35,7 @@ const values = [
 
 export default function Values() {
   return (
-    <section className=" py-16 sm:py-20">
+    <section className="  text-white  py-16 sm:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="flex flex-col gap-8 lg:gap-12">
           <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">

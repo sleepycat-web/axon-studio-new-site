@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
               <a
                 href="https://grow.axonstudio.tech/"
                 target="_blank"
-                className="text-base pb-4 font-medium flex items-center  hover:cursor-pointer hover:underline"
+                className="text-base text-white   pb-4 font-medium flex items-center  hover:cursor-pointer hover:underline"
               >
                 Subscribe to our Newsletter
                 <svg
@@ -130,7 +130,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Bottom links */}
-          <div className="grid max-w-xl flex-1 grid-cols-2 gap-8 sm:grid-cols-2">
+          <div className="text-white grid max-w-xl flex-1 grid-cols-2 gap-8 sm:grid-cols-2">
             {bottomLinks.map((group) => (
               <div key={group.header} className="flex flex-col gap-4">
                 <p className="text-base font-medium">{group.header}</p>
@@ -167,7 +167,7 @@ const Footer: React.FC = () => {
               <a
                 href="https://grow.axonstudio.tech/"
                 target="_blank"
-                className="text-base pb-4 font-medium flex items-center  hover:cursor-pointer hover:underline"
+                className="text-base text-white  pb-4 font-medium flex items-center  hover:cursor-pointer hover:underline"
               >
                 Subscribe to our Newsletter
                 <svg

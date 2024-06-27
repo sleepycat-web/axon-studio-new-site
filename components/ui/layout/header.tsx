@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
 
 
   return (
-    <div className="">
+    <div className="z-index-10">
       <header className={`transition`}>
         <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
           {/* Brand logo */}

@@ -24,7 +24,7 @@ const stats = [
 const Mission: React.FC = () => {
   return (
     <section>
-      <section className="py-16 sm:py-20">
+      <section className=" text-white  py-16 sm:py-20">
         {" "}
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
           {" "}
@@ -52,7 +52,7 @@ const Mission: React.FC = () => {
             <div className="flex flex-col gap-10">
               {/* Mission description */}
               <div className="space-y-8 sm:space-y-12">
-                <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
+                <h2 className=" text-white  text-3xl font-medium tracking-tight sm:text-4xl">
                   Our mission
                 </h2>
                 <div className="space-y-6">
@@ -79,7 +79,7 @@ const Mission: React.FC = () => {
               </div>
 
               {/* Stats */}
-              <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <dl className="grid text-white  grid-cols-1 gap-6 sm:grid-cols-2">
                 {stats.map((stat) => (
                   <div
                     key={stat.name}
