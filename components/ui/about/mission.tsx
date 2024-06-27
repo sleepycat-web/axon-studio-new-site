@@ -34,7 +34,7 @@ const Mission: React.FC = () => {
               About
             </h1>{" "}
             <p className="text-primary-950/70 dark:text-primary-200/70 mx-auto max-w-xl text-lg sm:text-xl">
-              Unlocking Your Brand&apos;'s Potential, One Click at a Time.
+              Unlocking Your Brand&apos;s Potential, One Click at a Time.
             </p>{" "}
           </div>{" "}
         </div>{" "}
