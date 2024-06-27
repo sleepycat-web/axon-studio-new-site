@@ -99,7 +99,7 @@ export function FlipWordsDemo() {
       //   </div>
 
       // </section>
-      <div className=" h-80 pt-6 flex justify-center items-center px-4">
+      <div className=" h-70 pt-6 flex justify-center items-center px-4">
         <div className="text-4xl mx-auto font-normal text-neutral-400">
           Build
           <FlipWords words={words} /> <br />
