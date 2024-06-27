@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
+      <link rel="canonical" href="https://axonstudio.tech/about" key="canonical" />
       <body className={inter.className}>{children}</body>
     </html>
   );

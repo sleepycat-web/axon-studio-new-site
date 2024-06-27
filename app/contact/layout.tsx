@@ -16,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className="bg-neutral-950" lang="en">
+      <link rel="canonical" href="https://axonstudio.tech/contact" key="canonical" />
       <body className={inter.className}>{children}</body>
     </html>
   );
