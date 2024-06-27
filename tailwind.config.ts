@@ -42,5 +42,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui"), addVariablesForColors],
+  plugins: [require('daisyui'), addVariablesForColors],
 };

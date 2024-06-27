@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { PlaceholdersAndVanishInput } from "../aceternity/placeholders-and-vanish-input";
+import Link from "next/link";
 
 interface Link {
   name: string;
@@ -102,10 +103,9 @@ const Footer: React.FC = () => {
 
           <div className="text-center  block lg:hidden">
             <div className="flex items-center justify-center">
-              <a
+              <Link
                 href="https://grow.axonstudio.tech/"
-                target="_blank"
-                className="text-base text-white   pb-4 font-medium flex items-center  hover:cursor-pointer hover:underline"
+                className="text-base text-white pb-4 font-medium flex items-center hover:cursor-pointer hover:underline"
               >
                 Subscribe to our Newsletter
                 <svg
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
                 >
                   <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             <div className="relative flex flex-col items-center">
@@ -137,11 +137,13 @@ const Footer: React.FC = () => {
                 <ul role="list" className="flex flex-col gap-3">
                   {group.links.map((link) => (
                     <li key={link.name}>
-                      <a
+                      <Link
                         href={link.href}
                         className="focus-visible:outline-primary-200 inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline focus-visible:outline-2"
                         target={link.isExternal ? "_blank" : undefined}
-                        rel={link.isExternal ? "noopener" : undefined}
+                        rel={
+                          link.isExternal ? "noopener noreferrer" : undefined
+                        }
                       >
                         {link.name}
                         {link.isExternal && (
@@ -155,7 +157,7 @@ const Footer: React.FC = () => {
                             <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
                           </svg>
                         )}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -164,10 +166,10 @@ const Footer: React.FC = () => {
           </div>
           <div className="hidden lg:block">
             <div className="relative">
-              <a
+              <Link
                 href="https://grow.axonstudio.tech/"
                 target="_blank"
-                className="text-base text-white  pb-4 font-medium flex items-center  hover:cursor-pointer hover:underline"
+                className="text-base text-white pb-4 font-medium flex items-center hover:cursor-pointer hover:underline"
               >
                 Subscribe to our Newsletter
                 <svg
@@ -179,7 +181,7 @@ const Footer: React.FC = () => {
                 >
                   <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
                 </svg>
-              </a>
+              </Link>
             </div>
             <PlaceholdersAndVanishInput
               placeholders={placeholders}

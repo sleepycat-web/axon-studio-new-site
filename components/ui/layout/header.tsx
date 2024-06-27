@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
+import Link from "next/link";
 
 const links = [
     { ref: "", name: "Home", href: "/" },
@@ -32,19 +33,18 @@ const Navbar: React.FC = () => {
         <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
           {/* Brand logo */}
           <div className="flex">
-            <a
-              href="/"
-              className="group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
-            >
-              <span className="sr-only">Axon</span>
-              <Image
-                className="h-12 w-auto"
-                width={65}
-                height={40}
-                src="/assets/logo-inverted.png"
-                alt="Logo"
-              />
-            </a>
+            <Link href="/">
+              <div className="group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2">
+                <span className="sr-only">Axon</span>
+                <Image
+                  className="h-12 w-auto"
+                  width={65}
+                  height={40}
+                  src="/assets/logo-inverted.png"
+                  alt="Logo"
+                />
+              </div>
+            </Link>
           </div>
 
           {/* Actions */}
@@ -101,29 +101,30 @@ const Navbar: React.FC = () => {
             {/* Navigation */}
             <nav className="divide-primary-300/10 flex flex-col gap-1 divide-y">
               {links.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target={link.name === "Newsletter" ? "_blank" : ""}
-                  rel={link.name === "Newsletter" ? "noopener noreferrer" : ""}
-                  className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
-                >
-                  <div className=":group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
-                    <div className="flex items-center gap-6">
-                      <span className="text-xs">{link.ref}</span>
-                      <span className="group-hover:underline">{link.name}</span>
+                <Link href={link.href}>
+                  <div
+                    key={link.name}
+                    className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl cursor-pointer"
+                  >
+                    <div className="group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                      <div className="flex items-center gap-6">
+                        <span className="text-xs">{link.ref}</span>
+                        <span className="group-hover:underline">
+                          {link.name}
+                        </span>
+                      </div>
+                      <svg
+                        className="text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                      </svg>
                     </div>
-                    <svg
-                      className="text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                    </svg>
                   </div>
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 // Define the type for the services
 type Service = {
   step: string;
@@ -67,12 +68,11 @@ const Services: React.FC = () => {
                 footprint and drive growth. Let&apos;s unlock your brand&apos;s
                 full potential together.
               </p>
-              <a
-                href="/about"
-                className="bg-primary-400 hover:bg-primary-300 focus-visible:outline-primary-400 text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium  transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-              >
-                Read about us
-              </a>
+              <Link href="/about">
+                <button className="bg-primary-400 hover:bg-primary-300 focus-visible:outline-primary-400 text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                  Read about us
+                </button>
+              </Link>
             </div>
           </div>
         </div>
