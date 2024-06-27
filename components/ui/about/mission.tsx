@@ -24,7 +24,7 @@ const stats = [
 const Mission: React.FC = () => {
   return (
     <section>
-      <section className="dark py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         {" "}
         <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
           {" "}
@@ -33,13 +33,13 @@ const Mission: React.FC = () => {
             <h1 className="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
               About
             </h1>{" "}
-            <p className="text-primary-950/70 dark:text-primary-200/70 mx-auto max-w-xl text-lg sm:text-xl">
+            <p className="text-primary-200/70 mx-auto max-w-xl text-lg sm:text-xl">
               Unlocking Your Brand&apos;s Potential, One Click at a Time.
             </p>{" "}
           </div>{" "}
         </div>{" "}
       </section>
-      <section className="dark py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
             <Image
@@ -56,19 +56,19 @@ const Mission: React.FC = () => {
                   Our mission
                 </h2>
                 <div className="space-y-6">
-                  <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                  <p className="text-primary-200/70 text-base sm:text-lg">
                     Welcome to Axon Studio, where creativity meets innovation to
                     forge exceptional digital experiences. We are a dynamic team
                     of forward-thinkers, dedicated to shaping the digital
                     landscape with our passion for design and technology.
                   </p>
-                  <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                  <p className="text-primary-200/70 text-base sm:text-lg">
                     We believe in the power of imagination to transform ideas
                     into reality. With a keen eye for aesthetics and a mastery
                     of the latest digital tools, we craft immersive experiences
                     that resonate with audiences on a profound level.
                   </p>
-                  <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                  <p className="text-primary-200/70 text-base sm:text-lg">
                     Driven by our commitment to excellence we are more than just
                     a creative agency; we are pioneers of possibility, pushing
                     the boundaries of what&apos;s conceivable to deliver
@@ -83,7 +83,7 @@ const Mission: React.FC = () => {
                 {stats.map((stat) => (
                   <div
                     key={stat.name}
-                    className="border-primary-900/10 dark:border-primary-300/10 rounded-3xl border p-6"
+                    className="border-primary-300/10 rounded-3xl border p-6"
                   >
                     <dt className="text-base">{stat.name}</dt>
                     <dd className="text-3xl font-medium tracking-tight">

@@ -24,21 +24,17 @@ const Navbar: React.FC = () => {
     }
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = !isDark;
-    setIsDark(newTheme);
-    localStorage.setItem("theme", newTheme ? "dark" : "light");
-  };
+
 
   return (
-    <div className="dark">
+    <div className="">
       <header className={`transition`}>
         <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
           {/* Brand logo */}
           <div className="flex">
             <a
               href="/"
-              className="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+              className="group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
             >
               <span className="sr-only">Axon</span>
               <Image
@@ -58,7 +54,7 @@ const Navbar: React.FC = () => {
             {/* Toggle menu */}
             <button
               type="button"
-              className="text-primary-950 dark:text-primary-200 hover:bg-primary-500/10 dark:hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
+              className="text-primary-200 hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
               onClick={() => setOpen(!open)}
               aria-controls="website-menu"
               aria-expanded={open}
@@ -94,8 +90,8 @@ const Navbar: React.FC = () => {
           id="website-menu"
         >
           <div className="grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
-            <div className="bg-primary-500/10 dark:bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
-              <p className="text-primary-950/70 dark:text-primary-200/70 max-w-sm text-xl italic leading-loose">
+            <div className="bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
+              <p className="text-primary-200/70 max-w-sm text-xl italic leading-loose">
                 <span className="font-medium">Axon Studio</span> is an SEO and
                 Web Development agency based in Siliguri. We work towards
                 elevating your brand&apos;s potential one click at a time
@@ -103,22 +99,22 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Navigation */}
-            <nav className="divide-primary-900/10 dark:divide-primary-300/10 flex flex-col gap-1 divide-y">
+            <nav className="divide-primary-300/10 flex flex-col gap-1 divide-y">
               {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   target={link.name === "Newsletter" ? "_blank" : ""}
                   rel={link.name === "Newsletter" ? "noopener noreferrer" : ""}
-                  className="text-primary-950 dark:text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
+                  className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl"
                 >
-                  <div className="group-focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
+                  <div className=":group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
                     <div className="flex items-center gap-6">
                       <span className="text-xs">{link.ref}</span>
                       <span className="group-hover:underline">{link.name}</span>
                     </div>
                     <svg
-                      className="text-primary-600 dark:text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
+                      className="text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"

@@ -3,15 +3,15 @@ import React from "react";
 
 export default function Details() {
     return (
-<section className="dark py-16 sm:py-20">
+<section className="py-16 sm:py-20">
   <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <dl className="grid gap-6 lg:grid-cols-2">
       {/* <!-- Address --> */}
-      <div className="bg-primary-500/10 dark:bg-primary-400/10 rounded-3xl px-6 py-8">
+      <div className="bg-primary-400/10 rounded-3xl px-6 py-8">
         <dt className="sr-only">Postal address</dt>
         <dd className="flex h-full flex-col justify-between gap-12">
           <svg
-            className="text-primary-600 dark:text-primary-400 h-6 w-6"
+            className="text-primary-400 h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -48,11 +48,11 @@ export default function Details() {
       </div> */}
 
       {/* <!-- Email --> */}
-      <div className="bg-primary-500/10 dark:bg-primary-400/10 rounded-3xl px-6 py-8">
+      <div className="bg-primary-400/10 rounded-3xl px-6 py-8">
         <dt className="sr-only">Email</dt>
         <dd className="flex h-full flex-col justify-between gap-12">
           <svg
-            className="text-primary-600 dark:text-primary-400 h-6 w-6"
+            className="text-primary-400 h-6 w-6"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"

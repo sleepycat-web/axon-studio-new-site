@@ -35,7 +35,7 @@ const values = [
 
 export default function Values() {
   return (
-    <section className="dark py-16 sm:py-20">
+    <section className=" py-16 sm:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="flex flex-col gap-8 lg:gap-12">
           <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
@@ -50,12 +50,12 @@ export default function Values() {
                 {column.map((value) => (
                   <div
                     key={value.ref}
-                    className="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8"
+                    className="bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8"
                   >
                     <p className="text-sm">{value.ref}</p>
                     <div className="flex flex-col gap-4">
                       <h3 className="text-xl font-medium">{value.name}</h3>
-                      <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                      <p className="text-primary-200/70 text-base sm:text-lg">
                         {value.description}
                       </p>
                     </div>
