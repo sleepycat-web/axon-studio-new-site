@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className="bg-primary-400/10 mt-16 py-16 lg:mt-20 lg:py-20"
+      className="bg-primary-400/10 mt-16 z-10 py-16 lg:mt-20 lg:py-20"
       aria-labelledby="footer-heading"
     >
       <h2 id="footer-heading" className="sr-only">
