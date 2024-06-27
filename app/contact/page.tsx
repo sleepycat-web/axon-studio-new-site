@@ -8,7 +8,7 @@ import { FlipWordsDemo } from "@/components/ui/aceternity/flip-words";
 
 export default function Main() {
   return (
-    <div className="bg-neutral-950">
+    <div className="h-svh bg-neutral-950">
       <Navbar />
 
       <FlipWordsDemo />
