@@ -8,7 +8,7 @@ export default function Cta() {
           <div className="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col items-center gap-8 rounded-3xl px-5 py-16 sm:gap-10">
             <div className="flex flex-col gap-4 sm:gap-6">
               <h2 className="mx-auto max-w-sm text-3xl font-medium tracking-tight sm:text-4xl">
-                Let's make something amazing together
+                Let&apos;s make something amazing together
               </h2>
               <p className="text-primary-950/70 dark:text-primary-200/70 mx-auto max-w-2xl text-lg">
                 Contact us today to get started on your online journey.

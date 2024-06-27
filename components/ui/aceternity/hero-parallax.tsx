@@ -125,7 +125,7 @@ export const Header = () => {
         We design and build your next digital experience
       </h1>
       <p className=" xl:ml-1.5 font-normal md:text-xl mt-8 text-primary-200/70 text-lg sm:text-xl">
-        Unlocking Your Brand's Potential, One Click at a Time.
+        Unlocking Your Brand&apos;s Potential, One Click at a Time.
       </p>
     </div>
 

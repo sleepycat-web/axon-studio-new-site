@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
               <p className="text-primary-950/70 dark:text-primary-200/70 max-w-sm text-xl italic leading-loose">
                 <span className="font-medium">Axon Studio</span> is an SEO and
                 Web Development agency based in Siliguri. We work towards
-                elevating your brand's potential one click at a time
+                elevating your brand&apos;s potential one click at a time
               </p>
             </div>
 

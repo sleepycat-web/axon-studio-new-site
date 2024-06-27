@@ -60,12 +60,12 @@ const Services: React.FC = () => {
               <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
                 Welcome to Axon Studio, your premier SEO and Web Development
                 Agency in Siliguri. With an expert team and one year of
-                experience, we're dedicated to elevating your brand's potential
-                one click at a time. Strategically positioned to serve
+                experience, we&apos;re dedicated to elevating your brand&apos;s
+                potential one click at a time. Strategically positioned to serve
                 businesses locally and globally, we offer tailored strategies
                 and cutting-edge solutions. Trust us to optimize your digital
-                footprint and drive growth. Let's unlock your brand's full
-                potential together.
+                footprint and drive growth. Let&apos;s unlock your brand&apos;s
+                full potential together.
               </p>
               <a
                 href="/about"
@@ -77,7 +77,6 @@ const Services: React.FC = () => {
           </div>
         </div>
       </section>
-     
     </section>
   );
 };
