@@ -22,8 +22,8 @@ export default function Page() {
         <div>
           <p className="mb-4">
             These Terms and Conditions govern your use of the services provided
-            by Axon Studio ("we" or "us"). By using our services, you agree to
-            these terms and conditions.
+            by Axon Studio (&quot;we&quot; or &quot;us&quot;). By using our
+            services, you agree to these terms and conditions.
           </p>
 
           <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">

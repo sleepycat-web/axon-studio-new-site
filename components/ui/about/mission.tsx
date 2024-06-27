@@ -34,7 +34,7 @@ const Mission: React.FC = () => {
               About
             </h1>{" "}
             <p className="text-primary-950/70 dark:text-primary-200/70 mx-auto max-w-xl text-lg sm:text-xl">
-              Unlocking Your Brand's Potential, One Click at a Time.
+              Unlocking Your Brand&apos;'s Potential, One Click at a Time.
             </p>{" "}
           </div>{" "}
         </div>{" "}
@@ -71,9 +71,9 @@ const Mission: React.FC = () => {
                   <p className="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
                     Driven by our commitment to excellence we are more than just
                     a creative agency; we are pioneers of possibility, pushing
-                    the boundaries of what's conceivable to deliver unparalleled
-                    results for our clients. Join us on a journey of creativity,
-                    innovation, and limitless potential.
+                    the boundaries of what&apos;s conceivable to deliver
+                    unparalleled results for our clients. Join us on a journey
+                    of creativity, innovation, and limitless potential.
                   </p>
                 </div>
               </div>
