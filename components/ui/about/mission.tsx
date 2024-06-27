@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import React from "react";
 
 const stats = [
@@ -42,12 +42,12 @@ const Mission: React.FC = () => {
       <section className="dark py-16 sm:py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-            <img
+            <Image
               className="mx-auto h-auto w-full max-w-xl rounded-3xl"
-              width="576"
-              height="864"
               src="/assets/about.webp"
               alt="About Image"
+              width={576}
+              height={864}
             />
             <div className="flex flex-col gap-10">
               {/* Mission description */}

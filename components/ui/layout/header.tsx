@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-500.css";
@@ -40,10 +41,10 @@ const Navbar: React.FC = () => {
               className="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
             >
               <span className="sr-only">Axon</span>
-              <img
+              <Image
                 className="h-12 w-auto"
-                width="65"
-                height="40"
+                width={65}
+                height={40}
                 src="/assets/logo-inverted.png"
                 alt="Logo"
               />
