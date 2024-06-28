@@ -30,7 +30,7 @@ export default function RootLayout({
       />
       <meta
         property="og:image"
-        content="https://axonstudio.tech/assets/hero.webp"
+        content="https://axonstudio.tech/assets/ogi.jpg"
       />
 
       {/* Twitter Meta Tags */}
@@ -47,7 +47,7 @@ export default function RootLayout({
       />
       <meta
         name="twitter:image"
-        content="https://axonstudio.tech/assets/hero.webp"
+        content="https://axonstudio.tech/assets/ogi.jpg"
       />
 
       <link rel="canonical" href="https://axonstudio.tech/" key="canonical" />
