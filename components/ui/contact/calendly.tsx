@@ -42,7 +42,7 @@ const Calendly: React.FC = () => {
     e.preventDefault();
     if (typeof window !== "undefined" && window.Calendly) {
       window.Calendly.initPopupWidget({
-        url: "https://calendly.com/axon-studio/meet",
+        url: "https://calendly.com/axon-studio/meet?hide_gdpr_banner=1",
       });
     } else {
       console.error("Calendly script not loaded.");
