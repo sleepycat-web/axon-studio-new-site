@@ -1,37 +1,25 @@
-"use client";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import "@fontsource/inter/latin-400.css";
-import "@fontsource/inter/latin-500.css";
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
-    { ref: "", name: "Home", href: "/" },
-    { ref: "", name: "About", href: "/about" },
-    { ref: "", name: "Newsletter", href: "https://grow.axonstudio.tech/", target: "_blank" },
-    { ref: "", name: "Contact", href: "/contact" },
+  { ref: "", name: "Home", href: "/" },
+  { ref: "", name: "About", href: "/about" },
+  {
+    ref: "",
+    name: "Newsletter",
+    href: "https://grow.axonstudio.tech/",
+    target: "_blank",
+  },
+  { ref: "", name: "Contact", href: "/contact" },
 ];
 
 const Navbar: React.FC = () => {
-  const [isDark, setIsDark] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-      setIsDark(theme === "dark");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setIsDark(true);
-    }
-  }, []);
-
-
 
   return (
     <div className="z-index-10">
-      <header className={`transition }`}>
-        {/* ${open ? "bg-primary-400/10" : "bg-transparent" */}{" "}
-        {/* Add this line */}{" "}
+      <header className={`transition}`}>
         <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
           {/* Brand logo */}
           <div className="flex">
@@ -51,8 +39,6 @@ const Navbar: React.FC = () => {
 
           {/* Actions */}
           <div className="-mr-2 flex items-center space-x-2 sm:space-x-3">
-            {/* Toggle theme mode */}
-
             {/* Toggle menu */}
             <button
               type="button"
@@ -83,6 +69,7 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
+
         {/* Menu content */}
         <div
           className={`mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 ${
@@ -101,12 +88,9 @@ const Navbar: React.FC = () => {
 
             {/* Navigation */}
             <nav className="divide-primary-300/10 flex flex-col gap-1 divide-y">
-              {links.map((link) => (
-                <Link href={link.href}>
-                  <div
-                    key={link.name}
-                    className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl cursor-pointer"
-                  >
+              {links.map((link, index) => (
+                <Link href={link.href} key={index}>
+                  <div className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl cursor-pointer">
                     <div className="group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
                       <div className="flex items-center gap-6">
                         <span className="text-xs">{link.ref}</span>
