@@ -8,7 +8,7 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Refund Policy",
+  title: "Refund Policy | Axon Studio",
   description:
     "Explore our straightforward refund policy at Axon Studio. Learn how we ensure satisfaction and handle refunds with transparency.",
 };

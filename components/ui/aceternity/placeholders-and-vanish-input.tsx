@@ -187,7 +187,7 @@ export function PlaceholdersAndVanishInput({
 
     // Pass the captured value to the onSubmit callback if it exists
     onSubmit && onSubmit(e, valueSub);
-    console.log(`submitted: ${valueSub}`);
+    console.log(`Submitted: ${valueSub}`);
   };
 
   return (

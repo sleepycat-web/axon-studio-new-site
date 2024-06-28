@@ -29,7 +29,9 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="z-index-10">
-      <header className={`transition`}>
+      <header className={`transition }`}>
+        {/* ${open ? "bg-primary-400/10" : "bg-transparent" */}{" "}
+        {/* Add this line */}{" "}
         <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
           {/* Brand logo */}
           <div className="flex">
@@ -81,7 +83,6 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-
         {/* Menu content */}
         <div
           className={`mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 ${

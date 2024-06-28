@@ -5,7 +5,7 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Axon Studio | Home",
+  title: "Contact | Axon Studio",
   description: "Contact us today to get started on your online journey.",
 };
 

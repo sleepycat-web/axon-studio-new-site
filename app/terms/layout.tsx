@@ -8,7 +8,7 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions",
+  title: "Terms and Conditions | Axon Studio",
   description:
     "Discover our clear and comprehensive terms of service at Axon Studio. Learn about our commitment to transparency and client satisfaction.",
 };

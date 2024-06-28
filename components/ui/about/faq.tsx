@@ -84,7 +84,7 @@ const Faq = () => {
                     className={`border-b text-lg transition ${
                       selected === index || selected === index + 1
                         ? "border-transparent"
-                        : "border-neutral-950"
+                        : "border-primary-800/70"
                     }`}
                   >
                     <button

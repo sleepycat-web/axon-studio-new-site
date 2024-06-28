@@ -12,17 +12,30 @@ export default async function handler(
       return res.status(400).json({ message: "valueSub is required" });
     }
 
-    console.log("Received request at", new Date().toISOString());
+    const formattedTimestamp = new Date().toLocaleString("en-IN", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+
+    console.log("Received request at", formattedTimestamp);
 
     try {
       const client = await clientPromise;
       const db = client.db("Innovia");
       const collection = db.collection("Innoviad");
 
-      console.log("Connected to MongoDB at", new Date().toISOString());
+      console.log("Connected to MongoDB at", formattedTimestamp);
 
-      const result = await collection.insertOne({ valueSub });
-      console.log("Inserted data at", new Date().toISOString());
+      const result = await collection.insertOne({
+        valueSub,
+        timestamp: formattedTimestamp,
+      });
+      console.log("Inserted data at", formattedTimestamp);
 
       res.status(201).json({ message: "Data saved successfully", result });
     } catch (error) {
