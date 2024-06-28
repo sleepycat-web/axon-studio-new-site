@@ -26,7 +26,7 @@ export default function RootLayout({
       />
       <meta
         property="og:description"
-        content="Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time."
+        content="Welcome to Axon Studio, your go-to partner for online growth!"
       />
       <meta
         property="og:image"
