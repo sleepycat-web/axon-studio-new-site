@@ -186,11 +186,12 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
   },
   {
-    title: "Cursor",
+    title: "Invoker Labs",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
   },
+
   {
     title: "Rogue",
     link: "",
@@ -222,22 +223,26 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
   },
   {
-    title: "Aceternity UI",
+    title: "Axon Studio",
     link: "",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    thumbnail: "/assets/axon.jpg",
   },
   {
-    title: "Tailwind Master Kit",
+    title: "Cursor",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
   },
   {
     title: "SmartBridge",
     link: "",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+  },
+  {
+    title: "Personal",
+    link: "",
+    thumbnail: "/assets/personal.jpg",
   },
   {
     title: "Renderwork Studio",
@@ -257,12 +262,7 @@ export const products = [
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
   },
-  {
-    title: "Invoker Labs",
-    link: "",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
-  },
+
   {
     title: "E Free Invoice",
     link: "",
