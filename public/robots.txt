@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://axonstudio.tech
+
+# Sitemaps
+Sitemap: https://axonstudio.tech/sitemap.xml
