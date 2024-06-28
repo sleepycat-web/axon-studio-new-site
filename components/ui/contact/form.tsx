@@ -203,9 +203,10 @@ const ContactForm = () => {
       </div>
       <dialog id="my_modal_1" className="modal ">
         <div className="modal-box bg-neutral-900">
-          <h3 className="font-bold text-lg">Hello!</h3>
+          <h3 className="font-bold text-lg">Thank you for reaching out!</h3>
           <p className="py-4">
-            Thanks for contacting us, we will get back to you shortly.
+            Your message has been received. We'll be in touch with you very
+            soon.
           </p>
           <div className="modal-action">
             <button
