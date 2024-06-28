@@ -13,9 +13,9 @@ export default function Main() {
       <Navbar />
       <Mission />
       <Values />
-     
+
       <Faq />
-       <Cta2 />
+      <Cta2 />
       <Footer />
     </div>
   );
