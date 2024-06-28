@@ -1,26 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-<loc>https://axonstudio.tech</loc>
-<changefreq>daily</changefreq>
-<priority>1</priority>
-</url><url>
-<loc>https://axonstudio.tech/about</loc>
-<changefreq>daily</changefreq>
-<priority>0.8</priority>
-</url><url>
-<loc>https://axonstudio.tech/contact</loc>
-<changefreq>daily</changefreq>
-<priority>0.8</priority>
-</url><url>
-<loc>https://axonstudio.tech/privacy</loc>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url><url>
-<loc>https://axonstudio.tech/refund</loc>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url><url>
-<loc>https://axonstudio.tech/terms</loc>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url></urlset>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://axonstudio.tech</loc>
+            <changefreq>daily</changefreq>
+            <priority>1</priority>
+        </url>
+        <url>
+            <loc>https://axonstudio.tech/about</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>https://axonstudio.tech/contact</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>https://axonstudio.tech/privacy</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://axonstudio.tech/refund</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+        <url>
+            <loc>https://axonstudio.tech/terms</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.5</priority>
+        </url>
+    </urlset>
