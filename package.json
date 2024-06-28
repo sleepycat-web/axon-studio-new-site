@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node build-utilities/generate-sitemap.js && next build",
     "start": "next start",
-    "postbuild": "next-sitemap",
+    
     "lint": "next lint"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "react": "^18",
     "react-calendly": "^4.3.1",
     "react-dom": "^18",
+  
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
