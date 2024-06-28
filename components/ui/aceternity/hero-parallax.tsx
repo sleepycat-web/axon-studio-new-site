@@ -223,10 +223,11 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
   },
   {
-    title: "Axon Studio",
+    title: "Andromeda",
     link: "",
-    thumbnail: "/assets/axon.jpg",
+    thumbnail: "/assets/personal.jpg",
   },
+
   {
     title: "Cursor",
     link: "",
@@ -239,11 +240,7 @@ export const products = [
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
   },
-  {
-    title: "Personal",
-    link: "",
-    thumbnail: "/assets/personal.jpg",
-  },
+
   {
     title: "Renderwork Studio",
     link: "",
@@ -268,6 +265,11 @@ export const products = [
     link: "",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+  },
+  {
+    title: "Axon Studio",
+    link: "",
+    thumbnail: "/assets/axon.jpg",
   },
 ];
 
