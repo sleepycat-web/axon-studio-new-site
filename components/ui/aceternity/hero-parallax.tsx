@@ -240,19 +240,19 @@ export const products = [
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
   },
-
-  {
-    title: "Renderwork Studio",
-    link: "",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
-  },
   {
     title: "Creme Digital",
     link: "",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
   },
+  {
+    title: "Renderwork Studio",
+    link: "",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+  },
+
   {
     title: "Golden Bells Academy",
     link: "",
