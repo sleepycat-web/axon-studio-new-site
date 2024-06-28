@@ -43,7 +43,7 @@ export default function RootLayout({
       />
       <meta
         name="twitter:description"
-        content="Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time."
+        content="Welcome to Axon Studio, your go-to partner for online growth! "
       />
       <meta
         name="twitter:image"
