@@ -225,7 +225,7 @@ export const products = [
   {
     title: "Andromeda",
     link: "",
-    thumbnail: "/assets/personal.jpg",
+    thumbnail: "/assets/andromeda.jpg",
   },
 
   {
@@ -247,10 +247,9 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
   },
   {
-    title: "Renderwork Studio",
+    title: "DocBox",
     link: "",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+    thumbnail: "/assets/docbox.png",
   },
 
   {
