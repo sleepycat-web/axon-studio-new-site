@@ -205,7 +205,7 @@ const ContactForm = () => {
         <div className="modal-box bg-neutral-900">
           <h3 className="font-bold text-lg">Thank you for reaching out!</h3>
           <p className="py-4">
-            Your message has been received. We'll be in touch with you very
+            Your message has been received. We&apos;ll be in touch with you very
             soon.
           </p>
           <div className="modal-action">
