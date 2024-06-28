@@ -20,10 +20,10 @@ export default function RootLayout({
       {/* Open Graph Meta Tags */}
       <meta property="og:url" content="https://axonstudio.tech/about" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="About | Axon Studio" />
+      <meta property="og:title" content="About | Axon Studio " />
       <meta
         property="og:description"
-        content="Axon Studio is a Web Development and SEO agency based in Siliguri."
+        content="Axon Studio is Web Development and SEO agency based in Siliguri."
       />
       <meta
         property="og:image"
@@ -32,23 +32,23 @@ export default function RootLayout({
 
       {/* Twitter Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:domain" content="axonstudio.tech" />
+      <meta property="twitter:domain" content="axonstudio.tech/about" />
       <meta property="twitter:url" content="https://axonstudio.tech/about" />
       <meta name="twitter:title" content="About | Axon Studio" />
       <meta
         name="twitter:description"
-        content="Axon Studio is a Web Development and SEO agency based in Siliguri."
+        content="Axon Studio is Web Development and SEO agency based in Siliguri."
       />
       <meta
         name="twitter:image"
         content="https://axonstudio.tech/assets/hero.webp"
       />
-      
       <link
         rel="canonical"
         href="https://axonstudio.tech/about"
         key="canonical"
       />
+
       <body className={inter.className}>{children}</body>
     </html>
   );
