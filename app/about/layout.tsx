@@ -5,7 +5,7 @@ import "../globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Axon Studio | About",
+  title: "About | Axon Studio",
   description:
     "Axon Studio is Web Development and SEO agency based in Siliguri. We work towards elevating your brand's potential one click at a time.",
 };
