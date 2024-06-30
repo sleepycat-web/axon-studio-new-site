@@ -26,7 +26,6 @@ export default function RootLayout({
           content="Explore our straightforward refund policy at Axon Studio. Learn how we ensure satisfaction and handle refunds with transparency."
         />
       </head>
-      <meta name="robots" content="noindex" />
       <link rel="canonical" href="https://axonstudio.tech/refund" key="canonical" />
       <body className={inter.className}>{children}</body>
     </html>

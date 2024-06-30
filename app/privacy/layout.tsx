@@ -26,7 +26,6 @@ export default function RootLayout({
           content="Our privacy policy outlines how Axon Studio collects and uses your information. Understand what data we collect and how it's handled to ensure transparency and trust."
         />
       </head>
-      <meta name="robots" content="noindex" />
       <link
         rel="canonical"
         href="https://axonstudio.tech/privacy"

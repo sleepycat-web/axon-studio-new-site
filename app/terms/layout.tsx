@@ -31,7 +31,6 @@ export default function RootLayout({
           content="Discover our clear and comprehensive terms of service at Axon Studio. Learn about our commitment to transparency and client satisfaction."
         />
       </head>
-      <meta name="robots" content="noindex" />
 
       <body className={inter.className}>{children}</body>
     </html>
