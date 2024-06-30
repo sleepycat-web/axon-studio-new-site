@@ -6,8 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Axon Studio | Web Development Agency in Siliguri",
-  description:
-    "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+  description: "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
 };
 
 export default function RootLayout({
@@ -34,6 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-neutral-950">
       <head>
+        <meta
+          name="description"
+          content="Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time."
+        />
+        
         {/* Open Graph Meta Tags */}
         <meta property="og:url" content="https://axonstudio.tech" />
         <meta property="og:type" content="website" />

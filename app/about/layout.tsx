@@ -17,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+      <head>
+        <meta
+          name="description"
+          content= "Axon Studio is Web Development and SEO agency based in Siliguri. We work towards elevating your brand's potential one click at a time."
+
+        />
+      </head>
       <link rel="canonical" href="https://axonstudio.tech/about" key="canonical" />
       <body className={inter.className}>{children}</body>
     </html>

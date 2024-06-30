@@ -20,8 +20,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="description"
+          content="Our privacy policy outlines how Axon Studio collects and uses your information. Understand what data we collect and how it's handled to ensure transparency and trust."
+        />
+      </head>
       <meta name="robots" content="noindex" />
-      <link rel="canonical" href="https://axonstudio.tech/privacy" key="canonical" />
+      <link
+        rel="canonical"
+        href="https://axonstudio.tech/privacy"
+        key="canonical"
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );

@@ -20,7 +20,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="canonical" href="https://axonstudio.tech/terms" key="canonical" />
+      <link
+        rel="canonical"
+        href="https://axonstudio.tech/terms"
+        key="canonical"
+      />
+      <head>
+        <meta
+          name="description"
+          content="Discover our clear and comprehensive terms of service at Axon Studio. Learn about our commitment to transparency and client satisfaction."
+        />
+      </head>
       <meta name="robots" content="noindex" />
 
       <body className={inter.className}>{children}</body>

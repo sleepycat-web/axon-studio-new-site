@@ -16,7 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html className="bg-neutral-950" lang="en">
-      <link rel="canonical" href="https://axonstudio.tech/contact" key="canonical" />
+      <head>
+        <meta
+          name="description"
+          content="Contact us today to get started on your online journey."
+        />
+      </head>
+      <link
+        rel="canonical"
+        href="https://axonstudio.tech/contact"
+        key="canonical"
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );
