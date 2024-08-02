@@ -9,7 +9,7 @@ const stats = [
   },
   {
     name: "Projects",
-    value: "6",
+    value: "9",
   },
   {
     name: "Clicks",
