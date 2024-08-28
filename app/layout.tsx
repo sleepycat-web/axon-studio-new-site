@@ -23,7 +23,7 @@ export default function RootLayout({
     sameAs: [
       "https://twitter.com/WebAxon",
       "https://www.instagram.com/web_axon/",
-      "https://www.linkedin.com/company/axon-web",
+      "https://www.linkedin.com/company/web-axon",
       "https://axonstudio.tech/",
       "https://www.facebook.com/people/Axon-Studio/61557992653296/",
     ],

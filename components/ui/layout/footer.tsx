@@ -21,7 +21,7 @@ const bottomLinks: LinkGroup[] = [
     links: [
       {
         name: "LinkedIn",
-        href: "https://www.linkedin.com/company/axon-web",
+        href: "https://www.linkedin.com/company/web-axon",
         isExternal: true,
       },
       {
