@@ -14,7 +14,7 @@ const ContactSection = () => {
                 <div className="flex flex-col md:flex-row md:gap-1">
                   <span>Sevoke Road,</span>
                   <span>Siliguri - 734001</span>
-                </div>{" "}
+                </div>
               </div>
             </dd>
           </div>

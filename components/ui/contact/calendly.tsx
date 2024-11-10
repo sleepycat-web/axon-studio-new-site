@@ -50,7 +50,7 @@ const Calendly: React.FC = () => {
   };
 
   return (
-    <div className=" z-[9999]">
+    <div className="fixed z-[9999]">
       
       <link
         href="https://assets.calendly.com/assets/external/widget.css"
