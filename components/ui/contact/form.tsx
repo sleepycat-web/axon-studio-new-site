@@ -174,7 +174,7 @@ const ContactForm = () => {
               onSubmit={handleSubmit}
             >
               {/* Name, Email, Phone, Website - 2 columns */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2  gap-4">
                 {/* Full Name */}
                 <div>
                   <label
