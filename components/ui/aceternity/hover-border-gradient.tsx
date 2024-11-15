@@ -106,7 +106,7 @@ export function HoverBorderGradientDemo() {
         as="button"
         className="  text-white flex items-center space-x-2 "
       >
-        <span className="font-sans font-medium">Book a meet</span>
+        <span className="  font-medium">Book a Call</span>
       </HoverBorderGradient>
     </div>
   );
