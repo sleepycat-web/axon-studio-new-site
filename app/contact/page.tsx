@@ -56,8 +56,26 @@ useEffect(() => {
       }
     };
 
+  // Add custom CSS to adjust Calendly widget height on mobile devices
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @media screen and (max-width: 768px) {
+      .calendly-overlay, .calendly-popup {
+        height: 100% !important;
+      }
+      .calendly-popup iframe {
+        height: 100% !important;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
   window.addEventListener("message", handleMessage);
-  return () => window.removeEventListener("message", handleMessage);
+  return () => {
+    // Remove the custom style when the component unmounts
+    document.head.removeChild(style);
+    window.removeEventListener("message", handleMessage);
+  };
 }, []);
 
 const openCalendlyPopup = () => {
