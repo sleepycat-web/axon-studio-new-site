@@ -56,26 +56,8 @@ useEffect(() => {
       }
     };
 
-  // Add custom CSS to adjust Calendly widget height on mobile devices
-  const style = document.createElement("style");
-  style.innerHTML = `
-    @media screen and (max-width: 768px) {
-      .calendly-overlay, .calendly-popup {
-        height: 100% !important;
-      }
-      .calendly-popup iframe {
-        height: 100% !important;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-
   window.addEventListener("message", handleMessage);
-  return () => {
-    // Remove the custom style when the component unmounts
-    document.head.removeChild(style);
-    window.removeEventListener("message", handleMessage);
-  };
+  return () => window.removeEventListener("message", handleMessage);
 }, []);
 
 const openCalendlyPopup = () => {
@@ -107,8 +89,8 @@ const shouldShowForm = !isWidgetOpen || isEventScheduled;
            </a>
          </div>
        )}
-       <div className="">
-         <section className="text-white pt-8">
+       <div>
+         <section className="text-white pt-8   ">
            <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
              <dl className="grid grid-cols-2 gap-4">
                {/* Address */}
@@ -129,7 +111,7 @@ const shouldShowForm = !isWidgetOpen || isEventScheduled;
                </div>
 
                {/* Email */}
-               <div className="bg-primary-400/10 rounded-3xl px-6 py-8 w-full">
+               <div className="bg-primary-400/10 rounded-3xl px-6 py-8 w-full ">
                  <dd className="flex flex-col lg:flex-row lg:items-center items-start gap-4">
                    <MessageCircle className="h-6 w-6 md:h-8 md:w-8 text-primary-400 shrink-0" />
                    <p className="text-sm md:text-base font-medium">
@@ -146,9 +128,9 @@ const shouldShowForm = !isWidgetOpen || isEventScheduled;
              </dl>
            </div>
          </section>{" "}
-         <section className="py-16 sm:py-20">
+         <section className="py-16 sm:py-20 ">
            <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
+             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 md:min-h-fit min-h-[40vh]">
                {/* Left Column - Header Content */}
                <div className="flex flex-col gap-4 sm:gap-6">
                  <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
