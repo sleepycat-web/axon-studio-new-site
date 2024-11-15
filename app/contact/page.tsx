@@ -6,13 +6,7 @@ import React, { useEffect } from "react";
 import { HoverBorderGradientDemo } from "@/components/ui/aceternity/hover-border-gradient";
 import { MapPin, MessageCircle } from "lucide-react";
 
-declare global {
-  interface Window {
-    Calendly: {
-      initPopupWidget(options: { url: string }): void;
-    };
-  }
-}
+ 
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
