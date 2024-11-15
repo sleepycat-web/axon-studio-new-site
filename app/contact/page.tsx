@@ -63,6 +63,7 @@ useEffect(() => {
 const openCalendlyPopup = () => {
   window.Calendly.initPopupWidget({
     url: "https://calendly.com/axon-studio/meet?hide_gdpr_banner=1",
+    
   });
 };
 const shouldShowForm = !isWidgetOpen || isEventScheduled;
@@ -77,6 +78,7 @@ const shouldShowForm = !isWidgetOpen || isEventScheduled;
            <link
              href="https://assets.calendly.com/assets/external/widget.css"
              rel="stylesheet"
+             className="min-h-max"
            />
            <a
              href="#"
@@ -130,10 +132,10 @@ const shouldShowForm = !isWidgetOpen || isEventScheduled;
          </section>{" "}
          <section className="py-16 sm:py-20 ">
            <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 md:min-h-fit min-h-[40vh]">
+             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 ">
                {/* Left Column - Header Content */}
                <div className="flex flex-col gap-4 sm:gap-6">
-                 <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
+                 <h2 className="text-3xl font-medium tracking-tight sm:text-4xl text-white">
                    Let&apos;s work together
                  </h2>
                  <p className="text-primary-200/70 max-w-lg text-lg sm:text-xl">
