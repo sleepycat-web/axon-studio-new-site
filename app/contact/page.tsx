@@ -10,8 +10,8 @@ import { MapPin, MessageCircle } from "lucide-react";
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
-  const [isEventScheduled, setIsEventScheduled] = useState(false);
-
+ 
+  // Update the useEffect hook event handler
   useEffect(() => {
     if (typeof window !== "undefined" && !window.Calendly) {
       const script = document.createElement("script");
@@ -31,8 +31,8 @@ const ContactPage: React.FC = () => {
 
     const handleMessage = (e: MessageEvent) => {
       if (e.data.event === "calendly.event_scheduled") {
-        setIsEventScheduled(true);
-        setIsSubmitted(true);
+        // Only update these states, don't close the widget
+         setIsSubmitted(true);
         fetch("/api/saveMeeting", {
           method: "POST",
           headers: {
@@ -42,8 +42,6 @@ const ContactPage: React.FC = () => {
         }).catch((error) => {
           console.error("Error:", error);
         });
-      } else if (e.data.event === "calendly.popup_closed") {
-        setIsWidgetOpen(false);
       } else if (e.data.event === "calendly.popup_opened") {
         setIsWidgetOpen(true);
       }
@@ -53,35 +51,35 @@ const ContactPage: React.FC = () => {
     return () => window.removeEventListener("message", handleMessage);
   }, []);
 
-  const openCalendlyPopup = () => {
+  // Update the visibility condition
+   const openCalendlyPopup = () => {
     window.Calendly.initPopupWidget({
       url: "https://calendly.com/axon-studio/meet?hide_gdpr_banner=1",
     });
   };
-  const shouldShowForm = !isWidgetOpen || isEventScheduled;
-  const shouldShowFloatingButton = !isSubmitted;
+   const shouldShowFloatingButton = !isSubmitted;
 
   return (
     <div className="bg-neutral-950">
       <Navbar />
-      {shouldShowFloatingButton && (
-        <div className="fixed z-[9999]">
-          <link
-            href="https://assets.calendly.com/assets/external/widget.css"
-            rel="stylesheet"
-            className="min-h-max"
-          />
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              openCalendlyPopup();
-            }}
-          >
-            <HoverBorderGradientDemo />
-          </a>
-        </div>
-      )}
+
+      <div className="fixed z-[9999]">
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+          className="min-h-max"
+        />
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            openCalendlyPopup();
+          }}
+        >
+          {shouldShowFloatingButton && <HoverBorderGradientDemo />}
+        </a>
+      </div>
+
       <div>
         <section className="text-white pt-8   ">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -133,34 +131,30 @@ const ContactPage: React.FC = () => {
                 </p>
               </div>
               <div>
-                {shouldShowForm && (
-                  <div>
-                    {isSubmitted && (
-                      <div className="flex flex-col items-center justify-center p-8 bg-neutral-900 rounded-lg">
-                        <div className="w-16 h-16 mb-6 bg-green-500/10 rounded-full flex items-center justify-center">
-                          <svg
-                            className="w-8 h-8 text-green-500"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        </div>
-                        <h3 className="text-2xl font-semibold mb-4">
-                          Thank you for reaching out!
-                        </h3>
-                        <p className="text-center text-lg text-primary-200/70">
-                          Your message has been received. We&apos;ll respond to
-                          you soon.
-                        </p>
-                      </div>
-                    )}
+                {isSubmitted && (
+                  <div className="flex flex-col items-center justify-center p-8 bg-neutral-900 rounded-lg">
+                    <div className="w-16 h-16 mb-6 bg-green-500/10 rounded-full flex items-center justify-center">
+                      <svg
+                        className="w-8 h-8 text-green-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-4">
+                      Thank you for reaching out!
+                    </h3>
+                    <p className="text-center text-lg text-primary-200/70">
+                      Your message has been received. We&apos;ll respond to you
+                      soon.
+                    </p>
                   </div>
                 )}
               </div>
