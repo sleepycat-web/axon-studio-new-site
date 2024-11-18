@@ -5,13 +5,20 @@ import Link from "next/link";
 const links = [
   { ref: "", name: "Home", href: "/" },
   { ref: "", name: "About", href: "/about" },
+
+  { ref: "", name: "Contact", href: "/contact" },
   {
     ref: "",
     name: "Newsletter",
     href: "https://grow.axonstudio.tech/",
     target: "_blank",
   },
-  { ref: "", name: "Contact", href: "/contact" },
+  {
+    ref: "",
+    name: "SaaS",
+    href: "https://launch.axonstudio.tech/",
+    target: "_blank",
+  },
 ];
 
 const Navbar: React.FC = () => {
@@ -77,7 +84,7 @@ const Navbar: React.FC = () => {
           }`}
           id="website-menu"
         >
-          <div className="grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
+          <div className=" grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
             <div className="bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
               <p className="text-primary-200/70 max-w-sm text-xl italic leading-loose">
                 <span className="font-medium">Axon Studio</span> is an SEO and
@@ -90,7 +97,7 @@ const Navbar: React.FC = () => {
             <nav className="divide-primary-300/10 flex flex-col gap-1 divide-y">
               {links.map((link, index) => (
                 <Link href={link.href} key={index}>
-                  <div className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none sm:py-8 sm:text-4xl cursor-pointer">
+                  <div className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none   sm:text-3xl cursor-pointer">
                     <div className="group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
                       <div className="flex items-center gap-6">
                         <span className="text-xs">{link.ref}</span>
