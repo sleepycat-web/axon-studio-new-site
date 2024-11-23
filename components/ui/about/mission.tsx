@@ -5,19 +5,19 @@ import React from "react";
 const stats = [
   {
     name: "Years",
-    value: "1",
+    value: "1.5",
   },
   {
     name: "Projects",
-    value: "9",
+    value: "12",
   },
   {
-    name: "Clicks",
-    value: "374K",
+    name: "Client Revenue Generated",
+    value: "₹13 Lakhs",
   },
   {
-    name: "Impressions",
-    value: "6.8M",
+    name: "Users",
+    value: "1.7K",
   },
 ];
 
