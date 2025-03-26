@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "About | Axon Studio",
   description:
-    "Axon Studio is Web Development and SEO agency based in Siliguri. We work towards elevating your brand's potential one click at a time.",
+    "Axon Studio is Software Development firm based in Siliguri. We work towards elevating your brand's potential one click at a time.",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <meta
           name="description"
-          content= "Axon Studio is Web Development and SEO agency based in Siliguri. We work towards elevating your brand's potential one click at a time."
+          content="Axon Studio is Software Development firm based in Siliguri. We work towards elevating your brand's potential one click at a time."
 
         />
       </head>

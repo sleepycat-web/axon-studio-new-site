@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
               alt="Logo"
             />
             <p className="text-primary-200/70 text-base">
-              Axon Studio is a premiere SEO and Web Development Agency based in
+              Axon Studio is a premier Software Development firm based in
               Siliguri.
             </p>
             <p className="text-primary-200/70 text-sm">© 2024 Axon Studio</p>

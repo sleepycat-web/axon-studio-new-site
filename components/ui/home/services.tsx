@@ -59,8 +59,7 @@ const Services: React.FC = () => {
             </h2>
             <div className="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
               <p className="text-primary-200/70 text-base sm:text-lg">
-                Welcome to Axon Studio, your premier SEO and Web Development
-                Agency in Siliguri. With an expert team and one year of
+                Welcome to Axon Studio, your premier Software Development firm in Siliguri. With an expert team and one year of
                 experience, we&apos;re dedicated to elevating your brand&apos;s
                 potential one click at a time. Strategically positioned to serve
                 businesses locally and globally, we offer tailored strategies
