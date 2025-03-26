@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -79,11 +80,13 @@ export default function RootLayout({
         />
 
         {/* Google Analytics */}
-        <script
-          async
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S882N1ZP71"
-        ></script>
-        <script
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
