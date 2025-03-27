@@ -21,6 +21,12 @@ const services: Service[] = [
     description:
       "Elevate your online presence with our industry-leading SEO solutions, driving visibility, traffic, and sustainable growth for your business with lasting impact.",
   },
+  {
+    step: "03",
+    name: "TablePro (SaaS)",
+    description:
+      "Transform your restaurant workflow with an exceptional platform, empowering your business to boost operational efficiency and maximise staff productivity.",
+  },
 ];
 
 const Services: React.FC = () => {
@@ -32,7 +38,7 @@ const Services: React.FC = () => {
             <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
               Services
             </h2>
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="grid gap-8 lg:grid-cols-3">
               {services.map((service) => (
                 <div
                   key={service.step}
