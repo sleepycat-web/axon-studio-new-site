@@ -1,15 +1,14 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { ArrowLeft } from "lucide-react";
 
 export default function Page() {
   return (
-    <div className="bg-neutral-950 ">
+    <div className="bg-neutral-950 text-white">
       <div className="navbar w-full ">
         <Link href="/" className="btn btn-ghost text-xl">
-          <FontAwesomeIcon icon={faArrowLeft} />
+          <ArrowLeft />
         </Link>
       </div>
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-12 lg:px-8">
@@ -17,13 +16,13 @@ export default function Page() {
           <h1 className="text-4xl font-medium tracking-tight sm:text-5xl">
             Privacy Policy
           </h1>
-          <p className="text-base">Last update: June 6, 2024</p>
+          <p className="text-base">Last update: April 15, 2025</p>
         </div>
         <div>
           <p className="mb-4">
             At Axon Studio, we are committed to safeguarding your privacy. This
             Privacy Policy outlines how we collect, use, and protect your
-            personal information when you use our website. Please take a moment
+            personal information when you use our website and services. Please take a moment
             to read through this document to understand our practices.
           </p>
 
@@ -37,7 +36,7 @@ export default function Page() {
           <ul className="list-inside list-disc space-y-4">
             <li>
               Information you provide: When you sign up for our newsletter, we
-              may ask for your name and email address.
+              ask for your name and email address.
             </li>
             <li>
               Usage data: We may collect data about how you use our website,

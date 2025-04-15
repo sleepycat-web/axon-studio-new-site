@@ -1,15 +1,14 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { ArrowLeft } from "lucide-react";
 
 export default function Page() {
     return (
-      <div className="bg-neutral-950 ">
+      <div className="bg-neutral-950 text-white ">
         <div className="navbar w-full ">
           <Link href="/" className="btn btn-ghost text-xl">
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <ArrowLeft />
           </Link>
         </div>
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -17,7 +16,7 @@ export default function Page() {
             <h1 className="text-4xl font-medium tracking-tight sm:text-5xl">
               Refund Policy
             </h1>
-            <p className="text-base">Last update: April 11, 2024</p>
+            <p className="text-base">Last update: April 15, 2025</p>
           </div>
           <div>
             <p className="mb-4">
@@ -31,8 +30,9 @@ export default function Page() {
             </h2>
             <p className="mb-6">We offer refunds for the following services:</p>
             <ul className="list-inside list-disc space-y-4">
+              <li>Website and App Development</li>
               <li>Search Engine Optimisation</li>
-              <li>Website Development</li>
+              <li>TablePro (SaaS)</li>
             </ul>
 
             <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">
@@ -68,6 +68,11 @@ export default function Page() {
               business days to the original payment method used. If your refund
               request is not approved, we will provide an explanation for the
               denial.
+            </p>
+            <p className="mb-4">
+              For SaaS subscriptions, if you have purchased a multi-month package
+              and request a refund partway through the subscription period, we
+              will issue a refund for the unused months only.
             </p>
 
             <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">

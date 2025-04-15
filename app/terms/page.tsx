@@ -1,15 +1,14 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { ArrowLeft } from "lucide-react";
 
 export default function Page() {
   return (
-    <div className="bg-neutral-950 ">
+    <div className="bg-neutral-950 text-white">
       <div className="navbar w-full ">
         <Link href="/" className="btn btn-ghost text-xl">
-          <FontAwesomeIcon icon={faArrowLeft} />
+          <ArrowLeft />
         </Link>
       </div>
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -17,7 +16,7 @@ export default function Page() {
           <h1 className="text-4xl font-medium tracking-tight sm:text-5xl">
             Terms and Conditions{" "}
           </h1>
-          <p className="text-base">Last update: April 11, 2024</p>
+          <p className="text-base">Last update: April 15, 2025</p>
         </div>
         <div>
           <p className="mb-4">
@@ -30,12 +29,13 @@ export default function Page() {
             1. Services
           </h2>
           <p className="mb-6">
-            We provide Search Engine Optimisation and Website Development
-            services. Our services may include, but are not limited to,
-            designing and developing your website, modifying your existing
-            website, providing SEO optimisation, creating backlinks for your
-            website, developing strategies to improve your website rankings and
-            creating and publishing content.
+            We provide Website and App Development, Search Engine Optimisation (SEO), and
+            Software as a Service (SaaS) solutions, including our TablePro
+            platform. Our services may include, but are not limited to,
+            designing and developing websites, modifying existing websites,
+            providing SEO optimisation, developing strategies to improve website
+            rankings, creating and publishing content, and offering access to
+            our SaaS products.
           </p>
 
           <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">
@@ -55,7 +55,7 @@ export default function Page() {
             We retain all ownership and intellectual property rights to any
             materials we create for you as part of our services, including but
             not limited to website and website content, files and creatives made
-            for the SEO process. You may use these materials solely for the
+            for the SEO process and our SaaS platforms like TablePro. You may use these materials solely for the
             purposes intended by the services, and you may not reproduce,
             modify, or distribute them without our prior consent.
           </p>
