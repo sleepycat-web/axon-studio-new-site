@@ -6,11 +6,10 @@ import React, { useEffect } from "react";
 import { HoverBorderGradientDemo } from "@/components/ui/aceternity/hover-border-gradient";
 import { MapPin, MessageCircle } from "lucide-react";
 
- 
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
- 
+
   // Update the useEffect hook event handler
   useEffect(() => {
     if (typeof window !== "undefined" && !window.Calendly) {
@@ -32,7 +31,7 @@ const ContactPage: React.FC = () => {
     const handleMessage = (e: MessageEvent) => {
       if (e.data.event === "calendly.event_scheduled") {
         // Only update these states, don't close the widget
-         setIsSubmitted(true);
+        setIsSubmitted(true);
         fetch("/api/saveMeeting", {
           method: "POST",
           headers: {
@@ -52,12 +51,12 @@ const ContactPage: React.FC = () => {
   }, []);
 
   // Update the visibility condition
-   const openCalendlyPopup = () => {
+  const openCalendlyPopup = () => {
     window.Calendly.initPopupWidget({
       url: "https://calendly.com/axon-studio/meet?hide_gdpr_banner=1",
     });
   };
-   const shouldShowFloatingButton = !isSubmitted;
+  const shouldShowFloatingButton = !isSubmitted;
 
   return (
     <div className="bg-neutral-950">
@@ -105,11 +104,11 @@ const ContactPage: React.FC = () => {
                   <MessageCircle className="h-6 w-6 md:h-8 md:w-8 text-primary-400 shrink-0" />
                   <p className="text-sm md:text-base font-medium">
                     <a
-                      href="mailto:info@axonstudio.tech"
+                      href="mailto:info@axonstudio.in"
                       className="inline-flex flex-wrap"
                     >
                       <span className="break-keep">info@axonstudio</span>
-                      <span className="break-all">.tech</span>
+                      <span className="break-all">.in</span>
                     </a>
                   </p>
                 </dd>

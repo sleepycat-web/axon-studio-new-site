@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
           <div className="text-center  block lg:hidden">
             <div className="flex items-center justify-center">
               <Link
-                href="https://grow.axonstudio.tech/"
+                href="https://grow.axonstudio.in/"
                 className="text-base text-white pb-4 font-medium flex items-center hover:cursor-pointer hover:underline"
               >
                 Subscribe to our Newsletter
@@ -166,7 +166,7 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block">
             <div className="relative">
               <Link
-                href="https://grow.axonstudio.tech/"
+                href="https://grow.axonstudio.in/"
                 target="_blank"
                 className="text-base text-white pb-4 font-medium flex items-center hover:cursor-pointer hover:underline"
               >

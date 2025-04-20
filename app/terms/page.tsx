@@ -29,9 +29,9 @@ export default function Page() {
             1. Services
           </h2>
           <p className="mb-6">
-            We provide Website and App Development, Search Engine Optimisation (SEO), and
-            Software as a Service (SaaS) solutions, including our TablePro
-            platform. Our services may include, but are not limited to,
+            We provide Website and App Development, Search Engine Optimisation
+            (SEO), and Software as a Service (SaaS) solutions, including our
+            TablePro platform. Our services may include, but are not limited to,
             designing and developing websites, modifying existing websites,
             providing SEO optimisation, developing strategies to improve website
             rankings, creating and publishing content, and offering access to
@@ -55,9 +55,10 @@ export default function Page() {
             We retain all ownership and intellectual property rights to any
             materials we create for you as part of our services, including but
             not limited to website and website content, files and creatives made
-            for the SEO process and our SaaS platforms like TablePro. You may use these materials solely for the
-            purposes intended by the services, and you may not reproduce,
-            modify, or distribute them without our prior consent.
+            for the SEO process and our SaaS platforms like TablePro. You may
+            use these materials solely for the purposes intended by the
+            services, and you may not reproduce, modify, or distribute them
+            without our prior consent.
           </p>
 
           <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">
@@ -119,7 +120,7 @@ export default function Page() {
           <p className="mb-4">
             If you have any questions or concerns about the Terms and Conditions
             or our services, please contact us at{" "}
-            <a href="mailto:info@axonstudio.tech">info@axonstudio.tech</a>
+            <a href="mailto:info@axonstudio.in">info@axonstudio.in</a>
           </p>
         </div>
       </div>

@@ -3,29 +3,29 @@ const path = require("path");
 
 function generateSitemap() {
   const pages = [
-    { url: "https://axonstudio.tech", changefreq: "daily", priority: 1.0 },
+    { url: "https://axonstudio.in", changefreq: "daily", priority: 1.0 },
     {
-      url: "https://axonstudio.tech/about",
+      url: "https://axonstudio.in/about",
       changefreq: "daily",
       priority: 0.8,
     },
     {
-      url: "https://axonstudio.tech/contact",
+      url: "https://axonstudio.in/contact",
       changefreq: "daily",
       priority: 0.8,
     },
     {
-      url: "https://axonstudio.tech/privacy",
+      url: "https://axonstudio.in/privacy",
       changefreq: "daily",
       priority: 0.5,
     },
     {
-      url: "https://axonstudio.tech/refund",
+      url: "https://axonstudio.in/refund",
       changefreq: "daily",
       priority: 0.5,
     },
     {
-      url: "https://axonstudio.tech/terms",
+      url: "https://axonstudio.in/terms",
       changefreq: "daily",
       priority: 0.5,
     },

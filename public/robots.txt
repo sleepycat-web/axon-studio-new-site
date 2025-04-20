@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://axonstudio.tech
+Host: https://axonstudio.in
 
 # Sitemaps
-Sitemap: https://axonstudio.tech/sitemap.xml
+Sitemap: https://axonstudio.in/sitemap.xml

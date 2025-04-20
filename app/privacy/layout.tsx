@@ -28,7 +28,7 @@ export default function RootLayout({
       </head>
       <link
         rel="canonical"
-        href="https://axonstudio.tech/privacy"
+        href="https://axonstudio.in/privacy"
         key="canonical"
       />
       <body className={inter.className}>{children}</body>

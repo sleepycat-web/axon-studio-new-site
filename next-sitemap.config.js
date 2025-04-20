@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://axonstudio.tech",
+  siteUrl: "https://axonstudio.in",
   generateRobotsTxt: true, // optional, if you need to generate robots.txt as well
   sitemap: {
     priorities: {

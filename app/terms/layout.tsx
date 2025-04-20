@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <link
         rel="canonical"
-        href="https://axonstudio.tech/terms"
+        href="https://axonstudio.in/terms"
         key="canonical"
       />
       <head>

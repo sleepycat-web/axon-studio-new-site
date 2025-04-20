@@ -10,13 +10,13 @@ const links = [
   {
     ref: "",
     name: "Newsletter",
-    href: "https://grow.axonstudio.tech/",
+    href: "https://grow.axonstudio.in/",
     target: "_blank",
   },
   {
     ref: "",
     name: "SaaS",
-    href: "https://launch.axonstudio.tech/",
+    href: "https://launch.axonstudio.in/",
     target: "_blank",
   },
 ];
@@ -87,8 +87,9 @@ const Navbar: React.FC = () => {
           <div className=" grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
             <div className="bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
               <p className="text-primary-200/70 max-w-sm text-xl italic leading-loose">
-                <span className="font-medium">Axon Studio</span> is a Software Development firm based in Siliguri. We work towards
-                elevating your brand&apos;s potential one click at a time
+                <span className="font-medium">Axon Studio</span> is a Software
+                Development firm based in Siliguri. We work towards elevating
+                your brand&apos;s potential one click at a time
               </p>
             </div>
 

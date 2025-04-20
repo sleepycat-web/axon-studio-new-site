@@ -22,8 +22,9 @@ export default function Page() {
           <p className="mb-4">
             At Axon Studio, we are committed to safeguarding your privacy. This
             Privacy Policy outlines how we collect, use, and protect your
-            personal information when you use our website and services. Please take a moment
-            to read through this document to understand our practices.
+            personal information when you use our website and services. Please
+            take a moment to read through this document to understand our
+            practices.
           </p>
 
           <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">
@@ -88,7 +89,7 @@ export default function Page() {
           <p className="mb-4">
             If you have any questions or concerns about our Privacy Policy or
             our services, please contact us at
-            <a href="mailto:info@axonstudio.tech"> info@axonstudio.tech</a>
+            <a href="mailto:info@axonstudio.in"> info@axonstudio.in</a>
           </p>
         </div>
       </div>

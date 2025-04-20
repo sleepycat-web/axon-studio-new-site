@@ -21,10 +21,13 @@ export default function RootLayout({
         <meta
           name="description"
           content="Axon Studio is Software Development firm based in Siliguri. We work towards elevating your brand's potential one click at a time."
-
         />
       </head>
-      <link rel="canonical" href="https://axonstudio.tech/about" key="canonical" />
+      <link
+        rel="canonical"
+        href="https://axonstudio.in/about"
+        key="canonical"
+      />
       <body className={inter.className}>{children}</body>
     </html>
   );

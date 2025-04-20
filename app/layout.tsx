@@ -6,8 +6,9 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Axon Studio | Web Development Agency in Siliguri",
-  description: "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
-}
+  description:
+    "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+};
 
 export default function RootLayout({
   children,
@@ -19,13 +20,13 @@ export default function RootLayout({
     "@type": "Corporation",
     name: "Axon Studio",
     alternateName: "Axon Web",
-    url: "https://axonstudio.tech",
-    logo: "https://axonstudio.tech/assets/axon-studio-logo.png",
+    url: "https://axonstudio.in",
+    logo: "https://axonstudio.in/assets/axon-studio-logo.png",
     sameAs: [
       "https://twitter.com/WebAxon",
       "https://www.instagram.com/web_axon/",
       "https://www.linkedin.com/company/web-axon",
-      "https://axonstudio.tech/",
+      "https://axonstudio.in/",
       "https://www.facebook.com/people/Axon-Studio/61557992653296/",
     ],
   };
@@ -37,9 +38,9 @@ export default function RootLayout({
           name="description"
           content="Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time."
         />
-        
+
         {/* Open Graph Meta Tags */}
-        <meta property="og:url" content="https://axonstudio.tech" />
+        <meta property="og:url" content="https://axonstudio.in" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
@@ -51,13 +52,13 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://axonstudio.tech/assets/ogi.jpg"
+          content="https://axonstudio.in/assets/ogi.jpg"
         />
 
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="axonstudio.tech" />
-        <meta property="twitter:url" content="https://axonstudio.tech" />
+        <meta property="twitter:domain" content="axonstudio.in" />
+        <meta property="twitter:url" content="https://axonstudio.in" />
         <meta
           name="twitter:title"
           content="Axon Studio | Web Development Agency in Siliguri"
@@ -68,10 +69,10 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content="https://axonstudio.tech/assets/ogi.jpg"
+          content="https://axonstudio.in/assets/ogi.jpg"
         />
 
-        <link rel="canonical" href="https://axonstudio.tech/" key="canonical" />
+        <link rel="canonical" href="https://axonstudio.in/" key="canonical" />
 
         {/* Schema.org JSON-LD */}
         <script
