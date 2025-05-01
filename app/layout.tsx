@@ -73,7 +73,9 @@ export default function RootLayout({
     "https://www.instagram.com/web_axon/",
     "https://www.linkedin.com/company/web-axon",
     "https://axonstudio.in/",
-    "https://www.facebook.com/people/Axon-Studio/61557992653296/"
+    "https://www.facebook.com/people/Axon-Studio/61557992653296/",
+    "https://www.youtube.com/@Web-Axon"
+
   ]
 }
 `}
@@ -100,7 +102,9 @@ export default function RootLayout({
     "https://twitter.com/WebAxon",
     "https://www.instagram.com/web_axon/",
     "https://www.linkedin.com/company/web-axon",
-    "https://www.facebook.com/people/Axon-Studio/61557992653296/"
+    "https://www.facebook.com/people/Axon-Studio/61557992653296/",
+    "https://www.youtube.com/@Web-Axon"
+
   ]
 }
 `}

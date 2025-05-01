@@ -39,6 +39,11 @@ const bottomLinks: LinkGroup[] = [
         href: "https://www.facebook.com/people/Axon-Studio/61557992653296/",
         isExternal: true,
       },
+      {
+        name: "YouTube",
+        href: "https://www.youtube.com/@Web-Axon",
+        isExternal: true,
+      },
     ],
   },
   {
