@@ -42,52 +42,40 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Corporation",
-    name: "Axon Studio",
-    alternateName: "Axon Web",
-    url: "https://axonstudio.in",
-    logo: "https://axonstudio.in/assets/axon-studio-logo.png",
-    sameAs: [
-      "https://twitter.com/WebAxon",
-      "https://www.instagram.com/web_axon/",
-      "https://www.linkedin.com/company/web-axon",
-      "https://axonstudio.in/",
-      "https://www.facebook.com/people/Axon-Studio/61557992653296/",
-    ],
-  };
+ 
 
   return (
     <html lang="en" className="bg-neutral-950">
-      <head>
-        {/* Schema.org JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-
-      </head>
-      <body className={inter.className}>
-        {children}
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-S882N1ZP71"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-S882N1ZP71');
-            `,
-          }}
-        />
-      </body>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-S882N1ZP71"
+        strategy="afterInteractive"
+      />
+      <Script id="gtag-init">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S882N1ZP71');
+      `}</Script>
+      <Script id="ld-json" type="application/ld+json">
+        {`
+{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Axon Studio",
+  "alternateName": "Web Axon",
+  "url": "https://axonstudio.in",
+  "logo": "https://axonstudio.in/assets/axon-studio-logo.png",
+  "sameAs": [
+    "https://twitter.com/WebAxon",
+    "https://www.instagram.com/web_axon/",
+    "https://www.linkedin.com/company/web-axon",
+    "https://axonstudio.in/",
+    "https://www.facebook.com/people/Axon-Studio/61557992653296/"
+  ]
+}
+`}
+      </Script>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

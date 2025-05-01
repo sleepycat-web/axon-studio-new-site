@@ -61,7 +61,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 sm:py-20 text-white">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
           <div>
