@@ -8,6 +8,33 @@ export const metadata: Metadata = {
   title: "Axon Studio | Web Development Agency in Siliguri",
   description:
     "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+  authors: [{ name: "Axon Studio", url: "https://axonstudio.in" }],
+  alternates: { canonical: "https://axonstudio.in/" },
+  openGraph: {
+    title: "Axon Studio | Web Development Agency in Siliguri",
+    description:
+      "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+    url: "https://axonstudio.in",
+    siteName: "Axon Studio",
+    images: [
+      {
+        url: "https://axonstudio.in/assets/ogi.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Axon Studio preview image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@WebAxon",
+    title: "Axon Studio | Web Development Agency in Siliguri",
+    description:
+      "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+    images: ["https://axonstudio.in/assets/ogi.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -34,52 +61,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-neutral-950">
       <head>
-        <meta
-          name="description"
-          content="Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time."
-        />
-
-        {/* Open Graph Meta Tags */}
-        <meta property="og:url" content="https://axonstudio.in" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Axon Studio | Web Development Agency in Siliguri"
-        />
-        <meta
-          property="og:description"
-          content="Welcome to Axon Studio, your go-to partner for online growth!"
-        />
-        <meta
-          property="og:image"
-          content="https://axonstudio.in/assets/ogi.jpg"
-        />
-
-        {/* Twitter Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="axonstudio.in" />
-        <meta property="twitter:url" content="https://axonstudio.in" />
-        <meta
-          name="twitter:title"
-          content="Axon Studio | Web Development Agency in Siliguri"
-        />
-        <meta
-          name="twitter:description"
-          content="Welcome to Axon Studio, your go-to partner for online growth! "
-        />
-        <meta
-          name="twitter:image"
-          content="https://axonstudio.in/assets/ogi.jpg"
-        />
-
-        <link rel="canonical" href="https://axonstudio.in/" key="canonical" />
-
         {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
 
+      </head>
+      <body className={inter.className}>
+        {children}
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S882N1ZP71"
@@ -97,8 +87,7 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className={inter.className}>{children}</body>
+      </body>
     </html>
   );
 }
