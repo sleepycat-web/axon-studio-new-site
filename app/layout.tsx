@@ -9,7 +9,12 @@ export const metadata: Metadata = {
   description:
     "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
   authors: [{ name: "Axon Studio", url: "https://axonstudio.in" }],
-  alternates: { canonical: "https://axonstudio.in/" },
+  alternates: {
+    canonical: "https://axonstudio.in/",
+    languages: {
+      en: "https://axonstudio.in/",
+    },
+  },
   openGraph: {
     title: "Axon Studio | Web Development Agency in Siliguri",
     description:
@@ -42,8 +47,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
- 
-
   return (
     <html lang="en" className="bg-neutral-950">
       <Script
@@ -70,6 +73,33 @@ export default function RootLayout({
     "https://www.instagram.com/web_axon/",
     "https://www.linkedin.com/company/web-axon",
     "https://axonstudio.in/",
+    "https://www.facebook.com/people/Axon-Studio/61557992653296/"
+  ]
+}
+`}
+      </Script>
+      <Script id="ld-localbusiness" type="application/ld+json">
+        {`
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Axon Studio",
+  "image": "https://axonstudio.in/assets/msme.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sevoke Road",
+    "addressLocality": "Siliguri",
+    "addressRegion": "West Bengal",
+    "postalCode": "734001",
+    "addressCountry": "IN"
+  },
+  "email": "info@axonstudio.in",
+  "url": "https://axonstudio.in",
+  "openingHours": "Mo,Tu,We,Th,Fr 09:00-19:00",
+  "sameAs": [
+    "https://twitter.com/WebAxon",
+    "https://www.instagram.com/web_axon/",
+    "https://www.linkedin.com/company/web-axon",
     "https://www.facebook.com/people/Axon-Studio/61557992653296/"
   ]
 }
