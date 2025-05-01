@@ -97,7 +97,7 @@ export default function RootLayout({
   },
   "email": "info@axonstudio.in",
   "url": "https://axonstudio.in",
-  "openingHours": "Mo,Tu,We,Th,Fr 09:00-19:00",
+  "openingHours": "Mo-Su 09:00-19:00",
   "sameAs": [
     "https://twitter.com/WebAxon",
     "https://www.instagram.com/web_axon/",
