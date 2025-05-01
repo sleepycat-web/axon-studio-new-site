@@ -5,7 +5,7 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Axon Studio | Web Development Agency in Siliguri",
+  title: "Axon Studio | Software Development Firm in Siliguri",
   description:
     "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
   authors: [{ name: "Axon Studio", url: "https://axonstudio.in" }],
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Axon Studio | Web Development Agency in Siliguri",
+    title: "Axon Studio | Software Development Firm in Siliguri",
     description:
       "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
     url: "https://axonstudio.in",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@WebAxon",
-    title: "Axon Studio | Web Development Agency in Siliguri",
+    title: "Axon Studio | Software Development Firm in Siliguri",
     description:
       "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
     images: ["https://axonstudio.in/assets/ogi.jpg"],
