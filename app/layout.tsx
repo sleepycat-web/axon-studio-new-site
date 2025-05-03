@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Axon Studio | Software Development Firm in Siliguri",
   description:
     "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
-  authors: [{ name: "Axon Studio", url: "https://axonstudio.in" }],
+  authors: [{ name: "Axon Studio", url: "https://axonstudio.in/" }],
   alternates: {
     canonical: "https://axonstudio.in/",
     languages: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Axon Studio | Software Development Firm in Siliguri",
     description:
       "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
-    url: "https://axonstudio.in",
+    url: "https://axonstudio.in/",
     siteName: "Axon Studio",
     images: [
       {
@@ -68,7 +68,7 @@ export default function RootLayout({
   "alternateName": "Web Axon",
   "description": "A leading software development firm in Siliguri offering custom solutions for web and mobile applications.",
   "foundingDate": "2024-01-01", 
-  "url": "https://axonstudio.in",
+  "url": "https://axonstudio.in/",
   "logo": {
     "@type": "ImageObject",
     "url": "https://axonstudio.in/assets/axon-studio-logo.png",
@@ -135,7 +135,7 @@ export default function RootLayout({
   },
   "email": "info@axonstudio.in",
   "telephone": "",
-  "url": "https://axonstudio.in",
+  "url": "https://axonstudio.in/",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -167,7 +167,7 @@ export default function RootLayout({
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://axonstudio.in"
+      "item": "https://axonstudio.in/"
     },
     {
       "@type": "ListItem",
