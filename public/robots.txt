@@ -1,9 +1,7 @@
-# *
 User-agent: *
 Allow: /
+Disallow: /privacy
+Disallow: /refund
+Disallow: /terms
 
-# Host
-Host: https://axonstudio.in
-
-# Sitemaps
 Sitemap: https://axonstudio.in/sitemap.xml
