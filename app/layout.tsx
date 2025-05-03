@@ -134,6 +134,7 @@ export default function RootLayout({
     "addressCountry": "IN"
   },
   "email": "info@axonstudio.in",
+  "telephone": "",
   "url": "https://axonstudio.in",
   "openingHoursSpecification": [
     {
