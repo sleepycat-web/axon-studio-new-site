@@ -155,7 +155,7 @@ export default function RootLayout({
 }
 `}
       </Script>
-      <Script id="ld-breadcrumbs" type="application/ld+json">
+      {/* <Script id="ld-breadcrumbs" type="application/ld+json">
         {`
 {
   "@context": "https://schema.org",
@@ -182,7 +182,7 @@ export default function RootLayout({
   ]
 }
 `}
-      </Script>
+      </Script> */}
       <Script id="ld-faq" type="application/ld+json">
         {`{
   "@context": "https://schema.org",
