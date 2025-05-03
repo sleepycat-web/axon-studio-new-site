@@ -122,7 +122,7 @@ export default function RootLayout({
   "@type": "LocalBusiness",
   "name": "Axon Studio",
   "image": [
-    "https://axonstudio.in/assets/ogi.jpg",
+    "https://axonstudio.in/assets/ogi.jpg"
   ],
   "description": "A leading software development firm in Siliguri offering custom solutions for web and mobile applications.",
   "address": {
