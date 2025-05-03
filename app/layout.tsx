@@ -145,6 +145,7 @@ export default function RootLayout({
   ],
   "paymentAccepted": ["Cash", "UPI", "Bank Transfer"],
   "currenciesAccepted": "INR",
+  "priceRange": "₹₹",
   "sameAs": [
     "https://twitter.com/WebAxon",
     "https://www.instagram.com/web_axon/",
