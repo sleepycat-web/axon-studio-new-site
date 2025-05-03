@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node build-utilities/generate-sitemap.js && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -21,7 +21,6 @@
     "mongodb": "^6.7.0",
     "mongoose": "^8.4.4",
     "next": "14.2.4",
-    "next-sitemap": "^4.2.3",
     "react": "^18",
     "react-calendly": "^4.3.1",
     "react-dom": "^18",
