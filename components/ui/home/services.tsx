@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 // Define the type for the services
+import Image from "next/image";
 type Service = {
   step: string;
   name: string;
