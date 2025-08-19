@@ -13,8 +13,8 @@ const stats = [
     value: "23",
   },
   {
-    name: "Client Revenue Generated",
-    value: "₹34 Lakhs",
+    name: "Orders Processed",
+    value: "13K",
   },
   {
     name: "Users",
