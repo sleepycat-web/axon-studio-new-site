@@ -13,7 +13,7 @@ const testimonials = [
     description: "Life Coaching",
     image: "/assets/ufirstlogo.png",
     message:
-      "I had the pleasure of working with Axon Studio to redesign my coaching's landing page. The insights and the client acquisition funnel have been incredibly helpful for me",
+      "I had the pleasure of working with Axon Studio to redesign my coaching's landing page. The insights and the client acquisition funnel have been incredibly helpful for me.",
   },
   {
     name: "Astita Media",

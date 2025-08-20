@@ -7,6 +7,7 @@ import Footer from "../components/ui/layout/footer";
 import Cta1 from "../components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
 import Registration from "@/components/ui/about/registration";
+import Faq from "@/components/ui/about/faq";
 export default function Main() {
   return (
     <div className="bg-neutral-950">
@@ -15,7 +16,7 @@ export default function Main() {
       <Services />
       <Reviews />
       <Registration />
-
+      <Faq />
       <Cta1 />
       <Footer />
     </div>
