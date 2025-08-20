@@ -64,6 +64,8 @@ export const FloatingNav = ({
           <Link
             key={`link=${idx}`}
             href={navItem.link}
+            target={navItem.name === "SaaS" ? "_blank" : undefined}
+            rel={navItem.name === "SaaS" ? "noopener" : undefined}
             className={cn(
               "relative text-neutral-50 items-center flex space-x-1  hover:text-neutral-300 "
             )}
@@ -72,12 +74,10 @@ export const FloatingNav = ({
             <span className=" sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-       
       </motion.div>
     </AnimatePresence>
   );
 };
-
 
 export function FloatingNavDemo() {
   const navItems = [
@@ -92,6 +92,10 @@ export function FloatingNavDemo() {
     {
       name: "Contact",
       link: "/contact",
+    },
+    {
+      name: "SaaS",
+      link: "https://launch.axonstudio.in/",
     },
   ];
   return (

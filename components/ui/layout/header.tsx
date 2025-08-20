@@ -7,12 +7,12 @@ const links = [
   { ref: "", name: "About", href: "/about" },
 
   { ref: "", name: "Contact", href: "/contact" },
-  {
-    ref: "",
-    name: "Newsletter",
-    href: "https://grow.axonstudio.in/",
-    target: "_blank",
-  },
+  // {
+  //   ref: "",
+  //   name: "Newsletter",
+  //   href: "https://grow.axonstudio.in/",
+  //   target: "_blank",
+  // },
   {
     ref: "",
     name: "SaaS",
