@@ -8,13 +8,7 @@ const testimonials = [
     message:
       "We got connected by fate and good deeds. Axon Studio has always been in the most understanding position during my journey and helped me in the technicality of my business.",
   },
-  {
-    name: "U First Coaching",
-    description: "Life Coaching",
-    image: "/assets/ufirstlogo.png",
-    message:
-      "I had the pleasure of working with Axon Studio to redesign my coaching's landing page. The insights and the client acquisition funnel have been incredibly helpful for me.",
-  },
+
   {
     name: "Astita Media",
     description: "Content Agency",
@@ -23,11 +17,33 @@ const testimonials = [
       "The Axon Studio team did a fantastic job with our website. Super easy to work with, quick delivery, and the end result fits our brand perfectly.",
   },
   {
+    name: "U First Coaching",
+    description: "Life Coaching",
+    image: "/assets/ufirstlogo.png",
+    message:
+      "I had the pleasure of working with Axon Studio to redesign my coaching's landing page. The insights and the client acquisition funnel have been incredibly helpful for me.",
+  },
+  {
     name: "Clayo AI",
     description: "AI Call Screening Solutions",
     image: "/assets/clayologo.jpg",
     message:
       "We were able to draw in the right audience and improve our online visibility thanks to Axon Studio's SEO work. Real results, a well-defined plan and seamless execution.",
+  },
+  {
+    name: "3 Hour Creator",
+    description: "Studio",
+    image: "/assets/3hclogo.png",
+    message:
+      "I had called them one day before our opening and the very next morning our website is live. No one can match Team Axon's speed.",
+  },
+
+  {
+    name: "Shree Shyam Mobile",
+    description: "Mobile Store",
+    image: "/assets/ssmlogo.jpg",
+    message:
+      "Axon Studio brings your imagination to light with minimal follow ups, they do a great job and are open to further service and developments with no delay thats the best part.",
   },
 ];
 
