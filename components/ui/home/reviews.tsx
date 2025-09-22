@@ -6,7 +6,7 @@ const testimonials = [
     description: "Cafe",
     image: "/assets/cmlogo.png",
     message:
-      "We got connected by fate and good deeds. Axon Studio has always been in the most understanding position during my journey and helped me in the technicality of my business.",
+      "We got connected by fate and good deeds. Amlan has always been in the most understanding position during my journey and helped me in the technicality of my business. Axon Studio❤️",
   },
 
   {
@@ -35,7 +35,7 @@ const testimonials = [
     description: "Studio",
     image: "/assets/3hclogo.png",
     message:
-      "I had called them one day before our opening and the very next morning our website is live. No one can match Team Axon's speed.",
+      "I had called Amlan one day before our opening and the very next morning our website is live. No one can match Team Axon's speed.",
   },
 
   {
