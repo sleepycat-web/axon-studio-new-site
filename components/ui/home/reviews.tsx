@@ -59,7 +59,7 @@ const Reviews = () => {
             {testimonials.map((testimonial, index) => (
               <figure
                 key={index}
-                className="bg-primary-400/10 hover:bg-primary-400/20 transition-colors rounded-3xl p-8 flex flex-col items-center text-center gap-6"
+                className="bg-primary-400/10 hover:bg-primary-400/20 transition-colors rounded-3xl p-6 flex flex-col items-center text-center gap-6"
               >
                 <div
                   className="flex flex-row gap-2"
