@@ -179,34 +179,34 @@ export const products = [
   },
 
   {
-    title: "Rogue",
+    title: "Ibéricas",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
-  },
+
+      "/assets/ibericass.png",  },
   {
-    title: "Editorially",
+    title: "TablePro",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+      "/assets/tpss.png",
   },
   {
     title: "Editrix AI",
     link: "",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/editrix.png",
-  },
-  {
-    title: "Pixel Perfect",
+  }, {
+    title: "Golden Bells Academy",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
   },
+ 
   {
-    title: "Algochurn",
+    title: "Clayo AI",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+      "/assets/clss.png",
   },
   {
     title: "Andromeda",
@@ -215,10 +215,9 @@ export const products = [
   },
 
   {
-    title: "Cursor",
+    title: "Buon Gusto",
     link: "",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    thumbnail: "/assets/buon.jpg",
   },
   {
     title: "SmartBridge",
@@ -239,10 +238,10 @@ export const products = [
   },
 
   {
-    title: "Golden Bells Academy",
+    title: "Sona Hotels",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+      "/assets/sonass.png",
   },
 
   {
