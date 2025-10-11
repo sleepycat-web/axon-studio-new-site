@@ -5,9 +5,9 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Axon Studio | Software Development Firm in Siliguri",
+  title: "Axon Studio | Enterprise Software Solutions in Siliguri",
   description:
-    "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+    "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
   authors: [{ name: "Axon Studio", url: "https://axonstudio.in/" }],
   alternates: {
     canonical: "https://axonstudio.in/",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Axon Studio | Software Development Firm in Siliguri",
+    title: "Axon Studio | Enterprise Software Solutions in Siliguri",
     description:
-      "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+      "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
     url: "https://axonstudio.in/",
     siteName: "Axon Studio",
     images: [
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@WebAxon",
-    title: "Axon Studio | Software Development Firm in Siliguri",
+    title: "Axon Studio | Enterprise Software Solutions in Siliguri",
     description:
-      "Welcome to Axon Studio, your go-to partner for online growth! We are a team of experts who will elevate your brand's potential one click at a time.",
+      "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
     images: ["https://axonstudio.in/assets/ogi.jpg"],
   },
 };
@@ -66,7 +66,7 @@ export default function RootLayout({
   "@type": "Organization",
   "name": "Axon Studio",
   "alternateName": "Web Axon",
-  "description": "A leading software development firm in Siliguri offering custom solutions for web and mobile applications.",
+  "description": "A leading software development firm in Siliguri specialising in web and mobile solutions for enterprises.",
   "foundingDate": "2024-01-01", 
   "url": "https://axonstudio.in/",
   "logo": {
@@ -93,7 +93,7 @@ export default function RootLayout({
    
     }
   ],
-  "knowsAbout": ["Web Development", "App Development", "UI/UX Design", "SEO"],
+  "knowsAbout": ["Web Development", "App Development", "UI/UX Design", "SEO", "Enterprise Software", "SaaS Solutions"],
   "sameAs": [
     "https://twitter.com/WebAxon",
     "https://www.instagram.com/web_axon/",
@@ -110,7 +110,7 @@ export default function RootLayout({
       "availableLanguage": ["English", "Hindi"]
     }
   ],
-  "slogan": "Elevating your brand's potential one click at a time"
+  "slogan": "Building tailored solutions that scale businesses beyond limits."
 }
 `}
       </Script>
@@ -124,7 +124,7 @@ export default function RootLayout({
   "image": [
     "https://axonstudio.in/assets/ogi.jpg"
   ],
-  "description": "A leading software development firm in Siliguri offering custom solutions for web and mobile applications.",
+  "description": "A leading software development firm in Siliguri specialising in web and mobile solutions for enterprises.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Sevoke Road",

@@ -104,28 +104,14 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    //Old
-    // <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-    //   <div className="flex flex-col items-start gap-8 sm:gap-10">
-    //     <div className="flex max-w-xl flex-col items-start gap-4 sm:gap-6">
-    //       <h1 className="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
-    //         We design and build your next digital experience
-    //       </h1>
-    //       <p className="xl:ml-1.5 text-primary text-lg sm:text-xl">
-    //       Unlocking Your Brand's Potential, One Click at a Time.
-    //       </p>
-    //     </div>
-
-    //   </div>
-    // </div>
 
     //New
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-4xl text-white font-medium tracking-tight sm:text-5xl lg:text-6xl">
-        We design and build your next digital experience
+        Engineering the Technology That Powers Your Growth.
       </h1>
       <p className=" xl:ml-1.5 font-normal md:text-xl mt-8 text-primary-200/70 text-lg sm:text-xl">
-        Unlocking Your Brand&apos;s Potential, One Click at a Time.
+        We craft platforms that scale with your ambition and establish you as an undeniable leader in your industry.
       </p>
     </div>
 

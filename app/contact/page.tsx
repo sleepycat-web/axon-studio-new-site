@@ -80,7 +80,7 @@ const ContactPage: React.FC = () => {
       </div>
 
       <div>
-        <section className="text-white pt-8   ">
+        <section className="text-white pt-12   ">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <dl className="grid grid-cols-2 gap-4">
               {/* Address */}

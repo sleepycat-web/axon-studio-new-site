@@ -6,19 +6,19 @@ import Registration from "./registration";
 const stats = [
   {
     name: "Years",
-    value: "1.5",
+    value: "2",
   },
   {
     name: "Projects",
-    value: "23",
+    value: "17",
   },
   {
     name: "Orders Processed",
-    value: "13K",
+    value: "22K",
   },
   {
     name: "Users",
-    value: "4K",
+    value: "4.6K",
   },
 ];
 
@@ -35,7 +35,7 @@ const Mission: React.FC = () => {
               About
             </h1>{" "}
             <p className="text-primary-200/70 mx-auto max-w-xl text-lg sm:text-xl">
-              Unlocking Your Brand&apos;s Potential, One Click at a Time.
+              Building tailored solutions that scale businesses beyond limits.
             </p>{" "}
           </div>{" "}
         </div>{" "}

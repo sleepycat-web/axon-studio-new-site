@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "About | Axon Studio",
   description:
-    "Axon Studio is Software Development firm based in Siliguri. We work towards elevating your brand's potential one click at a time.",
+    "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
 };
 
 export default function RootLayout({
@@ -17,12 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta
-          name="description"
-          content="Axon Studio is Software Development firm based in Siliguri. We work towards elevating your brand's potential one click at a time."
-        />
-      </head>
       <link
         rel="canonical"
         href="https://axonstudio.in/about"

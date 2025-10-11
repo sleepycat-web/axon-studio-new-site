@@ -1,129 +1,106 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+"use client";
+import React, { useState } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
+import { cn } from "../../../utils/cn";
 import Link from "next/link";
 
-const links = [
-  { ref: "", name: "Home", href: "/" },
-  { ref: "", name: "About", href: "/about" },
+export const FloatingNav = ({
+  navItems,
+  className,
+}: {
+  navItems: {
+    name: string;
+    link: string;
+    icon?: JSX.Element;
+  }[];
+  className?: string;
+}) => {
+  const { scrollYProgress } = useScroll();
 
-  { ref: "", name: "Contact", href: "/contact" },
-  // {
-  //   ref: "",
-  //   name: "Newsletter",
-  //   href: "https://grow.axonstudio.in/",
-  //   target: "_blank",
-  // },
-  {
-    ref: "",
-    name: "SaaS",
-    href: "https://launch.axonstudio.in/",
-    target: "_blank",
-  },
-];
+  const [visible, setVisible] = useState(true);
 
-const Navbar: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      let direction = current! - scrollYProgress.getPrevious()!;
+
+      if (scrollYProgress.get() < 0) {
+        setVisible(false);
+      } else {
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+    }
+  });
 
   return (
-    <div className="z-index-10">
-      <header className={`transition}`}>
-        <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-4 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
-          {/* Brand logo */}
-          <div className="flex">
-            <Link href="/">
-              <div className="group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2">
-                <span className="sr-only">Axon</span>
-                <Image
-                  className="h-12 w-auto"
-                  width={65}
-                  height={40}
-                  src="/assets/logo-inverted.png"
-                  alt="Logo"
-                />
-              </div>
-            </Link>
-          </div>
-
-          {/* Actions */}
-          <div className="-mr-2 flex items-center space-x-2 sm:space-x-3">
-            {/* Toggle menu */}
-            <button
-              type="button"
-              className="text-primary-200 hover:bg-primary-400/10 ring-primary-950 inline-flex h-14 w-14 items-center justify-center rounded-full transition focus:outline-none focus-visible:ring-2"
-              onClick={() => setOpen(!open)}
-              aria-controls="website-menu"
-              aria-expanded={open}
-            >
-              <span className="sr-only">Toggle menu</span>
-              <svg
-                className={`h-8 w-8 ${open ? "hidden" : "block"}`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M19 8H5V10H19V8ZM19 14H5V16H19V14Z"></path>
-              </svg>
-              <svg
-                className={`h-8 w-8 ${open ? "block" : "hidden"}`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Menu content */}
-        <div
-          className={`mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 ${
-            open ? "block" : "hidden"
-          }`}
-          id="website-menu"
-        >
-          <div className=" grid grid-cols-1 gap-16 pb-24 pt-6 lg:grid-cols-2 lg:pt-12">
-            <div className="bg-primary-400/10 hidden items-center justify-center rounded-3xl px-6 py-8 lg:flex">
-              <p className="text-primary-200/70 max-w-sm text-xl italic leading-loose">
-                <span className="font-medium">Axon Studio</span> is a Software
-                Development firm based in Siliguri. We work towards elevating
-                your brand&apos;s potential one click at a time.
-              </p>
-            </div>
-
-            {/* Navigation */}
-            <nav className="divide-primary-300/10 flex flex-col gap-1 divide-y">
-              {links.map((link, index) => (
-                <Link href={link.href} key={index}>
-                  <div className="text-primary-200 group inline-flex py-6 text-3xl font-medium tracking-tight transition focus-visible:outline-none   sm:text-3xl cursor-pointer">
-                    <div className="group-focus-visible:outline-primary-200 flex flex-1 items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
-                      <div className="flex items-center gap-6">
-                        <span className="text-xs">{link.ref}</span>
-                        <span className="group-hover:underline">
-                          {link.name}
-                        </span>
-                      </div>
-                      <svg
-                        className="text-primary-400 h-6 w-6 sm:h-8 sm:w-8"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </header>
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        initial={{
+          opacity: 1,
+          y: -100,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        className={cn(
+          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border border-white/[0.2] rounded-full bg-stone-950  shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-8 pl-8 py-2  items-center justify-center space-x-4",
+          className
+        )}
+      >
+        {navItems.map((navItem: any, idx: number) => (
+          <Link
+            key={`link=${idx}`}
+            href={navItem.link}
+            target={navItem.name === "SaaS" ? "_blank" : undefined}
+            rel={navItem.name === "SaaS" ? "noopener" : undefined}
+            className={cn(
+              "relative text-neutral-50 items-center flex space-x-1  hover:text-neutral-300 "
+            )}
+          >
+            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+            <span className=" sm:block text-sm">{navItem.name}</span>
+          </Link>
+        ))}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
-export default Navbar;
+export default function Header() {
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "About",
+      link: "/about",
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+    },
+    {
+      name: "SaaS",
+      link: "https://launch.axonstudio.in/",
+    },
+  ];
+  return (
+    <div className="relative py-8  w-full">
+      <FloatingNav navItems={navItems} />
+    </div>
+  );
+}

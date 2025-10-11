@@ -12,15 +12,15 @@ type Service = {
 const services: Service[] = [
   {
     step: "01",
-    name: "Web Development",
+    name: "Enterprise Software",
     description:
-      "Crafting captivating digital experiences. Our Web Development solutions merge creativity, functionality, and innovation for an unforgettable online presence.",
+      "Every platform is built from scratch to fit your unique workflows. We help you scale, streamline, and gain a competitive edge by turning your boldest ideas into reality.",
   },
   {
     step: "02",
-    name: "Search Engine Optimisation",
+    name: "Web Development & SEO",
     description:
-      "Elevate your online presence with our industry-leading SEO solutions, driving visibility, traffic, and sustainable growth for your business with lasting impact.",
+      "We craft captivating digital experiences that engage your audience and drive results. Our creative web design and proven SEO strategies help you build an unforgettable online presence.",
   },
   {
     step: "03",
@@ -66,14 +66,9 @@ const Services: React.FC = () => {
             </h2>
             <div className="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
               <p className="text-primary-200/70 text-base sm:text-lg">
-                Welcome to Axon Studio, your premier Software Development firm in Siliguri. With an expert team and one year of
-                experience, we&apos;re dedicated to elevating your brand&apos;s
-                potential one click at a time. Strategically positioned to serve
-                businesses locally and globally, we offer tailored strategies
-                and cutting-edge solutions. Trust us to optimize your digital
-                footprint and drive growth. Let&apos;s unlock your brand&apos;s
-                full potential together.
+                Welcome to Axon Studio, your premier Software Development firm in Siliguri. Having successfully launched over 17 projects for our clients in the last 2 years, our team has the expertise to turn your vision into systems that drive unimaginable growth for your business.
               </p>
+              <p className="text-primary-200/70 text-base sm:text-lg">We partner with businesses locally and globally, delivering tailored strategies and cutting-edge digital solutions. From foundational websites to sophisticated enterprise software, we engineer systems designed for growth.Let&apos;s unite your vision with our technology to create something extraordinary.</p>
               <Link href="/about">
                 <button className="bg-primary-400 hover:bg-primary-300 focus-visible:outline-primary-400 text-primary-950 inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
                   Read about us
