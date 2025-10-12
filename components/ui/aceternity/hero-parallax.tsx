@@ -196,11 +196,11 @@ export const products = [
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/editrix.png",
   }, {
-    title: "Golden Bells Academy",
+    title: "Vista Haven",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
-  },
+
+      "/assets/vhss.png",  },
  
   {
     title: "Clayo AI",
@@ -226,10 +226,9 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
   },
   {
-    title: "Creme Digital",
+    title: "Alter",
     link: "",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    thumbnail: "/assets/alss.png",
   },
   {
     title: "DocBox",
