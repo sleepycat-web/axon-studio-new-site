@@ -16,7 +16,7 @@ export default function Page() {
           <h1 className="text-4xl font-medium tracking-tight sm:text-5xl">
             Refund Policy
           </h1>
-          <p className="text-base">Last update: April 15, 2025</p>
+          <p className="text-base">Last update: December 17, 2025</p>
         </div>
         <div>
           <p className="mb-4">
@@ -33,6 +33,7 @@ export default function Page() {
             <li>Website and App Development</li>
             <li>Search Engine Optimisation</li>
             <li>TablePro (SaaS)</li>
+            <li>Aurea (SaaS)</li>
           </ul>
 
           <h2 className="mb-6 mt-12 text-xl font-medium sm:text-2xl">

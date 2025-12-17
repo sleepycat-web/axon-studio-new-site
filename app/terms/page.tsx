@@ -16,7 +16,7 @@ export default function Page() {
           <h1 className="text-4xl font-medium tracking-tight sm:text-5xl">
             Terms and Conditions{" "}
           </h1>
-          <p className="text-base">Last update: April 15, 2025</p>
+          <p className="text-base">Last update: December 17, 2025</p>
         </div>
         <div>
           <p className="mb-4">
@@ -31,7 +31,7 @@ export default function Page() {
           <p className="mb-6">
             We provide Website and App Development, Search Engine Optimisation
             (SEO), and Software as a Service (SaaS) solutions, including our
-            TablePro platform. Our services may include, but are not limited to,
+            TablePro and Aurea platforms. Our services may include, but are not limited to,
             designing and developing websites, modifying existing websites,
             providing SEO optimisation, developing strategies to improve website
             rankings, creating and publishing content, and offering access to
@@ -55,7 +55,7 @@ export default function Page() {
             We retain all ownership and intellectual property rights to any
             materials we create for you as part of our services, including but
             not limited to website and website content, files and creatives made
-            for the SEO process and our SaaS platforms like TablePro. You may
+            for the SEO process and our SaaS platforms like TablePro and Aurea. You may
             use these materials solely for the purposes intended by the
             services, and you may not reproduce, modify, or distribute them
             without our prior consent.

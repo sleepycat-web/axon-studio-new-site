@@ -28,6 +28,12 @@ const services: Service[] = [
     description:
       "Transform your restaurant workflow with an exceptional platform, empowering your business to boost operational efficiency and maximise staff productivity.",
   },
+  {
+    step: "04",
+    name: "Aurea (SaaS)",
+    description:
+      "Streamline your salon and wellness center operations with our comprehensive management software, designed to enhance client experiences, optimize scheduling, and drive business growth.",
+  },
 ];
 
 const Services: React.FC = () => {
@@ -39,7 +45,7 @@ const Services: React.FC = () => {
             <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
               Services
             </h2>
-            <div className="grid gap-8 lg:grid-cols-3">
+            <div className="grid gap-8 lg:grid-cols-2">
               {services.map((service) => (
                 <div
                   key={service.step}

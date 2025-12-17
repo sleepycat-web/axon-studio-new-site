@@ -16,7 +16,7 @@ export default function Page() {
           <h1 className="text-4xl font-medium tracking-tight sm:text-5xl">
             Privacy Policy
           </h1>
-          <p className="text-base">Last update: April 15, 2025</p>
+          <p className="text-base">Last update: December 17, 2025</p>
         </div>
         <div>
           <p className="mb-4">
@@ -36,8 +36,7 @@ export default function Page() {
           </p>
           <ul className="list-inside list-disc space-y-4">
             <li>
-              Information you provide: When you sign up for our newsletter, we
-              ask for your name and email address.
+              Information you provide: When you sign up for our newsletter,log in to our platforms including TablePro and Aurea, or use our services, we may collect your name, email address, and phone number.
             </li>
             <li>
               Usage data: We may collect data about how you use our website,
