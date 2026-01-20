@@ -72,7 +72,7 @@ const Services: React.FC = () => {
             </h2>
             <div className="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
               <p className="text-primary-200/70 text-base sm:text-lg">
-                Welcome to Axon Studio, your premier Software Development firm in Siliguri. Having successfully launched over 17 projects for our clients in the last 2 years, our team has the expertise to turn your vision into systems that drive unimaginable growth for your business.
+                Welcome to Axon Studio, your premier Software Development firm in Noida. Having successfully launched over 17 projects for our clients in the last 2 years, our team has the expertise to turn your vision into systems that drive unimaginable growth for your business.
               </p>
               <p className="text-primary-200/70 text-base sm:text-lg">We partner with businesses locally and globally, delivering tailored strategies and cutting-edge digital solutions. From foundational websites to sophisticated enterprise software, we engineer systems designed for growth.Let&apos;s unite your vision with our technology to create something extraordinary.</p>
               <Link href="/about">

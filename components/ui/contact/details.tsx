@@ -12,9 +12,9 @@ const ContactSection = () => {
               <MapPin className="h-6 w-6 md:h-8 md:w-8 text-primary-400" />
               <div className="text-base font-medium">
                 <div className="flex flex-col md:flex-row md:gap-1">
-                  <span className="text-sm md:text-base">Sevoke Road,</span>
+                  <span className="text-sm md:text-base">Greater Noida Link Road,</span>
                   <span className="text-sm md:text-base">
-                    Siliguri - 734001
+                    Noida - 201301
                   </span>
                 </div>
               </div>

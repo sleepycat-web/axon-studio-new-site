@@ -5,7 +5,7 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Axon Studio | Enterprise Software Solutions in Siliguri",
+  title: "Axon Studio | Enterprise Software Solutions in Noida",
   description:
     "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
   authors: [{ name: "Axon Studio", url: "https://axonstudio.in/" }],
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Axon Studio | Enterprise Software Solutions in Siliguri",
+    title: "Axon Studio | Enterprise Software Solutions in Noida",
     description:
       "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
     url: "https://axonstudio.in/",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@WebAxon",
-    title: "Axon Studio | Enterprise Software Solutions in Siliguri",
+    title: "Axon Studio | Enterprise Software Solutions in Noida",
     description:
       "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
     images: ["https://axonstudio.in/assets/ogi.jpg"],
@@ -66,7 +66,7 @@ export default function RootLayout({
   "@type": "Organization",
   "name": "Axon Studio",
   "alternateName": "Web Axon",
-  "description": "A leading software development firm in Siliguri specialising in web and mobile solutions for enterprises.",
+  "description": "A leading software development firm in Noida specialising in web and mobile solutions for enterprises.",
   "foundingDate": "2024-01-01", 
   "url": "https://axonstudio.in/",
   "logo": {
@@ -77,10 +77,10 @@ export default function RootLayout({
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Sevoke Road",
-    "addressLocality": "Siliguri",
-    "addressRegion": "West Bengal",
-    "postalCode": "734001",
+    "streetAddress": "Greater Noida Link Road",
+    "addressLocality": "Noida",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "201301",
     "addressCountry": "IN"
   },
   "email": "info@axonstudio.in",
@@ -124,13 +124,13 @@ export default function RootLayout({
   "image": [
     "https://axonstudio.in/assets/ogi.jpg"
   ],
-  "description": "A leading software development firm in Siliguri specialising in web and mobile solutions for enterprises.",
+  "description": "A leading software development firm in Noida specialising in web and mobile solutions for enterprises.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Sevoke Road",
-    "addressLocality": "Siliguri",
-    "addressRegion": "West Bengal",
-    "postalCode": "734001",
+    "streetAddress": "Greater Noida Link Road",
+    "addressLocality": "Noida",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "201301",
     "addressCountry": "IN"
   },
   "email": "info@axonstudio.in",

@@ -100,7 +100,7 @@ const Footer: React.FC = () => {
             />
             <p className="text-primary-200/70 text-base">
               Axon Studio is a premier Software Development firm based in
-              Siliguri.
+              Noida.
             </p>
             <p className="text-primary-200/70 text-sm">© 2024 Axon Studio</p>
           </div>
@@ -108,10 +108,10 @@ const Footer: React.FC = () => {
           <div className="text-center  block lg:hidden">
             <div className="flex items-center justify-center">
               <p
-                 className="text-base text-white pb-4 font-medium flex items-center  "
+                className="text-base text-white pb-4 font-medium flex items-center  "
               >
                 Subscribe to our Newsletter
-                
+
               </p>
             </div>
 
@@ -162,10 +162,10 @@ const Footer: React.FC = () => {
           <div className="hidden lg:block">
             <div className="relative">
               <p
-                 className="text-base text-white pb-4 font-medium flex items-center  "
+                className="text-base text-white pb-4 font-medium flex items-center  "
               >
                 Subscribe to our Newsletter
-               
+
               </p>
             </div>
             <PlaceholdersAndVanishInput
