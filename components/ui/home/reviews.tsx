@@ -2,6 +2,13 @@ import React from "react";
 import Image from "next/image";
 const testimonials = [
   {
+    name: "Government of Sikkim",
+    description: "State Government, Sikkim",
+    image: "/assets/sikkimlogo.png",
+    message: "Axon Studio has been instrumental in modernizing our digital presence. Their expertise in web development and SEO has significantly improved our outreach and efficiency.",
+    prominent: true,
+  },
+  {
     name: "U First Coaching",
     description: "Life Coaching, United Kingdom",
     image: "/assets/ufirstlogo.png",
@@ -29,7 +36,7 @@ const testimonials = [
     message:
       "The Axon Studio team did a fantastic job with our website. Super easy to work with, quick delivery, and the end result fits our brand perfectly.",
   },
- 
+
   {
     name: "3 Hour Creator",
     description: "Creative Studio, Noida",
@@ -59,7 +66,7 @@ const Reviews = () => {
             {testimonials.map((testimonial, index) => (
               <figure
                 key={index}
-                className="bg-primary-400/10 hover:bg-primary-400/20 transition-colors rounded-3xl p-6 flex flex-col items-center text-center gap-6"
+                className={`transition-colors rounded-3xl p-6 flex flex-col items-center text-center gap-6 ${testimonial.prominent ? 'bg-gray-900 hover:bg-gray-800/60 col-span-2' : 'bg-primary-400/10 hover:bg-primary-400/20'}`}
               >
                 <div
                   className="flex flex-row gap-2"

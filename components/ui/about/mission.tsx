@@ -14,11 +14,11 @@ const stats = [
   },
   {
     name: "Orders Processed",
-    value: "22K",
+    value: "23.5K",
   },
   {
     name: "Users",
-    value: "5.2K",
+    value: "6.8K",
   },
 ];
 
