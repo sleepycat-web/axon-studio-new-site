@@ -90,13 +90,18 @@ export function FloatingNavDemo() {
       link: "/about",
     },
     {
+      name: "Portfolio",
+      link: "/portfolio",
+
+    },
+    {
       name: "Contact",
       link: "/contact",
     },
-    {
-      name: "SaaS",
-      link: "https://launch.axonstudio.in/",
-    },
+    // {
+    //   name: "SaaS",
+    //   link: "https://launch.axonstudio.in/",
+    // },
   ];
   return (
     <div className="relative  w-full">
