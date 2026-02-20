@@ -57,7 +57,7 @@ const testimonials = [
     description: "Restaurant, Siliguri",
     image: "/assets/tklogo.png",
     message:
-      "Table Pro has helped us streamline our management and daily operations. It's easy to use and has helped us deliver exceptional service.",
+      "Table Pro has streamlined our management and SOP. It's very user friendly and has helped our staff deliver exceptional service, even during rush hours.",
   },
 ];
 
