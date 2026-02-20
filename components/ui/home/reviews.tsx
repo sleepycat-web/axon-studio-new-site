@@ -52,6 +52,13 @@ const testimonials = [
     message:
       "Axon Studio brings your imagination to light with minimal follow ups, they do a great job and are open to further service and developments with no delay thats the best part.",
   },
+  {
+    name: "Tukuche",
+    description: "Restaurant, Siliguri",
+    image: "/tklogo.png",
+    message:
+      "Table Pro has helped us streamline our management and daily operations. It's easy to use and has helped us deliver exceptional service.",
+  },
 ];
 
 const Reviews = () => {
