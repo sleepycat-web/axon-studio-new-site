@@ -55,7 +55,7 @@ const testimonials = [
   {
     name: "Tukuche",
     description: "Restaurant, Siliguri",
-    image: "/tklogo.png",
+    image: "/assets/tklogo.png",
     message:
       "Table Pro has helped us streamline our management and daily operations. It's easy to use and has helped us deliver exceptional service.",
   },
