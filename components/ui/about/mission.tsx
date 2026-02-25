@@ -31,7 +31,7 @@ const Mission: React.FC = () => {
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-40"></div>
         <div className="absolute top-0 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30"></div>
 
-        <div className="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8 relative">
+        <div className="mx-auto mt-12 max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8 relative">
           <div className="flex flex-col gap-6">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mx-auto">

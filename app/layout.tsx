@@ -249,7 +249,7 @@ export default function RootLayout({
       </Script>
       <body className={inter.className}>
         {/* global grid texture - sits behind all content */}
-        <div className="fixed inset-0 grid-pattern opacity-30 pointer-events-none -z-10" />
+        <div className="fixed inset-0 grid-pattern opacity-30 pointer-events-none -z-m10" />
         {children}
       </body>
     </html>

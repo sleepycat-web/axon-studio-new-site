@@ -158,7 +158,7 @@ export default function PortfolioPage() {
   }, [router]);
 
   return (
-    <div className="bg-neutral-950 text-white relative overflow-x-hidden pt-20">
+    <div className="bg-neutral-950 text-white relative overflow-x-hidden ">
       {/* Grid pattern background */}
       {/* grid pattern is global; removed to avoid double overlay */}
 
@@ -171,7 +171,7 @@ export default function PortfolioPage() {
         <div className="absolute top-20 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30"></div>
 
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center text-center mt-12">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
               <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>

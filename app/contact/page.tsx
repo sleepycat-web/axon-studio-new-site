@@ -58,7 +58,7 @@ const ContactPage: React.FC = () => {
   const shouldShowFloatingButton = !isSubmitted;
 
   return (
-    <div className="bg-neutral-950 relative overflow-x-hidden pt-20">
+    <div className="bg-neutral-950 relative overflow-x-hidden ">
       {/* global grid handled by root layout */}
 
       <Navbar />
@@ -87,7 +87,7 @@ const ContactPage: React.FC = () => {
         <section className="text-white pt-16 sm:pt-24 relative">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             {/* Header */}
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 mt-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
                 <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
                 <span className="text-sm text-neutral-300 font-medium">Get in Touch</span>
