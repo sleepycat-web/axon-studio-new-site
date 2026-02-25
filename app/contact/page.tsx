@@ -96,8 +96,19 @@ const ContactPage: React.FC = () => {
                 Let&apos;s <span className="gradient-text-subtle">Connect</span>
               </h1>
               <p className="text-neutral-400 mx-auto max-w-xl text-lg">
-                Ready to start your project? We&apos;d love to hear from you.
+                Ready to start? We&apos;d love to hear from you.
               </p>
+              <div className="mt-8 flex justify-center">
+                <button
+                  onClick={openCalendlyPopup}
+                  className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white"
+                >
+                  Schedule a Call
+                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
+              </div>
             </div>
 
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
