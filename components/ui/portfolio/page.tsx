@@ -158,7 +158,7 @@ export default function PortfolioPage() {
   }, [router]);
 
   return (
-    <div className="bg-neutral-950 text-white relative overflow-x-hidden">
+    <div className="bg-neutral-950 text-white relative overflow-x-hidden pt-20">
       {/* Grid pattern background */}
       {/* grid pattern is global; removed to avoid double overlay */}
 

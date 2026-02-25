@@ -9,7 +9,7 @@ import Footer from "../../components/ui/layout/footer";
 
 export default function Main() {
   return (
-    <div className="bg-neutral-950 relative">
+    <div className="bg-neutral-950 relative pt-20">
       {/* global grid handled by root layout */}
 
       <Navbar />

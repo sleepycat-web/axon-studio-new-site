@@ -58,7 +58,7 @@ const ContactPage: React.FC = () => {
   const shouldShowFloatingButton = !isSubmitted;
 
   return (
-    <div className="bg-neutral-950 relative overflow-x-hidden">
+    <div className="bg-neutral-950 relative overflow-x-hidden pt-20">
       {/* global grid handled by root layout */}
 
       <Navbar />
