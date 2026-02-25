@@ -5,7 +5,7 @@ import Navbar from "@/components/ui/layout/header";
 import Footer from "@/components/ui/layout/footer";
 import Cta1 from "@/components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -138,7 +138,6 @@ const stats = [
 export default function PortfolioPage() {
   const workRef = useRef<HTMLElement | null>(null);
   const [scrollToWork, setScrollToWork] = useState(false);
-  const searchParams = useSearchParams();
   const router = useRouter();
 
   // scroll when the button on this page is clicked
@@ -149,26 +148,19 @@ export default function PortfolioPage() {
     }
   }, [scrollToWork]);
 
-  // scroll when the page is opened with a ?scroll=work query param and then clear it
+  // if the URL contains a hash when the page loads, scroll to the section
   useEffect(() => {
-    const scrollParam = searchParams?.get("scroll");
-    if (scrollParam === "work" && workRef.current) {
+    if (typeof window !== "undefined" && window.location.hash === "#work" && workRef.current) {
       workRef.current.scrollIntoView({ behavior: "smooth" });
-
-      // remove the query parameter so the search bar stays clean
-      const paramsString = searchParams?.toString() ?? "";
-      const newParams = new URLSearchParams(paramsString);
-      newParams.delete("scroll");
-      const base = "/portfolio";
-      const queryString = newParams.toString();
-      router.replace(queryString ? `${base}?${queryString}` : base, { scroll: false });
+      // clear the hash from url without scrolling again
+      router.replace("/portfolio", { scroll: false });
     }
-  }, [searchParams, router]);
+  }, [router]);
 
   return (
     <div className="bg-neutral-950 text-white relative overflow-x-hidden">
       {/* Grid pattern background */}
-      <div className="absolute inset-0 grid-pattern opacity-40"></div>
+      {/* grid pattern is global; removed to avoid double overlay */}
 
       <Navbar />
 
@@ -335,7 +327,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── Featured Work ── */}
-      <section ref={workRef} className="relative py-24 sm:py-32 overflow-hidden">
+      <section id="work" ref={workRef} className="relative py-24 sm:py-32 overflow-hidden">
         <div className="absolute top-0 left-0 right-0 section-divider"></div>
         <div className="absolute bottom-0 left-0 right-0 section-divider"></div>
 

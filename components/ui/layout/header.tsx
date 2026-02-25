@@ -127,7 +127,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="relative py-8  w-full">
+    <div className="relative w-full">
       <FloatingNav navItems={navItems} />
     </div>
   );

@@ -3,7 +3,7 @@ import Navbar from "@/components/ui/layout/header";
 import Footer from "@/components/ui/layout/footer";
 import { useState, FormEvent } from "react";
 import React, { useEffect } from "react";
- import { MapPin, MessageCircle } from "lucide-react";
+import { MapPin, MessageCircle } from "lucide-react";
 
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -58,9 +58,8 @@ const ContactPage: React.FC = () => {
   const shouldShowFloatingButton = !isSubmitted;
 
   return (
-    <div className="bg-neutral-950 relative">
-      {/* Grid pattern background */}
-      <div className="fixed inset-0 grid-pattern opacity-30 pointer-events-none"></div>
+    <div className="bg-neutral-950 relative overflow-x-hidden">
+      {/* global grid handled by root layout */}
 
       <Navbar />
 
@@ -80,7 +79,7 @@ const ContactPage: React.FC = () => {
         </a>
       </div>
 
-      <div className="relative">
+      <div className="relative overflow-x-hidden">
         {/* Background orbs */}
         <div className="absolute top-0 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-30"></div>
         <div className="absolute top-40 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-20"></div>

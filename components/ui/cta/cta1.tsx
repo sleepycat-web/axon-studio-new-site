@@ -35,7 +35,7 @@ export default function Cta1() {
                 </svg>
               </button>
             </Link>
-            <Link href="/portfolio?scroll=work">
+            <Link href="/portfolio#work">
               <button className="btn-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white">
                 View Portfolio
               </button>

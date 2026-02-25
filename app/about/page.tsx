@@ -10,8 +10,7 @@ import Footer from "../../components/ui/layout/footer";
 export default function Main() {
   return (
     <div className="bg-neutral-950 relative">
-      {/* Grid pattern background */}
-      <div className="fixed inset-0 grid-pattern opacity-30 pointer-events-none"></div>
+      {/* global grid handled by root layout */}
 
       <Navbar />
       <Mission />
