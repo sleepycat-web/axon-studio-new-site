@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/layout/header";
 import Footer from "@/components/ui/layout/footer";
 import Cta1 from "@/components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -137,13 +138,32 @@ const stats = [
 export default function PortfolioPage() {
   const workRef = useRef<HTMLElement | null>(null);
   const [scrollToWork, setScrollToWork] = useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
+  // scroll when the button on this page is clicked
   useEffect(() => {
     if (scrollToWork && workRef.current) {
       workRef.current.scrollIntoView({ behavior: "smooth" });
       setScrollToWork(false);
     }
   }, [scrollToWork]);
+
+  // scroll when the page is opened with a ?scroll=work query param and then clear it
+  useEffect(() => {
+    const scrollParam = searchParams?.get("scroll");
+    if (scrollParam === "work" && workRef.current) {
+      workRef.current.scrollIntoView({ behavior: "smooth" });
+
+      // remove the query parameter so the search bar stays clean
+      const paramsString = searchParams?.toString() ?? "";
+      const newParams = new URLSearchParams(paramsString);
+      newParams.delete("scroll");
+      const base = "/portfolio";
+      const queryString = newParams.toString();
+      router.replace(queryString ? `${base}?${queryString}` : base, { scroll: false });
+    }
+  }, [searchParams, router]);
 
   return (
     <div className="bg-neutral-950 text-white relative overflow-x-hidden">

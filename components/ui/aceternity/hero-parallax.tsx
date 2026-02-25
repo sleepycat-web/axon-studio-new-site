@@ -134,9 +134,9 @@ export const Header = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
-        <a href="/portfolio" className="btn-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white pointer-events-auto">
+        <Link href="/portfolio?scroll=work" className="btn-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white pointer-events-auto">
           View Our Work
-        </a>
+        </Link>
       </div>
     </div>
 
