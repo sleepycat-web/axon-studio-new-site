@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-neutral-950">
+    <html lang="en" className="bg-neutral-950 overflow-x-hidden">
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-S882N1ZP71"
         strategy="afterInteractive"
@@ -65,7 +65,7 @@ export default function RootLayout({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Axon Studio",
-  "alternateName": "Web Axon",
+  "alternateName": "The Axon Studio",
   "description": "A leading software development firm in Noida specialising in web and mobile solutions for enterprises.",
   "foundingDate": "2024-01-01", 
   "url": "https://axonstudio.in/",
@@ -96,10 +96,9 @@ export default function RootLayout({
   "knowsAbout": ["Web Development", "App Development", "UI/UX Design", "SEO", "Enterprise Software", "SaaS Solutions"],
   "sameAs": [
     "https://twitter.com/WebAxon",
-    "https://www.instagram.com/web_axon/",
-    "https://www.linkedin.com/company/web-axon",
+    "https://www.instagram.com/theaxonstudio/",
+    "https://www.linkedin.com/company/theaxonstudio",
     "https://www.facebook.com/people/Axon-Studio/61557992653296/",
-    "https://www.youtube.com/@Web-Axon"
   ],
   "contactPoint": [
     {
@@ -149,10 +148,9 @@ export default function RootLayout({
   "priceRange": "₹₹",
   "sameAs": [
     "https://twitter.com/WebAxon",
-    "https://www.instagram.com/web_axon/",
-    "https://www.linkedin.com/company/web-axon",
+    "https://www.instagram.com/theaxonstudio/",
+    "https://www.linkedin.com/company/the-axon-studio/",
     "https://www.facebook.com/people/Axon-Studio/61557992653296/",
-    "https://www.youtube.com/@Web-Axon"
   ]
 }
 `}

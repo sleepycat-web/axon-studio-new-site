@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-neutral-950 overflow-x-hidden">
       <link
         rel="canonical"
         href="https://axonstudio.in/about"

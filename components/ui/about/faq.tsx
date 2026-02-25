@@ -61,46 +61,47 @@ const Faq = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 text-white">
+    <section className="py-20 sm:py-28 text-white relative">
+      {/* Gradient divider */}
+      <div className="absolute top-0 left-0 right-0 section-divider"></div>
+
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-3 lg:gap-8">
+        <div className="grid gap-16 lg:grid-cols-3 lg:gap-12">
           <div>
-            <h2 className="text-3xl font-medium tracking-tight sm:text-4xl">
-              Frequently asked questions
+            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
+              FAQ
+            </span>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Frequently Asked Questions
             </h2>
+            <p className="mt-4 text-neutral-400">
+              Find answers to common questions about our services and processes.
+            </p>
           </div>
           <div className="lg:col-span-2">
-            <dl className="-mt-3">
+            <dl className="space-y-2">
               {questions.map((question, index) => (
                 <div
                   key={question.id}
-                  className={`rounded-3xl px-4 transition ${
-                    selected === index
-                      ? "bg-primary-400/10"
+                  className={`glass-card rounded-2xl transition-all duration-300 ${selected === index
+                      ? "border-accent-500/30 bg-accent-500/5"
                       : ""
-                  }`}
-                >
-                  <dt
-                    className={`border-b text-lg transition ${
-                      selected === index || selected === index + 1
-                        ? "border-transparent"
-                        : "border-primary-800/70"
                     }`}
-                  >
+                >
+                  <dt>
                     <button
                       type="button"
-                      className="group block w-full py-6 text-left transition focus-visible:outline-none"
+                      className="group block w-full px-6 py-5 text-left transition focus-visible:outline-none"
                       aria-controls={question.id}
                       onClick={() => toggle(index)}
                       aria-expanded={selected === index}
                     >
-                      <div className="group-focus-visible:outline-primary-200 flex items-center justify-between rounded-3xl group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-2">
-                        <span className="font-medium">{question.title}</span>
-                        <span className="ml-6 flex h-7 items-center">
+                      <div className="flex items-center justify-between">
+                        <span className="font-medium text-base group-hover:text-accent-300 transition-colors">{question.title}</span>
+                        <span className="ml-6 flex h-8 w-8 items-center justify-center rounded-full bg-white/5 group-hover:bg-accent-500/20 transition-colors">
                           <svg
-                            className={`text-primary-400 h-6 w-6 transform transition duration-200 ease-in-out ${
-                              selected === index ? "-rotate-180" : "rotate-0"
-                            }`}
+                            className={`text-accent-400 h-5 w-5 transform transition duration-300 ease-out ${selected === index ? "rotate-180" : "rotate-0"
+                              }`}
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                             fill="currentColor"
@@ -113,13 +114,18 @@ const Faq = () => {
                     </button>
                   </dt>
                   <dd
-                    className="pb-6 pr-6"
+                    className="overflow-hidden transition-all duration-300"
                     id={question.id}
-                    style={{ display: selected === index ? "block" : "none" }}
+                    style={{
+                      maxHeight: selected === index ? "500px" : "0",
+                      opacity: selected === index ? 1 : 0
+                    }}
                   >
-                    <p className="text-primary-200/70 text-base">
-                      {question.answer}
-                    </p>
+                    <div className="px-6 pb-5 pr-12">
+                      <p className="text-neutral-400 text-base leading-relaxed">
+                        {question.answer}
+                      </p>
+                    </div>
                   </dd>
                 </div>
               ))}

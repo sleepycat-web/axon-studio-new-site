@@ -58,7 +58,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden bg-neutral-950 antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] pt-24 pb-40 overflow-hidden bg-neutral-950 antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -68,7 +68,7 @@ export const HeroParallax = ({
           translateY,
           opacity,
         }}
-        className=""
+        className="z-0"
       >
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
           {firstRow.map((product) => (
@@ -106,13 +106,38 @@ export const Header = () => {
   return (
 
     //New
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-4xl text-white font-medium tracking-tight sm:text-5xl lg:text-6xl">
-        Engineering the Technology That Powers Your Growth.
+    <div className="max-w-7xl relative z-20 mx-auto  py-28 px-4 w-full left-0 top-0 pointer-events-none">
+      {/* Decorative orbs */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 orb-gradient orb-primary opacity-60"></div>
+      <div className="absolute -top-10 right-0 w-80 h-80 orb-gradient orb-secondary opacity-40"></div>
+
+      {/* Badge */}
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 pointer-events-auto">
+        <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+        <span className="text-sm text-neutral-300 font-medium">Enterprise Software Solutions</span>
+      </div>
+
+      <h1 className="text-4xl text-white font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1] pointer-events-auto">
+        Engineering the Technology
+        <br />
+        <span className="gradient-text-subtle">That Powers Your Growth.</span>
       </h1>
-      <p className=" xl:ml-1.5 font-normal md:text-xl mt-8 text-primary-200/70 text-lg sm:text-xl">
+      <p className="xl:ml-1.5 font-normal md:text-xl mt-8 text-neutral-400 text-lg sm:text-xl max-w-2xl leading-relaxed pointer-events-auto">
         We craft platforms that scale with your ambition and establish you as an undeniable leader in your industry.
       </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-wrap gap-4 mt-10 pointer-events-auto">
+        <a href="/contact" className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white pointer-events-auto">
+          Start Your Project
+          <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/portfolio" className="btn-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white pointer-events-auto">
+          View Our Work
+        </a>
+      </div>
     </div>
 
     //Another
@@ -154,7 +179,7 @@ export const ProductCard = ({
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
+      <h2 className="absolute bottom-4 left-4 opacity-10 group-hover/product:opacity-100 text-white">
         {product.title}
       </h2>
     </motion.div>
@@ -183,7 +208,8 @@ export const products = [
     link: "",
     thumbnail:
 
-      "/assets/ibericass.png",  },
+      "/assets/ibericass.png",
+  },
   {
     title: "TablePro",
     link: "",
@@ -200,8 +226,8 @@ export const products = [
     link: "",
     thumbnail:
 
-      "/assets/vhss.png",  },
- 
+      "/assets/vhss.png",
+  },
   {
     title: "Clayo AI",
     link: "",

@@ -3,8 +3,7 @@ import Navbar from "@/components/ui/layout/header";
 import Footer from "@/components/ui/layout/footer";
 import { useState, FormEvent } from "react";
 import React, { useEffect } from "react";
-import { HoverBorderGradientDemo } from "@/components/ui/aceternity/hover-border-gradient";
-import { MapPin, MessageCircle } from "lucide-react";
+ import { MapPin, MessageCircle } from "lucide-react";
 
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -59,7 +58,10 @@ const ContactPage: React.FC = () => {
   const shouldShowFloatingButton = !isSubmitted;
 
   return (
-    <div className="bg-neutral-950">
+    <div className="bg-neutral-950 relative">
+      {/* Grid pattern background */}
+      <div className="fixed inset-0 grid-pattern opacity-30 pointer-events-none"></div>
+
       <Navbar />
 
       <div className="fixed z-[9999]">
@@ -75,22 +77,42 @@ const ContactPage: React.FC = () => {
             openCalendlyPopup();
           }}
         >
-          {shouldShowFloatingButton && <HoverBorderGradientDemo />}
         </a>
       </div>
 
-      <div>
-        <section className="text-white pt-12   ">
+      <div className="relative">
+        {/* Background orbs */}
+        <div className="absolute top-0 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-30"></div>
+        <div className="absolute top-40 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-20"></div>
+
+        <section className="text-white pt-16 sm:pt-24 relative">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <dl className="grid grid-cols-2 gap-4">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
+                <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+                <span className="text-sm text-neutral-300 font-medium">Get in Touch</span>
+              </div>
+              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
+                Let&apos;s <span className="gradient-text-subtle">Connect</span>
+              </h1>
+              <p className="text-neutral-400 mx-auto max-w-xl text-lg">
+                Ready to start your project? We&apos;d love to hear from you.
+              </p>
+            </div>
+
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Address */}
-              <div className="bg-primary-400/10 rounded-3xl px-6 py-8 w-full">
+              <div className="glass-card glass-card-hover rounded-3xl px-6 py-8 w-full">
                 <dd className="flex flex-col lg:flex-row lg:items-center items-start gap-4">
-                  <MapPin className="h-6 w-6 md:h-8 md:w-8 text-primary-400" />
+                  <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-accent-400" />
+                  </div>
                   <div className="text-base font-medium">
-                    <div className="flex flex-col md:flex-row md:gap-1">
-                      <span className="text-sm md:text-base">Greater Noida Link Road,</span>
-                      <span className="text-sm md:text-base">
+                    <div className="flex flex-col">
+                      <span className="text-sm text-neutral-500 mb-1">Our Location</span>
+                      <span className="text-base">Greater Noida Link Road,</span>
+                      <span className="text-base text-neutral-300">
                         Noida - 201301
                       </span>
                     </div>
@@ -99,40 +121,55 @@ const ContactPage: React.FC = () => {
               </div>
 
               {/* Email */}
-              <div className="bg-primary-400/10 rounded-3xl px-6 py-8 w-full ">
+              <div className="glass-card glass-card-hover rounded-3xl px-6 py-8 w-full">
                 <dd className="flex flex-col lg:flex-row lg:items-center items-start gap-4">
-                  <MessageCircle className="h-6 w-6 md:h-8 md:w-8 text-primary-400 shrink-0" />
-                  <p className="text-sm md:text-base font-medium">
+                  <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center">
+                    <MessageCircle className="h-5 w-5 text-accent-400" />
+                  </div>
+                  <div className="text-base font-medium">
+                    <span className="text-sm text-neutral-500 block mb-1">Email Us</span>
                     <a
                       href="mailto:info@axonstudio.in"
-                      className="inline-flex flex-wrap"
+                      className="text-base hover:text-accent-400 transition-colors"
                     >
-                      <span className="break-keep">info@axonstudio</span>
-                      <span className="break-all">.in</span>
+                      info@axonstudio.in
                     </a>
-                  </p>
+                  </div>
                 </dd>
               </div>
             </dl>
           </div>
-        </section>{" "}
-        <section className="py-16 sm:py-20 ">
+        </section>
+
+        <section className="py-20 sm:py-28 relative">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 ">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
               {/* Left Column - Header Content */}
-              <div className="flex flex-col gap-4 sm:gap-6">
-                <h2 className="text-3xl font-medium tracking-tight sm:text-4xl text-white">
-                  Let&apos;s work together
+              <div className="flex flex-col gap-6">
+                <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
+                  Work With Us
+                </span>
+                <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl text-white">
+                  Let&apos;s Build Something Amazing
                 </h2>
-                <p className="text-primary-200/70 max-w-lg text-lg sm:text-xl">
+                <p className="text-neutral-400 max-w-lg text-lg leading-relaxed">
                   We&apos;d love to learn more about you and what we can build
-                  together.
+                  together. Schedule a call to get started.
                 </p>
+                <button
+                  onClick={openCalendlyPopup}
+                  className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white w-fit mt-4"
+                >
+                  Schedule a Call
+                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
               </div>
               <div>
                 {isSubmitted && (
-                  <div className="flex flex-col items-center justify-center p-8 bg-neutral-900 rounded-lg">
-                    <div className="w-16 h-16 mb-6 bg-green-500/10 rounded-full flex items-center justify-center">
+                  <div className="flex flex-col items-center justify-center p-10 glass-card rounded-3xl">
+                    <div className="w-16 h-16 mb-6 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center">
                       <svg
                         className="w-8 h-8 text-green-500"
                         fill="none"
@@ -147,10 +184,10 @@ const ContactPage: React.FC = () => {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-semibold mb-4">
+                    <h3 className="text-2xl font-semibold mb-4 gradient-text-subtle">
                       Thank you for reaching out!
                     </h3>
-                    <p className="text-center text-lg text-primary-200/70">
+                    <p className="text-center text-lg text-neutral-400">
                       Your message has been received. We&apos;ll respond to you
                       soon.
                     </p>

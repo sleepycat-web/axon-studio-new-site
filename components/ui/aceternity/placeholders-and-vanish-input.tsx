@@ -163,8 +163,8 @@ export function PlaceholdersAndVanishInput({
   };
 
   const sanitizeEmailInput = (input: string): string => {
-  return input.replace(/[^a-zA-Z0-9@.]/g, '');
-};
+    return input.replace(/[^a-zA-Z0-9@.]/g, '');
+  };
 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -192,12 +192,12 @@ export function PlaceholdersAndVanishInput({
 
     // Pass the captured value to the onSubmit callback if it exists
     onSubmit && onSubmit(e, valueSub);
-   };
+  };
 
   return (
     <form
       className={cn(
-        "w-full relative max-w-xl mx-auto text-gray-100 bg-zinc-800 h-12 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200"
+        "w-full relative max-w-xl mx-auto text-gray-100 bg-white/[0.06] border border-white/10 h-12 rounded-full overflow-hidden shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),_0px_1px_0px_0px_rgba(25,28,33,0.02),_0px_0px_0px_1px_rgba(25,28,33,0.08)] transition duration-200"
       )}
       onSubmit={handleSubmit}
     >
@@ -275,9 +275,8 @@ export function PlaceholdersAndVanishInput({
               y: 5,
               opacity: 0,
             }}
-            key={`current-placeholder-${
-              submitted ? "thank-you" : currentPlaceholder
-            }`}
+            key={`current-placeholder-${submitted ? "thank-you" : currentPlaceholder
+              }`}
             animate={{
               y: 0,
               opacity: 1,

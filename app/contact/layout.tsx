@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="bg-neutral-950" lang="en">
+    <html className="bg-neutral-950 overflow-x-hidden" lang="en">
       <head>
         <meta
           name="description"

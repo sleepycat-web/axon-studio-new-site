@@ -146,30 +146,46 @@ export default function PortfolioPage() {
   }, [scrollToWork]);
 
   return (
-    <div className="bg-neutral-950 text-white">
+    <div className="bg-neutral-950 text-white relative overflow-x-hidden">
+      {/* Grid pattern background */}
+      <div className="absolute inset-0 grid-pattern opacity-40"></div>
+
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="pt-10 pb-20 sm:pt-24 sm:pb-28">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <section className="pt-16 pb-24 sm:pt-28 sm:pb-32 relative overflow-hidden">
+        {/* Background orbs */}
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-40"></div>
+        <div className="absolute top-20 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30"></div>
+
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
           <div className="flex flex-col items-center text-center">
-            <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight sm:text-6xl">
-              Software that runs businesses.{" "}
-              <span className="text-primary-400">Websites that grow them.</span>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+              <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+              <span className="text-sm text-neutral-300 font-medium">Our Work</span>
+            </div>
+
+            <h1 className="max-w-6xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
+              Software that runs businesses.
+              <br />
+              <span className="gradient-text-subtle">Websites that grow them.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-neutral-400 sm:text-xl">
-              We partner with businesses across industries to designand build software platforms, internal systems and high-converting
-              websites engineered to deliver real, measurable results.
+            <p className="mt-8 max-w-2xl text-lg text-neutral-400 sm:text-xl leading-relaxed">
+              We partner with businesses across industries to design and build software platforms, internal systems and high-converting websites engineered to deliver real, measurable results.
             </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact">
-                <button className="bg-primary-400 hover:bg-primary-300 text-primary-950 inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition">
+                <button className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white">
                   Start a project
+                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </button>
               </Link>
               <button
                 onClick={() => setScrollToWork(true)}
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-base font-medium text-white transition hover:bg-white/10"
+                className="btn-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white"
               >
                 View our work
               </button>
@@ -177,16 +193,16 @@ export default function PortfolioPage() {
           </div>
 
           {/* Stats bar */}
-          <div className="mt-16 grid grid-cols-2 gap-6 sm:mt-20 lg:grid-cols-4">
+          <div className="mt-20 grid grid-cols-2 gap-4 sm:mt-24 lg:grid-cols-4">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-6 text-center"
+                className="glass-card glass-card-hover rounded-2xl px-6 py-8 text-center"
               >
-                <p className="text-3xl font-semibold tracking-tight text-primary-400 sm:text-4xl">
+                <p className="text-3xl font-semibold tracking-tight gradient-text-subtle sm:text-4xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-sm text-neutral-400">{stat.label}</p>
+                <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -194,37 +210,42 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── What We Do ── */}
-      <section className="border-b border-white/10 pb-20 sm:pb-28">
+      <section className="relative py-24 sm:py-32">
+        <div className="absolute bottom-0 left-0 right-0 section-divider"></div>
+
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="flex flex-col gap-4">
-            <span className="text-sm font-medium uppercase tracking-widest text-primary-400">
+            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               What We Do
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               Our Capabilities
             </h2>
-            <p className="max-w-7xl text-base text-neutral-400 sm:text-lg">
+            <p className="max-w-2xl text-base text-neutral-400 sm:text-lg">
               We design and engineer business-critical systems that improve efficiency, visibility, and revenue control.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            {capabilities.map((cap) => (
+          <div className="mt-16 grid gap-6 lg:grid-cols-3">
+            {capabilities.map((cap, index) => (
               <div
                 key={cap.title}
-                className="flex flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-8"
+                className="glass-card glass-card-hover flex flex-col rounded-3xl p-8 group"
               >
-                <h3 className="text-xl font-semibold">{cap.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors">
+                  <span className="text-accent-400 font-semibold">{String(index + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 className="text-xl font-semibold group-hover:text-accent-300 transition-colors">{cap.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-400">
                   {cap.description}
                 </p>
                 <ul className="mt-6 flex-1 space-y-3">
                   {cap.items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-2 text-sm text-neutral-300"
+                      className="flex items-start gap-3 text-sm text-neutral-300"
                     >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-400" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-400" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -236,18 +257,20 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── Process ── */}
-      <section className="border-t border-white/10 py-20 sm:py-28">
+      <section className="relative py-24 sm:py-32">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
+
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="flex flex-col gap-4">
-            <span className="text-sm font-medium uppercase tracking-widest text-primary-400">
+            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               How We Work
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               Our Process
             </h2>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl glass-card sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 step: "01",
@@ -269,13 +292,20 @@ export default function PortfolioPage() {
                 title: "Launch & Support",
                 text: "We deploy, monitor, and continue improving post-launch.",
               },
-            ].map((s) => (
-              <div key={s.step} className="bg-neutral-950 p-8">
-                <span className="text-2xl font-bold text-primary-400">
+            ].map((s, index) => (
+              <div key={s.step} className="bg-neutral-950/50 p-8 relative group hover:bg-accent-500/5 transition-colors">
+                {index < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 transform -translate-y-1/2 z-10">
+                    <svg className="w-6 h-6 text-accent-500/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                )}
+                <span className="text-2xl font-bold gradient-text-subtle">
                   {s.step}
                 </span>
-                <h3 className="mt-3 text-lg font-semibold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                <h3 className="mt-4 text-lg font-semibold group-hover:text-accent-300 transition-colors">{s.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-400">
                   {s.text}
                 </p>
               </div>
@@ -285,50 +315,57 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── Featured Work ── */}
-      <section ref={workRef} className="border-t border-b border-white/10 pt-20 pb-20 sm:pt-24 sm:pb-28">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <section ref={workRef} className="relative py-24 sm:py-32 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
+        <div className="absolute bottom-0 left-0 right-0 section-divider"></div>
+
+        {/* Background orbs */}
+        <div className="absolute top-1/3 -left-40 w-96 h-96 orb-gradient orb-secondary opacity-20"></div>
+        <div className="absolute bottom-1/4 -right-40 w-80 h-80 orb-gradient orb-primary opacity-20"></div>
+
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
           <div className="flex flex-col gap-4">
-            <span className="text-sm font-medium uppercase tracking-widest text-primary-400">
+            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               Portfolio
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               Featured Projects
             </h2>
-            <p className="max-w-7xl text-base text-neutral-400 sm:text-lg">
+            <p className="max-w-2xl text-base text-neutral-400 sm:text-lg">
               A selection of operational systems we&apos;ve built for
               our clients across industries.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group relative flex flex-col justify-between rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-primary-400/30 hover:bg-primary-400/[0.04]"
+                className="glass-card glass-card-hover group relative flex flex-col justify-between rounded-3xl p-8"
               >
                 <div>
-                  <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-primary-400/10 px-3 py-1 text-xs font-medium text-primary-300">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="rounded-full bg-accent-500/10 border border-accent-500/20 px-4 py-1.5 text-xs font-medium text-accent-300">
                       <span className="sm:hidden">{project.mobileTag}</span>
                       <span className="hidden sm:inline">{project.tag}</span>
                     </span>
-                    <span className="hidden sm:inline text-xs text-neutral-500">
+                    <span className="hidden sm:inline text-xs text-neutral-500 font-medium">
                       {project.industry}
                     </span>
                   </div>
-                  <h3 className="mt-5 text-2xl font-semibold">{project.title}</h3>
-                  <p className="mt-3 text-base leading-relaxed text-neutral-400">
+                  <h3 className="mt-6 text-xl font-semibold group-hover:text-accent-300 transition-colors sm:text-2xl">{project.title}</h3>
+                  <p className="mt-4 text-base leading-relaxed text-neutral-400">
                     {project.description}
                   </p>
                 </div>
-                <ul className="mt-6 space-y-2.5 border-t border-white/10 pt-5">
+                <ul className="mt-8 space-y-3 border-t border-white/5 pt-6">
                   {project.results.map((r) => (
                     <li
                       key={r}
-                      className="flex items-start gap-2 text-sm text-neutral-300"
+                      className="flex items-start gap-3 text-sm text-neutral-300"
                     >
                       <svg
-                        className="mt-0.5 h-4 w-4 shrink-0 text-primary-400"
+                        className="mt-0.5 h-5 w-5 shrink-0 text-accent-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

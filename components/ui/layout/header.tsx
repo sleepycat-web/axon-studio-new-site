@@ -56,24 +56,46 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border border-white/[0.2] rounded-full bg-stone-950  shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-8 pl-8 py-2  items-center justify-center space-x-4",
+          "flex max-w-fit fixed top-10 inset-x-0 mx-auto z-[5000] items-center justify-center",
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {/* floating panel with blurred/light background like other page elements */}
+        <div className=" flex items-center justify-center gap-2 rounded-full border  px-2 py-1.5 shadow-lg shadow-black/10 backdrop-blur-md border-white/10 bg-neutral-950">
+          {/* Nav items container */}
+          <div className="flex items-center gap-1">
+            {navItems.map((navItem: any, idx: number) => (
+              <Link
+                key={`link-${idx}`}
+                href={navItem.link}
+                target={navItem.name === "SaaS" ? "_blank" : undefined}
+                rel={navItem.name === "SaaS" ? "noopener" : undefined}
+                className={cn(
+                  "relative flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                  navItem.name === "Contact" ? "hidden sm:flex" : "",
+                  "text-neutral-300 hover:bg-white/10 hover:text-white"
+                )}
+              >
+                {navItem.icon && (
+                  <span className="block sm:hidden">{navItem.icon}</span>
+                )}
+                {/* always show name so mobile users can see links */}
+                <span className="block">{navItem.name}</span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div className="h-5 w-px bg-neutral-200 dark:bg-white/10" />
+
+          {/* CTA / premium button */}
           <Link
-            key={`link=${idx}`}
-            href={navItem.link}
-            target={navItem.name === "SaaS" ? "_blank" : undefined}
-            rel={navItem.name === "SaaS" ? "noopener" : undefined}
-            className={cn(
-              "relative text-neutral-50 items-center flex space-x-1  hover:text-neutral-300 "
-            )}
+            href="/contact"
+            className="btn-premium inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold text-white ml-2"
           >
-            {/* <span className="block sm:hidden">{navItem.icon}</span> */}
-            <span className=" sm:block text-sm">{navItem.name}</span>
+            Get Started
           </Link>
-        ))}
+        </div>
       </motion.div>
     </AnimatePresence>
   );
@@ -97,11 +119,13 @@ export default function Header() {
       name: "Contact",
       link: "/contact",
     },
+    // example of external SaaS link if needed in future
     // {
     //   name: "SaaS",
     //   link: "https://launch.axonstudio.in/",
     // },
   ];
+
   return (
     <div className="relative py-8  w-full">
       <FloatingNav navItems={navItems} />

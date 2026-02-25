@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="bg-neutral-950" lang="en">
+    <html className="bg-neutral-950 overflow-x-hidden" lang="en">
       <head>
         <meta
           name="description"
@@ -28,7 +28,7 @@ export default function RootLayout({
         href="https://axonstudio.in/portfolio"
         key="canonical"
       />
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} overflow-x-hidden`}>{children}</body>
     </html>
   );
 }
