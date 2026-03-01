@@ -18,7 +18,7 @@ const stats = [
   },
   {
     name: "Users",
-    value: "6.8K",
+    value: "6.9K",
   },
 ];
 

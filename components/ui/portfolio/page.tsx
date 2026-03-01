@@ -132,7 +132,7 @@ const stats = [
   { value: "19+", label: "Projects Delivered" },
   { value: "7+", label: "Industries Served" },
   { value: "11+", label: "Clients Worldwide" },
-  { value: "6.8K+", label: "Users Managed" },
+  { value: "6.9K+", label: "Users Managed" },
 ];
 
 export default function PortfolioPage() {
