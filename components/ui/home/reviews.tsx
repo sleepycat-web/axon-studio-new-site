@@ -94,8 +94,30 @@ const Reviews = () => {
                 key={index}
                 className="glass-card glass-card-hover rounded-3xl p-8 flex flex-col gap-6 group"
               >
-                {/* Stars */}
-                <div className="flex items-center gap-3">
+                {/* Quote */}
+                <blockquote className="text-neutral-300 text-base sm:text-lg leading-relaxed flex-1">
+                  <p>&ldquo;{testimonial.message}&rdquo;</p>
+                </blockquote>
+
+                {/* Author */}
+                <figcaption className="flex items-center justify-between pt-4 border-t border-white/5">
+                  <div className="flex items-center gap-4">
+                    <Image
+                      className="rounded-full ring-2 ring-accent-500/20"
+                      src={testimonial.image}
+                      alt={`${testimonial.name} logo`}
+                      width={48}
+                      height={48}
+                    />
+                    <div>
+                      <div className="text-base font-semibold group-hover:text-accent-300 transition-colors">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-sm text-neutral-500">
+                        {testimonial.description}
+                      </div>
+                    </div>
+                  </div>
                   <div
                     className="flex flex-row gap-1"
                     aria-label="5 out of 5 stars"
@@ -112,30 +134,6 @@ const Reviews = () => {
                         <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z" />
                       </svg>
                     ))}
-                  </div>
-                </div>
-
-                {/* Quote */}
-                <blockquote className="text-neutral-300 text-base sm:text-lg leading-relaxed flex-1">
-                  <p>&ldquo;{testimonial.message}&rdquo;</p>
-                </blockquote>
-
-                {/* Author */}
-                <figcaption className="flex items-center gap-4 pt-4 border-t border-white/5">
-                  <Image
-                    className="rounded-full ring-2 ring-accent-500/20"
-                    src={testimonial.image}
-                    alt={`${testimonial.name} logo`}
-                    width={48}
-                    height={48}
-                  />
-                  <div>
-                    <div className="text-base font-semibold group-hover:text-accent-300 transition-colors">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-neutral-500">
-                      {testimonial.description}
-                    </div>
                   </div>
                 </figcaption>
               </figure>
