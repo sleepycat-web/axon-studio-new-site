@@ -93,7 +93,8 @@ export const FloatingNav = ({
             href="/contact"
             className="btn-premium inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold text-white ml-2"
           >
-            Get Started
+            <span className="hidden sm:inline">Get Started</span>
+            <span className="sm:hidden">Contact</span>
           </Link>
         </div>
       </motion.div>

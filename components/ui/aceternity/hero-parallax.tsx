@@ -70,7 +70,7 @@ export const HeroParallax = ({
         }}
         className="z-0"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
+        <motion.div className="flex flex-col md:flex-row-reverse space-y-4 md:space-y-0 md:space-x-reverse md:space-x-20 mb-20">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -79,7 +79,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
+        <motion.div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-20 mb-20">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -88,7 +88,7 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
+        <motion.div className="flex flex-col md:flex-row-reverse space-y-4 md:space-y-0 md:space-x-reverse md:space-x-20">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -106,7 +106,7 @@ export const Header = () => {
   return (
 
     //New
-    <div className="max-w-7xl relative z-20 mx-auto  py-28 px-4 w-full left-0 top-0 pointer-events-none">
+    <div className="max-w-7xl relative z-20 mx-auto py-16 sm:py-28 px-4 w-full left-0 top-0 pointer-events-none">
       {/* Decorative orbs */}
       <div className="absolute -top-20 -left-20 w-96 h-96 orb-gradient orb-primary opacity-60"></div>
       <div className="absolute -top-10 right-0 w-80 h-80 orb-gradient orb-secondary opacity-40"></div>
@@ -164,7 +164,7 @@ export const ProductCard = ({
         y: -20,
       }}
       key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-96 w-full sm:w-[30rem] relative flex-shrink-0"
     >
       <Link
         href={product.link}
