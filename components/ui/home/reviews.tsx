@@ -119,7 +119,7 @@ const Reviews = () => {
                     </div>
                   </div>
                   <div
-                    className="flex flex-row gap-1"
+                    className="flex flex-row gap-1 pl-2"
                     aria-label="5 out of 5 stars"
                   >
                     {[...Array(5)].map((_, starIndex) => (
