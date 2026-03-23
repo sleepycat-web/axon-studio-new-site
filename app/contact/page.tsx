@@ -121,9 +121,9 @@ const ContactPage: React.FC = () => {
                   <div className="text-base font-medium">
                     <div className="flex flex-col">
                       <span className="text-sm text-neutral-500 mb-1">Our Location</span>
-                      <span className="text-base">Greater Noida Link Road,</span>
+                      <span className="text-base">Sevoke Road,</span>
                       <span className="text-base text-neutral-300">
-                        Noida - 201301
+                        Siliguri - 734001
                       </span>
                     </div>
                   </div>

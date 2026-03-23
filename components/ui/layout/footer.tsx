@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
               />
               <p className="text-neutral-400 text-base leading-relaxed">
                 Axon Studio is a premier Software Development firm based in
-                Noida, building systems that power business growth.
+                Siliguri, building systems that power business growth.
               </p>
               <p className="text-neutral-600 text-sm">© 2024 Axon Studio. All rights reserved.</p>
             </div>

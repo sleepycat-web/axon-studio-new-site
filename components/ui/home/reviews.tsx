@@ -31,7 +31,7 @@ const testimonials = [
 
   {
     name: "Astita Media",
-    description: "Content Agency, Noida",
+    description: "Content Agency, Siliguri",
     image: "/assets/astitalogo.png",
     message:
       "The Axon Studio team did a fantastic job with our website. Super easy to work with, quick delivery, and the end result fits our brand perfectly.",
@@ -39,7 +39,7 @@ const testimonials = [
 
   {
     name: "3 Hour Creator",
-    description: "Creative Studio, Noida",
+    description: "Creative Studio, Siliguri",
     image: "/assets/3hclogo.png",
     message:
       "I had called Amlan one day before our opening and the very next morning our website is live. No one can match Team Axon's speed.",
