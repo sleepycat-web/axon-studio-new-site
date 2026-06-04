@@ -35,7 +35,7 @@ const ProjectPlaceholderSVG = ({ title }: { title: string }) => {
   );
 };
 
-const ProjectGallery = ({ title, images }: { title: string; images?: string[] }) => {
+const ProjectGallery = ({ title, images, previewImage }: { title: string; images?: string[]; previewImage?: string }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -119,54 +119,67 @@ const ProjectGallery = ({ title, images }: { title: string; images?: string[] })
           <ProjectPlaceholderSVG title={getPlaceholderTitle()} />
         ) : (
           <div className="relative w-full h-full bg-neutral-950 flex items-center justify-center">
-            {images.map((img, idx) => {
-              if (img.toLowerCase().endsWith(".pdf")) {
+            {previewImage ? (
+              <div className="absolute inset-0 transition-opacity duration-300 opacity-100">
+                <Image
+                  src={previewImage}
+                  alt="Project UI"
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: 'center 40%' }}
+                  priority
+                />
+              </div>
+            ) : (
+              images.map((img, idx) => {
+                if (img.toLowerCase().endsWith(".pdf")) {
+                  return (
+                    <div
+                      key={img}
+                      className={`absolute inset-0 bg-white flex items-center justify-center overflow-hidden pointer-events-none transition-opacity duration-300 ${
+                        idx === currentIndex ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      {idx === currentIndex && (
+                        <iframe
+                          src={`${img}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
+                          className="absolute top-1/2 left-0 w-full pointer-events-none"
+                          style={{ height: '200%', border: 'none', transform: 'translateY(-50%)' }}
+                          scrolling="no"
+                          tabIndex={-1}
+                        />
+                      )}
+                    </div>
+                  );
+                }
+
                 return (
                   <div
                     key={img}
-                    className={`absolute inset-0 bg-white flex items-center justify-center overflow-hidden pointer-events-none transition-opacity duration-300 ${
-                      idx === currentIndex ? "opacity-100" : "opacity-0"
+                    className={`absolute inset-0 transition-opacity duration-300 ${
+                      idx === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
                     }`}
                   >
-                    {idx === currentIndex && (
-                      <iframe
-                        src={`${img}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
-                        className="absolute top-1/2 left-0 w-full pointer-events-none"
-                        style={{ height: '200%', border: 'none', transform: 'translateY(-50%)' }}
-                        scrolling="no"
-                        tabIndex={-1}
-                      />
-                    )}
+                    <Image
+                      src={img}
+                      alt="Project UI"
+                      fill
+                      className={
+                        img.toLowerCase().includes("booking") ||
+                          img.toLowerCase().includes("vhss") ||
+                          img.toLowerCase().includes("tpss") ||
+                          img.toLowerCase().includes("sonass") ||
+                          img.toLowerCase().includes("docbox") ||
+                          img.toLowerCase().includes("/lab/")
+                          ? "object-contain object-center"
+                          : "object-cover object-top"
+                      }
+                      priority={idx === 0 || idx === currentIndex}
+                    />
                   </div>
                 );
-              }
-
-              return (
-                <div
-                  key={img}
-                  className={`absolute inset-0 transition-opacity duration-300 ${
-                    idx === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
-                  }`}
-                >
-                  <Image
-                    src={img}
-                    alt="Project UI"
-                    fill
-                    className={
-                      img.toLowerCase().includes("booking") ||
-                        img.toLowerCase().includes("vhss") ||
-                        img.toLowerCase().includes("tpss") ||
-                        img.toLowerCase().includes("sonass") ||
-                        img.toLowerCase().includes("docbox") ||
-                        img.toLowerCase().includes("/lab/")
-                        ? "object-contain object-center"
-                        : "object-cover object-top"
-                    }
-                    priority={idx === 0 || idx === currentIndex}
-                  />
-                </div>
-              );
-            })}
+              })
+            )}
           </div>
         )}
         {currentImage.toLowerCase().endsWith(".pdf") && (
@@ -592,6 +605,7 @@ const projects = [
       "Dynamic staff scheduling aligned to appointment load",
       "Staff performance and payroll tracking in one system",
     ],
+    previewImage: "/assets/aureass.png",
     images: ["/Aurea.pdf"]
   },
   {
@@ -869,7 +883,7 @@ export default function PortfolioPage() {
                   <p className="mt-4 text-base leading-relaxed text-neutral-400">
                     {project.description}
                   </p>
-                  <ProjectGallery title={project.title} images={project.images} />
+                  <ProjectGallery title={project.title} images={project.images} previewImage={project.previewImage} />
                 </div>
                 <ul className="mt-8 space-y-3 border-t border-white/5 pt-6">
                   {project.results.map((r) => (
