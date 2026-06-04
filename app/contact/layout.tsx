@@ -1,33 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Contact | Axon Studio",
   description: "Contact us today to get started on your online journey.",
+  alternates: {
+    canonical: "https://axonstudio.in/contact",
+  },
 };
 
-export default function RootLayout({
+export default function ContactLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html className="bg-neutral-950 overflow-x-hidden" lang="en">
-      <head>
-        <meta
-          name="description"
-          content="Contact us today to get started on your online journey."
-        />
-      </head>
-      <link
-        rel="canonical"
-        href="https://axonstudio.in/contact"
-        key="canonical"
-      />
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+  return <>{children}</>;
 }

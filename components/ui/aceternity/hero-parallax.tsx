@@ -194,13 +194,13 @@ export const products = [
     title: "Moonbeam",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+      "/assets/moonbeam.png",
   },
   {
     title: "Invoker Labs",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+      "/assets/invoker.png",
   },
 
   {
@@ -220,7 +220,7 @@ export const products = [
     title: "Editrix AI",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+      "/assets/editrix.png",
   }, {
     title: "Vista Haven",
     link: "",
@@ -249,7 +249,7 @@ export const products = [
     title: "SmartBridge",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+      "/assets/smartbridge.png",
   },
   {
     title: "Alter",
@@ -273,7 +273,7 @@ export const products = [
     title: "E Free Invoice",
     link: "",
     thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+      "/assets/efreeinvoice.png",
   },
   {
     title: "Axon Studio",

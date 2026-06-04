@@ -84,5 +84,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("daisyui"), addVariablesForColors],
+  plugins: [addVariablesForColors],
 };

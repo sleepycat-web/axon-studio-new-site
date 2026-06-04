@@ -1,11 +1,560 @@
 "use client";
 import React, { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/ui/layout/header";
 import Footer from "@/components/ui/layout/footer";
 import Cta1 from "@/components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
 import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+
+const ProjectPlaceholderSVG = ({ title }: { title: string }) => {
+  return (
+    <div className="w-full h-full bg-neutral-900/40 flex flex-col items-center justify-center relative overflow-hidden group/placeholder border border-white/5">
+      {/* Background grid */}
+      <div className="absolute inset-0 grid-pattern opacity-10 pointer-events-none" />
+
+      {/* Visual representation */}
+      <div className="z-10 flex flex-col items-center gap-3 text-center px-4">
+        <div className="w-10 h-10 rounded-full bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 group-hover/placeholder:scale-110 transition-transform duration-500">
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+          </svg>
+        </div>
+        <div>
+          <span className="text-[9px] text-accent-400 uppercase tracking-widest font-semibold">System Interface Mockup</span>
+          <h4 className="mt-1 text-[11px] text-neutral-400 font-medium max-w-[220px] mx-auto leading-tight">{title}</h4>
+        </div>
+      </div>
+
+      {/* Decorative linear lines */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-500/0 via-accent-500/30 to-accent-500/0" />
+    </div>
+  );
+};
+
+const ProjectGallery = ({ title, images }: { title: string; images?: string[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Keyboard navigation for Lightbox
+  useEffect(() => {
+    if (!isLightboxOpen || !images || images.length === 0) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsLightboxOpen(false);
+      } else if (e.key === "ArrowRight") {
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+      } else if (e.key === "ArrowLeft") {
+        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isLightboxOpen, images]);
+
+  if (!images || images.length === 0) return null;
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const currentImage = images[currentIndex];
+  const isPlaceholder = !currentImage || currentImage.startsWith("placeholder");
+
+  const getPlaceholderTitle = () => {
+    if (currentImage) {
+      if (currentImage.includes(":")) {
+        return currentImage.substring(currentImage.indexOf(":") + 1);
+      }
+      // Map local screenshot paths to clean, human-readable titles
+      const filename = currentImage.split("/").pop() || "";
+      if (currentImage.toLowerCase().endsWith(".pdf")) return filename.replace(".pdf", "").replace("-", " ");
+      if (filename.includes("admin-panel-ss")) return "Admin Panel";
+      if (filename.includes("booking-page-ss")) return "Booking Page";
+      if (filename.includes("pos-page-ss")) return "POS Terminal";
+      if (filename.includes("order-panel-ss")) return "Kitchen Display System (KDS)";
+      if (filename.includes("aggregated-panel-ss")) return "Aggregated Analytics Dashboard";
+      if (filename.includes("inventory-panel-ss")) return "Inventory Control";
+      if (filename.includes("crm")) return "Sales CRM";
+      if (filename.includes("vendors")) return "Supplier & Procurement Portal";
+      if (filename.includes("inventory")) return "Inventory Management";
+      if (filename.includes("logistics")) return "Logistics & Dispatch";
+      if (filename.includes("settings")) return "Settings";
+      if (filename.includes("staff")) return "Home Collection Staff Mobile App";
+      if (filename.includes("records")) return "Patient Medical Records Dashboard";
+      if (filename.includes("user")) return "Online Collection Booking Page";
+      if (filename.includes("directory")) return "Healthcare Staff & Schedule Directory";
+    }
+    return `${title} (Mockup ${currentIndex + 1})`;
+  };
+
+  return (
+    <>
+      <div
+        onClick={() => setIsLightboxOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            setIsLightboxOpen(true);
+          }
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label={`Open photo gallery for ${title}`}
+        className="relative w-full aspect-[16/9] mt-6 rounded-lg overflow-hidden group border border-white/10 cursor-pointer focus:outline-none focus:ring-[1px] focus:ring-accent-400"
+      >
+        {isPlaceholder ? (
+          <ProjectPlaceholderSVG title={getPlaceholderTitle()} />
+        ) : (
+          <div className="relative w-full h-full bg-neutral-950 flex items-center justify-center">
+            {images.map((img, idx) => {
+              if (img.toLowerCase().endsWith(".pdf")) {
+                return (
+                  <div
+                    key={img}
+                    className={`absolute inset-0 bg-white flex items-center justify-center overflow-hidden pointer-events-none transition-opacity duration-300 ${
+                      idx === currentIndex ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    {idx === currentIndex && (
+                      <iframe
+                        src={`${img}#page=1&view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
+                        className="absolute top-1/2 left-0 w-full pointer-events-none"
+                        style={{ height: '200%', border: 'none', transform: 'translateY(-50%)' }}
+                        scrolling="no"
+                        tabIndex={-1}
+                      />
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <div
+                  key={img}
+                  className={`absolute inset-0 transition-opacity duration-300 ${
+                    idx === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  <Image
+                    src={img}
+                    alt="Project UI"
+                    fill
+                    className={
+                      img.toLowerCase().includes("booking") ||
+                        img.toLowerCase().includes("vhss") ||
+                        img.toLowerCase().includes("tpss") ||
+                        img.toLowerCase().includes("sonass") ||
+                        img.toLowerCase().includes("docbox") ||
+                        img.toLowerCase().includes("/lab/")
+                        ? "object-contain object-center"
+                        : "object-cover object-top"
+                    }
+                    priority={idx === 0 || idx === currentIndex}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {currentImage.toLowerCase().endsWith(".pdf") && (
+          <div className="absolute bottom-4 right-4 z-20 px-3 py-1.5 bg-black text-white text-xs font-semibold rounded-full shadow-lg flex items-center gap-1.5 border border-white/10 pointer-events-none">
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            PDF
+          </div>
+        )}
+        {images.length > 1 && (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity duration-300 flex items-center justify-between px-3 pointer-events-none">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
+                className="pointer-events-auto p-2 rounded-full bg-black/40 text-white hover:bg-black/80 backdrop-blur-sm transition-colors border border-white/10 z-10"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+                className="pointer-events-auto p-2 rounded-full bg-black/40 text-white hover:bg-black/80 backdrop-blur-sm transition-colors border border-white/10 z-10"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentIndex(idx);
+                  }}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`pointer-events-auto w-1.5 h-1.5 rounded-full transition-colors ${idx === currentIndex ? "bg-white" : "bg-white/40 hover:bg-white/60"}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Lightbox Modal rendered at body level to escape transform/filter stacking contexts */}
+      {mounted && typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
+          {isLightboxOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center"
+              onClick={() => setIsLightboxOpen(false)}
+            >
+              {/* Close button */}
+              <motion.button
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                onClick={() => setIsLightboxOpen(false)}
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-all duration-200 z-[10000]"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </motion.button>
+
+              {/* Lightbox content container (90% width, 80% height) */}
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ delay: 0.05, duration: 0.25 }}
+                className={`relative flex items-center justify-center overflow-hidden ${currentImage.toLowerCase().endsWith(".pdf") ? "w-[95%] h-[95%]" : "w-[90%] h-[78%]"
+                  }`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                {isPlaceholder ? (
+                  <ProjectPlaceholderSVG title={getPlaceholderTitle()} />
+                ) : currentImage.toLowerCase().endsWith(".pdf") ? (
+                  <iframe
+                    src={`${currentImage}#zoom=100`}
+                    className="w-full h-full bg-white rounded-lg shadow-2xl"
+                    style={{ border: 'none' }}
+                  />
+                ) : (
+                  <Image
+                    src={currentImage}
+                    alt="Project UI Large"
+                    fill
+                    className="object-contain object-center"
+                  />
+                )}
+
+                {/* Navigation arrows in Lightbox */}
+                {images.length > 1 && (
+                  <>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        prevImage();
+                      }}
+                      className="absolute left-0 p-3 rounded-full bg-black/60 text-white hover:bg-black/90 backdrop-blur-sm transition-all border border-white/10 hover:scale-110 z-10"
+                    >
+                      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        nextImage();
+                      }}
+                      className="absolute right-0 p-3 rounded-full bg-black/60 text-white hover:bg-black/90 backdrop-blur-sm transition-all border border-white/10 hover:scale-110 z-10"
+                    >
+                      <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </>
+                )}
+
+                {/* Indicator badge */}
+                <div className="absolute top-6 left-6 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-sm text-white/80 font-medium z-10">
+                  {currentIndex + 1} / {images.length}
+                </div>
+              </motion.div>
+
+              {/* Subtitle / caption (High contrast off-white card to prevent black-on-black confusion) */}
+              {!currentImage.toLowerCase().endsWith(".pdf") && (
+                <motion.div
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 10, opacity: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="absolute bottom-6 left-0 right-0 flex flex-col items-center pointer-events-none z-10"
+                >
+                  <div className="bg-neutral-100 border border-white/10 px-6 py-3 rounded-2xl text-center shadow-2xl">
+                    <h4 className="text-neutral-900 font-semibold text-base sm:text-lg">{getPlaceholderTitle()}</h4>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+    </>
+  );
+};
+
+const showcaseItems = [
+  {
+    title: "Chai Mine",
+    src: "/assets/chaimine.png",
+    isFiveFour: false,
+    category: "Chai Mine Website"
+  },
+  {
+    title: "Vista Haven",
+    src: "/assets/vhss.png",
+    isFiveFour: true,
+    category: "Resort & Hotel Booking System"
+  },
+  {
+    title: "Clayo AI",
+    src: "/assets/clss.png",
+    isFiveFour: false,
+    category: "Conversational AI Platform"
+  },
+  {
+    title: "TablePro",
+    src: "/assets/tpss.png",
+    isFiveFour: true,
+    category: "Restaurant Booking System"
+  },
+  {
+    title: "Sona Hotels",
+    src: "/assets/sonass.png",
+    isFiveFour: true,
+    category: "Hospitality Management Platform"
+  },
+  {
+    title: "Axon Studio",
+    src: "/assets/axon.jpg",
+    isFiveFour: false,
+    category: "Agency Landing Page"
+  },
+  {
+    title: "Andromeda",
+    src: "/assets/andromeda.jpg",
+    isFiveFour: false,
+    category: "Design Portfolio"
+  },
+  {
+    title: "DocBox",
+    src: "/assets/docbox.png",
+    isFiveFour: true,
+    category: "Diagnostic & Booking System"
+  },
+  {
+    title: "Invoker Labs",
+    src: "/assets/invoker.png",
+    isFiveFour: false,
+    category: "Developer Tool"
+  },
+  {
+    title: "Ibéricas",
+    src: "/assets/ibericass.png",
+    isFiveFour: false,
+    category: "E-Commerce & Distribution"
+  },
+  {
+    title: "Moonbeam",
+    src: "/assets/moonbeam.png",
+    isFiveFour: false,
+    category: "SaaS Platform"
+  },
+  {
+    title: "SmartBridge",
+    src: "/assets/smartbridge.png",
+    isFiveFour: false,
+    category: "IoT Control Panel"
+  },
+  {
+    title: "Alter",
+    src: "/assets/alss.png",
+    isFiveFour: false,
+    category: "Digital Agency"
+  }
+];
+
+const WebShowcase = () => {
+  const [current, setCurrent] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [hasEnteredView, setHasEnteredView] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHasEnteredView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isAutoPlaying || !hasEnteredView) return;
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % showcaseItems.length);
+    }, 6000); // Slower autoplay: 6 seconds per slide
+    return () => clearInterval(timer);
+  }, [isAutoPlaying, hasEnteredView]);
+
+  const goTo = (idx: number) => {
+    setCurrent(idx);
+    setIsAutoPlaying(false);
+    setTimeout(() => setIsAutoPlaying(true), 10000); // 10 seconds delay before resuming autoplay
+  };
+
+  const next = () => goTo((current + 1) % showcaseItems.length);
+  const prev = () => goTo((current - 1 + showcaseItems.length) % showcaseItems.length);
+
+  return (
+    <div ref={containerRef} className="mt-12">
+      {/* Main showcase container - 16:9 ratio on desktop */}
+      <div
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            next();
+          } else if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            prev();
+          }
+        }}
+        aria-label="Web showcase gallery. Use left and right arrow keys to navigate."
+        className="relative w-full aspect-[5/3] sm:aspect-[16/9] rounded-3xl overflow-hidden border border-white/10 glass-card group focus:outline-none focus:ring-[1px] focus:ring-accent-400"
+      >
+        {showcaseItems.map((item, idx) => {
+          const isNear = idx === current ||
+            idx === (current + 1) % showcaseItems.length ||
+            idx === (current - 1 + showcaseItems.length) % showcaseItems.length;
+          return (
+            <div
+              key={item.src}
+              className={`absolute inset-0 transition-opacity duration-300 ${idx === current ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+            >
+              {item.isFiveFour ? (
+                // Centered image using object-contain - keeps natural aspect ratio (e.g. 5:4 or vertical) and fits height
+                <div className="relative w-full h-full flex items-center justify-center bg-neutral-950">
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    className="object-contain object-center"
+                    priority={isNear}
+                  />
+                </div>
+              ) : (
+                // Full Widescreen Layout
+                <div className="relative w-full h-full">
+                  <Image
+                    src={item.src}
+                    alt={item.title}
+                    fill
+                    className="object-cover object-top"
+                    priority={isNear}
+                  />
+                </div>
+              )}
+
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none z-10" />
+
+              {/* Title overlay - positioned bottom-left */}
+              <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 z-10 pointer-events-none">
+                <div className="max-w-xl">
+                  <h3 className="text-base sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight">
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Navigation arrows */}
+        <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+          <button onClick={prev} className="p-3 rounded-full bg-black/50 text-white hover:bg-black/80 backdrop-blur-sm transition-all border border-white/10 hover:scale-110">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button onClick={next} className="p-3 rounded-full bg-black/50 text-white hover:bg-black/80 backdrop-blur-sm transition-all border border-white/10 hover:scale-110">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Counter badge */}
+        <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 text-xs text-white/80 font-medium z-20">
+          {current + 1} / {showcaseItems.length}
+        </div>
+      </div>
+
+      {/* Thumbnail strip */}
+      <div className="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+        {showcaseItems.map((item, idx) => (
+          <button
+            key={item.src}
+            onClick={() => goTo(idx)}
+            className={`relative shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${idx === current
+              ? "border-accent-400 ring-2 ring-accent-400/30 scale-105"
+              : "border-white/10 hover:border-white/30 opacity-60 hover:opacity-100"
+              }`}
+          >
+            <Image src={item.src} alt={`Thumb ${idx + 1}`} fill className="object-cover object-top" />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const projects = [
   {
@@ -21,6 +570,14 @@ const projects = [
       "Self-ordering kiosks reduced front-of-house dependency",
       "Centralized reporting for franchise-level decision making",
     ],
+    images: [
+      "/pos/admin-panel-ss.png",
+      "/pos/pos-page-ss.png",
+      "/pos/booking-page-ss.png",
+      "/pos/order-panel-ss-1.png",
+      "/pos/aggregated-panel-ss.png",
+      "/pos/inventory-panel-ss.png"
+    ]
   },
   {
     title: "Salon Chain Appointment & Workforce Management Platform",
@@ -35,6 +592,7 @@ const projects = [
       "Dynamic staff scheduling aligned to appointment load",
       "Staff performance and payroll tracking in one system",
     ],
+    images: ["/Aurea.pdf"]
   },
   {
     title: "Manufacturing CRM & Supply Chain Suite",
@@ -49,22 +607,30 @@ const projects = [
       "Full visibility from raw material intake to dispatch",
       "Real-time operational reporting across sales, procurement, and logistics teams",
     ],
+    images: [
+      "/supplier/crm.png",
+      "/supplier/vendors.png",
+      "/supplier/inventory.png",
+      "/supplier/logistics.png",
+      "/supplier/settings.png"
+    ]
   },
+  // {
+  //   title: "Automotive Dealership Service Records & Workshop Automation System",
+  //   industry: "Automotive",
+  //   tag: "Dealership Operations Platform",
+  //   mobileTag: "Automotive Dealership Operations Platform",
+  //   description:
+  //     "Centralized dealership system designed to manage vehicle records, service history, workshop scheduling, automated reminders, and customer communication through integrated workflows.",
+  //   results: [
+  //     "Complete digital service history tracking for every vehicle",
+  //     "Automated service reminders with WhatsApp integration",
+  //     "Workshop job allocation and status tracking in one dashboard",
+  //   ],
+  //   images: ["placeholder-1", "placeholder-2"]
+  // },
   {
-    title: "Automotive Dealership Service Records & Workshop Automation System",
-    industry: "Automotive",
-    tag: "Dealership Operations Platform",
-    mobileTag: "Automotive Dealership Operations Platform",
-    description:
-      "Centralized dealership system designed to manage vehicle records, service history, workshop scheduling, automated reminders, and customer communication through integrated workflows.",
-    results: [
-      "Complete digital service history tracking for every vehicle",
-      "Automated service reminders with WhatsApp integration",
-      "Workshop job allocation and status tracking in one dashboard",
-    ],
-  },
-  {
-    title: "Diagnostic Centre Booking & Home Sample Collection Management System",
+    title: "Diagnostic Centre Booking & Home Sample Collection App",
     industry: "Healthcare & Diagnostics",
     tag: "Healthcare Operations Platform",
     mobileTag: "Healthcare Operations Platform",
@@ -75,20 +641,12 @@ const projects = [
       "Field staff dashboard for viewing assigned home collections and updating status in real time",
       "Central lab panel to coordinate technicians, routes, and report delivery",
     ],
-  },
-  {
-    title: "High-Converting Business Websites & Lead Systems",
-    industry: "Cross-Industry",
-    tag: "Web Development & SEO ",
-    mobileTag: "Cross Industry Lead Systems",
-    description:
-      "Performance-focused websites and landing systems engineered to generate qualified leads, establish authority, and align directly with revenue goals.",
-
-    results: [
-      "Optimized build structure for strong performance scores",
-      "Clear conversion journeys aligned with sales objectives",
-      "SEO-aligned architecture for long-term organic visibility",
-    ],
+    images: [
+      "/lab/staff.png",
+      "/lab/records.png",
+      "/lab/user.png",
+      "/lab/directory.png"
+    ]
   },
 ];
 
@@ -268,6 +826,122 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* ── Featured Work ── */}
+      <section id="work" ref={workRef} className="relative py-24 sm:py-32 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
+        <div className="absolute bottom-0 left-0 right-0 section-divider"></div>
+
+        {/* Background orbs */}
+        <div className="absolute top-1/3 -left-40 w-96 h-96 orb-gradient orb-secondary opacity-20"></div>
+        <div className="absolute bottom-1/4 -right-40 w-80 h-80 orb-gradient orb-primary opacity-20"></div>
+
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
+          <div className="flex flex-col gap-4">
+            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
+              Portfolio
+            </span>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              Featured Projects
+            </h2>
+            <p className="max-w-2xl text-base text-neutral-400 sm:text-lg">
+              A selection of operational systems we&apos;ve built for
+              our clients across industries.
+            </p>
+          </div>
+
+          <div className="mt-16 grid gap-6 lg:grid-cols-2">
+            {projects.map((project, idx) => (
+              <article
+                key={project.title}
+                className="glass-card glass-card-hover group relative flex flex-col justify-between rounded-3xl p-8"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="rounded-full bg-accent-500/10 border border-accent-500/20 px-4 py-1.5 text-xs font-medium text-accent-300">
+                      <span className="sm:hidden">{project.mobileTag}</span>
+                      <span className="hidden sm:inline">{project.tag}</span>
+                    </span>
+                    <span className="hidden sm:inline text-xs text-neutral-500 font-medium">
+                      {project.industry}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-xl font-semibold group-hover:text-accent-300 transition-colors sm:text-2xl">{project.title}</h3>
+                  <p className="mt-4 text-base leading-relaxed text-neutral-400">
+                    {project.description}
+                  </p>
+                  <ProjectGallery title={project.title} images={project.images} />
+                </div>
+                <ul className="mt-8 space-y-3 border-t border-white/5 pt-6">
+                  {project.results.map((r) => (
+                    <li
+                      key={r}
+                      className="flex items-start gap-3 text-sm text-neutral-300"
+                    >
+                      <svg
+                        className="mt-0.5 h-5 w-5 shrink-0 text-accent-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Web Development & SEO Showcase ── */}
+      <section className="relative py-24 sm:py-32 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 section-divider"></div>
+
+        {/* Background orbs */}
+        <div className="absolute top-1/4 -right-40 w-96 h-96 orb-gradient orb-primary opacity-20"></div>
+        <div className="absolute bottom-1/3 -left-40 w-80 h-80 orb-gradient orb-secondary opacity-15"></div>
+
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
+          <div className="flex flex-col gap-4">
+            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
+              Web Development & SEO
+            </span>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              High-Converting Business Websites & Lead Systems
+            </h2>
+            <p className="max-w-3xl text-base text-neutral-400 sm:text-lg">
+              Performance-focused websites and landing systems engineered to generate qualified leads, establish authority, and align directly with revenue goals.
+            </p>
+          </div>
+
+          {/* Results row */}
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {[
+              "Optimized build structure for strong performance scores",
+              "Clear conversion journeys aligned with sales objectives",
+              "SEO-aligned architecture for long-term organic visibility",
+            ].map((r) => (
+              <div key={r} className="flex items-start gap-3 glass-card rounded-2xl px-5 py-4">
+                <svg className="mt-0.5 h-5 w-5 shrink-0 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-sm text-neutral-300">{r}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Slideshow */}
+          <WebShowcase />
+        </div>
+      </section>
+
       {/* ── Process ── */}
       <section className="relative py-24 sm:py-32">
         <div className="absolute top-0 left-0 right-0 section-divider"></div>
@@ -321,79 +995,6 @@ export default function PortfolioPage() {
                   {s.text}
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Featured Work ── */}
-      <section id="work" ref={workRef} className="relative py-24 sm:py-32 overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 section-divider"></div>
-        <div className="absolute bottom-0 left-0 right-0 section-divider"></div>
-
-        {/* Background orbs */}
-        <div className="absolute top-1/3 -left-40 w-96 h-96 orb-gradient orb-secondary opacity-20"></div>
-        <div className="absolute bottom-1/4 -right-40 w-80 h-80 orb-gradient orb-primary opacity-20"></div>
-
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
-          <div className="flex flex-col gap-4">
-            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
-              Portfolio
-            </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              Featured Projects
-            </h2>
-            <p className="max-w-2xl text-base text-neutral-400 sm:text-lg">
-              A selection of operational systems we&apos;ve built for
-              our clients across industries.
-            </p>
-          </div>
-
-          <div className="mt-16 grid gap-6 lg:grid-cols-2">
-            {projects.map((project) => (
-              <article
-                key={project.title}
-                className="glass-card glass-card-hover group relative flex flex-col justify-between rounded-3xl p-8"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="rounded-full bg-accent-500/10 border border-accent-500/20 px-4 py-1.5 text-xs font-medium text-accent-300">
-                      <span className="sm:hidden">{project.mobileTag}</span>
-                      <span className="hidden sm:inline">{project.tag}</span>
-                    </span>
-                    <span className="hidden sm:inline text-xs text-neutral-500 font-medium">
-                      {project.industry}
-                    </span>
-                  </div>
-                  <h3 className="mt-6 text-xl font-semibold group-hover:text-accent-300 transition-colors sm:text-2xl">{project.title}</h3>
-                  <p className="mt-4 text-base leading-relaxed text-neutral-400">
-                    {project.description}
-                  </p>
-                </div>
-                <ul className="mt-8 space-y-3 border-t border-white/5 pt-6">
-                  {project.results.map((r) => (
-                    <li
-                      key={r}
-                      className="flex items-start gap-3 text-sm text-neutral-300"
-                    >
-                      <svg
-                        className="mt-0.5 h-5 w-5 shrink-0 text-accent-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </article>
             ))}
           </div>
         </div>

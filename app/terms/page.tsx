@@ -6,9 +6,13 @@ import { ArrowLeft } from "lucide-react";
 export default function Page() {
   return (
     <div className="bg-neutral-950 text-white">
-      <div className="navbar w-full ">
-        <Link href="/" className="btn btn-ghost text-xl">
-          <ArrowLeft />
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-start">
+        <Link 
+          href="/" 
+          className="inline-flex items-center justify-center p-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-neutral-400 hover:text-white transition-all duration-200"
+          aria-label="Go back to home"
+        >
+          <ArrowLeft className="w-5 h-5" />
         </Link>
       </div>
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
