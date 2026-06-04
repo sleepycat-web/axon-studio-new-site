@@ -2,23 +2,24 @@
 import Image from "next/image";
 import React from "react";
 import Registration from "./registration";
+import { COMPANY_METRICS } from "@/constants/metrics";
 
 const stats = [
   {
     name: "Years",
-    value: "2",
+    value: COMPANY_METRICS.years,
   },
   {
     name: "Projects",
-    value: "19",
+    value: COMPANY_METRICS.projects,
   },
   {
     name: "Orders Processed",
-    value: "23.5K",
+    value: COMPANY_METRICS.ordersProcessed,
   },
   {
     name: "Users",
-    value: "6.9K",
+    value: COMPANY_METRICS.usersManaged,
   },
 ];
 

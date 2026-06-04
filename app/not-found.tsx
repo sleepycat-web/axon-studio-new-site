@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <div className="bg-neutral-950">
       <Navbar />
-      <section className="   bg-neutral-950 py-16 sm:py-20">
+      <section className="bg-neutral-950 pt-32 pb-16 sm:pt-36 sm:pb-20 text-white">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="flex flex-col items-start gap-8 sm:gap-10">
             <div className="flex flex-col gap-4 sm:gap-6">

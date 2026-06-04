@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 // Define the type for the services
 import Image from "next/image";
+import { COMPANY_METRICS } from "@/constants/metrics";
 
 const iconMap: { [key: string]: JSX.Element } = {
   "01": (
@@ -132,7 +133,7 @@ const Services: React.FC = () => {
             </div>
             <div className="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
               <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">
-                Welcome to Axon Studio, your premier Software Development firm in Siliguri. Having successfully launched over 19 projects for our clients in the last 2 years, our team has the expertise to turn your vision into systems that drive unimaginable growth for your business.
+                Welcome to Axon Studio, your premier Software Development firm in Siliguri. Having successfully launched over {COMPANY_METRICS.projectsNumeric} projects for our clients in the last {COMPANY_METRICS.years} years, our team has the expertise to turn your vision into systems that drive unimaginable growth for your business.
               </p>
               <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">We partner with businesses locally and globally, delivering tailored strategies and cutting-edge digital solutions. From foundational websites to sophisticated enterprise software, we engineer systems designed for growth. Let&apos;s unite your vision with our technology to create something extraordinary.</p>
               <Link href="/about">

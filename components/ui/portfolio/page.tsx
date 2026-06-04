@@ -9,6 +9,7 @@ import Cta1 from "@/components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { COMPANY_METRICS } from "@/constants/metrics";
 
 const ProjectPlaceholderSVG = ({ title }: { title: string }) => {
   return (
@@ -712,10 +713,10 @@ const capabilities = [
 ];
 
 const stats = [
-  { value: "28+", label: "Projects Delivered" },
-  { value: "7+", label: "Industries Served" },
-  { value: "12+", label: "Clients Worldwide" },
-  { value: "8.8K+", label: "Users Managed" },
+  { value: COMPANY_METRICS.projects, label: "Projects Delivered" },
+  { value: COMPANY_METRICS.industriesServed, label: "Industries Served" },
+  { value: COMPANY_METRICS.clientsWorldwide, label: "Clients Worldwide" },
+  { value: COMPANY_METRICS.usersManaged, label: "Users Managed" },
 ];
 
 export default function PortfolioPage() {

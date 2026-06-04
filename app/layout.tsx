@@ -98,7 +98,7 @@ export default function RootLayout({
     "https://twitter.com/WebAxon",
     "https://www.instagram.com/theaxonstudio/",
     "https://www.linkedin.com/company/theaxonstudio",
-    "https://www.facebook.com/people/Axon-Studio/61557992653296/",
+    "https://www.facebook.com/people/Axon-Studio/61557992653296/"
   ],
   "contactPoint": [
     {
@@ -150,7 +150,7 @@ export default function RootLayout({
     "https://twitter.com/WebAxon",
     "https://www.instagram.com/theaxonstudio/",
     "https://www.linkedin.com/company/the-axon-studio/",
-    "https://www.facebook.com/people/Axon-Studio/61557992653296/",
+    "https://www.facebook.com/people/Axon-Studio/61557992653296/"
   ]
 }
 `}
