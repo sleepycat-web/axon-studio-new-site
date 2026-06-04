@@ -129,10 +129,10 @@ const capabilities = [
 ];
 
 const stats = [
-  { value: "19+", label: "Projects Delivered" },
+  { value: "28+", label: "Projects Delivered" },
   { value: "7+", label: "Industries Served" },
-  { value: "11+", label: "Clients Worldwide" },
-  { value: "7.3K+", label: "Users Managed" },
+  { value: "12+", label: "Clients Worldwide" },
+  { value: "8.8K+", label: "Users Managed" },
 ];
 
 export default function PortfolioPage() {
