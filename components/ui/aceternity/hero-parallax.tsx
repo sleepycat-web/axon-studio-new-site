@@ -175,7 +175,7 @@ export const ProductCard = ({
           height="600"
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
+          alt={`${product.title} user interface design showcase`}
         />
       </Link>
       <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
@@ -204,7 +204,7 @@ export const products = [
   },
 
   {
-    title: "Ibéricas",
+    title: "Inversiones Ibéricas",
     link: "",
     thumbnail:
 

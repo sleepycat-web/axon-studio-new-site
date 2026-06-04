@@ -61,7 +61,7 @@ const Mission: React.FC = () => {
               <Image
                 className="relative mx-auto h-auto w-full max-w-xl rounded-3xl ring-1 ring-white/10"
                 src="/assets/about.webp"
-                alt="About Image"
+                alt="Modern city skyline and business buildings representing scalable corporate infrastructure and growth"
                 width={576}
                 height={864}
               />

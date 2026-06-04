@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                 width={65}
                 height={40}
                 src="/assets/logo-inverted.png"
-                alt="Logo"
+                alt="Axon Studio white logo - Software Engineering Firm"
               />
               <p className="text-neutral-400 text-base leading-relaxed">
                 Axon Studio is a premier Software Development firm based in

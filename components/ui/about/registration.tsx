@@ -34,7 +34,7 @@ const Registration = () => {
                 <Image
                   className="h-auto w-full max-w-md rounded-sm"
                   src="/assets/msme.png"
-                  alt="MSME Registration Logo"
+                  alt="Ministry of MSME, Government of India - Udyam Registration logo"
                   width={150}
                   height={200}
                 />

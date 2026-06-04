@@ -105,7 +105,7 @@ const Reviews = () => {
                     <Image
                       className="rounded-full ring-2 ring-accent-500/20"
                       src={testimonial.image}
-                      alt={`${testimonial.name} logo`}
+                      alt={`Company logo for ${testimonial.name} - Axon Studio client (${testimonial.description})`}
                       width={48}
                       height={48}
                     />

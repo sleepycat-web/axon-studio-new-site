@@ -73,14 +73,19 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
   const currentImage = images[currentIndex];
   const isPlaceholder = !currentImage || currentImage.startsWith("placeholder");
 
-  const getPlaceholderTitle = () => {
-    if (currentImage) {
-      if (currentImage.includes(":")) {
-        return currentImage.substring(currentImage.indexOf(":") + 1);
+  const getImageTitle = (img: string, idx: number) => {
+    if (img) {
+      if (img.includes(":")) {
+        return img.substring(img.indexOf(":") + 1);
       }
       // Map local screenshot paths to clean, human-readable titles
-      const filename = currentImage.split("/").pop() || "";
-      if (currentImage.toLowerCase().endsWith(".pdf")) return filename.replace(".pdf", "").replace("-", " ");
+      const filename = img.split("/").pop() || "";
+      if (img.toLowerCase().endsWith(".pdf")) {
+        if (filename.toLowerCase().includes("aurea")) {
+          return "Introduction page of the Aurea document";
+        }
+        return filename.replace(".pdf", "").replace("-", " ");
+      }
       if (filename.includes("admin-panel-ss")) return "Admin Panel";
       if (filename.includes("booking-page-ss")) return "Booking Page";
       if (filename.includes("pos-page-ss")) return "POS Terminal";
@@ -97,7 +102,11 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
       if (filename.includes("user")) return "Online Collection Booking Page";
       if (filename.includes("directory")) return "Healthcare Staff & Schedule Directory";
     }
-    return `${title} (Mockup ${currentIndex + 1})`;
+    return `${title} (Mockup ${idx + 1})`;
+  };
+
+  const getPlaceholderTitle = () => {
+    return getImageTitle(currentImage, currentIndex);
   };
 
   return (
@@ -123,7 +132,9 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
               <div className="absolute inset-0 transition-opacity duration-300 opacity-100">
                 <Image
                   src={previewImage}
-                  alt="Project UI"
+                  alt={previewImage.toLowerCase().includes("aurea")
+                    ? `Introduction page image of the ${title} project document`
+                    : `Interface preview of the ${title} software platform`}
                   fill
                   className="object-cover"
                   style={{ objectPosition: 'center 40%' }}
@@ -162,7 +173,7 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
                   >
                     <Image
                       src={img}
-                      alt="Project UI"
+                      alt={`Screenshot of ${getImageTitle(img, idx)} interface within the ${title} application`}
                       fill
                       className={
                         img.toLowerCase().includes("booking") ||
@@ -279,7 +290,7 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
                 ) : (
                   <Image
                     src={currentImage}
-                    alt="Project UI Large"
+                    alt={`Detailed view of ${getPlaceholderTitle()} for the ${title} system dashboard`}
                     fill
                     className="object-contain object-center"
                   />
@@ -347,7 +358,7 @@ const showcaseItems = [
     title: "Chai Mine",
     src: "/assets/chaimine.png",
     isFiveFour: false,
-    category: "Chai Mine Website"
+    category: "Website"
   },
   {
     title: "Vista Haven",
@@ -389,7 +400,7 @@ const showcaseItems = [
     title: "DocBox",
     src: "/assets/docbox.png",
     isFiveFour: true,
-    category: "Diagnostic & Booking System"
+    category: "AI Document & Workflow Automation Platform"
   },
   {
     title: "Invoker Labs",
@@ -398,10 +409,10 @@ const showcaseItems = [
     category: "Developer Tool"
   },
   {
-    title: "Ibéricas",
+    title: "Inversiones Ibéricas",
     src: "/assets/ibericass.png",
     isFiveFour: false,
-    category: "E-Commerce & Distribution"
+    category: "Finance Firm"
   },
   {
     title: "Moonbeam",
@@ -496,7 +507,7 @@ const WebShowcase = () => {
                 <div className="relative w-full h-full flex items-center justify-center bg-neutral-950">
                   <Image
                     src={item.src}
-                    alt={item.title}
+                    alt={`${item.title} ${item.category} web interface showcase`}
                     fill
                     className="object-contain object-center"
                     priority={isNear}
@@ -507,7 +518,7 @@ const WebShowcase = () => {
                 <div className="relative w-full h-full">
                   <Image
                     src={item.src}
-                    alt={item.title}
+                    alt={`${item.title} ${item.category} web interface showcase`}
                     fill
                     className="object-cover object-top"
                     priority={isNear}
@@ -561,7 +572,7 @@ const WebShowcase = () => {
               : "border-white/10 hover:border-white/30 opacity-60 hover:opacity-100"
               }`}
           >
-            <Image src={item.src} alt={`Thumb ${idx + 1}`} fill className="object-cover object-top" />
+            <Image src={item.src} alt={`Thumbnail navigation for ${item.title} project`} fill className="object-cover object-top" />
           </button>
         ))}
       </div>
