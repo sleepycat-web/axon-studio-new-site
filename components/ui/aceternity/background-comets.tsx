@@ -65,13 +65,15 @@ const ALL_PATHS = [
     "M19 -645C19 -645 87 -240 551 -113C1015 14 1083 419 1083 419"
 ];
 
-const MOBILE_PATHS = Array.from({ length: 40 }).map((_, i) => {
-    const c = -800 + i * 35;
-    const xOffset = (i % 7) * 15 - 45; 
-    const startX = -300 + xOffset;
-    const startY = startX + c;
-    const endX = 1000 + xOffset;
-    const endY = endX + c;
+const MOBILE_PATHS = Array.from({ length: 60 }).map((_, i) => {
+    // With slice, coordinates aren't stretched, so a slope of 1.2 looks like a perfect steep diagonal
+    const slope = 1.2; 
+    const c = -500 + i * 24;
+    const xOffset = (i % 7) * 10 - 25; 
+    const startX = -100 + xOffset;
+    const startY = startX * slope + c;
+    const endX = 600 + xOffset;
+    const endY = endX * slope + c;
     return `M${startX} ${startY} L${endX} ${endY}`;
 });
 
@@ -98,13 +100,13 @@ export const BackgroundComets = React.memo(
                 )}
             >
                 <svg
-                    className=" z-0 h-full w-full pointer-events-none absolute transform -scale-x-100 md:scale-x-100 "
+                    className=" z-0 h-full w-full pointer-events-none absolute "
                     width="100%"
                     height="100%"
-                    viewBox="0 0 696 316"
+                    viewBox={activePaths === MOBILE_PATHS ? "0 0 390 844" : "0 0 696 316"}
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="none"
+                    preserveAspectRatio={activePaths === MOBILE_PATHS ? "xMidYMid slice" : "none"}
                 >
                     {mounted && (
                         <>
@@ -119,7 +121,7 @@ export const BackgroundComets = React.memo(
                                 <motion.path
                                     key={`path-${activePaths === MOBILE_PATHS ? 'mobile' : 'desktop'}-${index}`}
                                     d={path}
-                                    stroke={`url(#linearGradient-${index})`}
+                                    stroke={`url(#linearGradient-${index % ALL_PATHS.length})`}
                                     strokeOpacity="0.4"
                                     strokeWidth="0.5"
                                 ></motion.path>
