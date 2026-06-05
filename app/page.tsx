@@ -3,6 +3,7 @@ import React from "react";
 import { HeroParallaxDemo } from "@/components/ui/aceternity/hero-parallax";
 import Navbar from "@/components/ui/layout/header";
 import Services from "../components/ui/home/services";
+import Process from "@/components/ui/home/process";
 import Footer from "../components/ui/layout/footer";
 import Cta1 from "../components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
@@ -16,6 +17,7 @@ export default function Main() {
       <HeroParallaxDemo />
       <Navbar />
       <Services />
+      <Process />
       <Reviews />
       <Registration />
       <Faq />

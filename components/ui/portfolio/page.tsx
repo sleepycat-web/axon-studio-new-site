@@ -10,6 +10,9 @@ import Reviews from "@/components/ui/home/reviews";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY_METRICS } from "@/constants/metrics";
+import Process from "@/components/ui/home/process";
+import { FlipWords } from "@/components/ui/aceternity/flip-words";
+import { BackgroundBeamsWithCollision } from "@/components/ui/aceternity/background-beams";
 
 const ProjectPlaceholderSVG = ({ title }: { title: string }) => {
   return (
@@ -148,9 +151,8 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
                   return (
                     <div
                       key={img}
-                      className={`absolute inset-0 bg-white flex items-center justify-center overflow-hidden pointer-events-none transition-opacity duration-300 ${
-                        idx === currentIndex ? "opacity-100" : "opacity-0"
-                      }`}
+                      className={`absolute inset-0 bg-white flex items-center justify-center overflow-hidden pointer-events-none transition-opacity duration-300 ${idx === currentIndex ? "opacity-100" : "opacity-0"
+                        }`}
                     >
                       {idx === currentIndex && (
                         <iframe
@@ -168,9 +170,8 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
                 return (
                   <div
                     key={img}
-                    className={`absolute inset-0 transition-opacity duration-300 ${
-                      idx === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-300 ${idx === currentIndex ? "opacity-100" : "opacity-0 pointer-events-none"
+                      }`}
                   >
                     <Image
                       src={img}
@@ -749,21 +750,26 @@ export default function PortfolioPage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="pt-16 pb-24 sm:pt-28 sm:pb-32 relative overflow-hidden">
+      <BackgroundBeamsWithCollision className="pt-24 pb-6 sm:pt-28 sm:pb-20 relative overflow-hidden min-h-screen bg-transparent dark:bg-transparent bg-none dark:bg-none flex flex-col justify-start">
         {/* Background orbs */}
-        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-40"></div>
-        <div className="absolute top-20 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30"></div>
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-40 pointer-events-none"></div>
+        <div className="absolute top-20 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30 pointer-events-none"></div>
 
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
-          <div className="flex flex-col items-center text-center mt-12">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative z-20">
+          <div className="flex flex-col items-center text-center mt-6">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
               <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
               <span className="text-sm text-neutral-300 font-medium">Our Work</span>
             </div>
 
             <h1 className="max-w-6xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
-              Software that runs businesses.
+              Software that runs{" "}
+              <FlipWords
+                words={["businesses.", "startups.", "enterprises.", "franchises."]}
+                duration={2000}
+                className="text-white dark:text-white font-semibold inline-block w-[6.2em] text-left"
+              />
               <br />
               <span className="gradient-text-subtle">Websites that grow them.</span>
             </h1>
@@ -789,11 +795,11 @@ export default function PortfolioPage() {
           </div>
 
           {/* Stats bar */}
-          <div className="mt-20 grid grid-cols-2 gap-4 sm:mt-24 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="glass-card glass-card-hover rounded-2xl px-6 py-8 text-center"
+                className="glass-card glass-card-hover rounded-2xl p-6 text-center"
               >
                 <p className="text-3xl font-semibold tracking-tight gradient-text-subtle sm:text-4xl">
                   {stat.value}
@@ -803,7 +809,7 @@ export default function PortfolioPage() {
             ))}
           </div>
         </div>
-      </section>
+      </BackgroundBeamsWithCollision>
 
       {/* ── What We Do ── */}
       <section className="relative py-24 sm:py-32">
@@ -968,63 +974,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* ── Process ── */}
-      <section className="relative py-24 sm:py-32">
-        <div className="absolute top-0 left-0 right-0 section-divider"></div>
-
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <div className="flex flex-col gap-4">
-            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
-              How We Work
-            </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              Our Process
-            </h2>
-          </div>
-
-          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl glass-card sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                step: "01",
-                title: "Discovery",
-                text: "We learn your business, your goals, and the problem you need solved.",
-              },
-              {
-                step: "02",
-                title: "Strategy & Design",
-                text: "We define system architecture and workflows and design user interfaces around real operational needs.",
-              },
-              {
-                step: "03",
-                title: "Development",
-                text: "We develop in structured phases, ship iteratively, and maintain full transparency throughout delivery.",
-              },
-              {
-                step: "04",
-                title: "Launch & Support",
-                text: "We deploy, monitor, and continue improving post-launch.",
-              },
-            ].map((s, index) => (
-              <div key={s.step} className="bg-neutral-950/50 p-8 relative group hover:bg-accent-500/5 transition-colors">
-                {index < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 transform -translate-y-1/2 z-10">
-                    <svg className="w-6 h-6 text-accent-500/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                )}
-                <span className="text-2xl font-bold gradient-text-subtle">
-                  {s.step}
-                </span>
-                <h3 className="mt-4 text-lg font-semibold group-hover:text-accent-300 transition-colors">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-neutral-400">
-                  {s.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Process />
 
       <Reviews />
       <Cta1 />

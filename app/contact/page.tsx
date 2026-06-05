@@ -4,6 +4,7 @@ import Footer from "@/components/ui/layout/footer";
 import { useState, FormEvent } from "react";
 import React, { useEffect } from "react";
 import { MapPin, MessageCircle } from "lucide-react";
+import { BackgroundComets } from "@/components/ui/aceternity/background-comets";
 
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -58,8 +59,11 @@ const ContactPage: React.FC = () => {
   const shouldShowFloatingButton = !isSubmitted;
 
   return (
-    <div className="bg-neutral-950 relative overflow-x-hidden ">
-      {/* global grid handled by root layout */}
+    <div className="bg-neutral-950 relative overflow-x-hidden min-h-screen ">
+      {/* Fixed Background Comets covering the entire screen */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <BackgroundComets className="w-full h-full bg-transparent dark:bg-transparent bg-none dark:bg-none" />
+      </div>
 
       <Navbar />
 
@@ -79,13 +83,13 @@ const ContactPage: React.FC = () => {
         </a>
       </div>
 
-      <div className="relative overflow-x-hidden">
+      <div className="relative overflow-x-hidden z-20">
         {/* Background orbs */}
-        <div className="absolute top-0 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-30"></div>
-        <div className="absolute top-40 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-20"></div>
+        <div className="absolute top-0 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-30 pointer-events-none"></div>
+        <div className="absolute top-40 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-20 pointer-events-none"></div>
 
-        <section className="text-white pt-16 sm:pt-24 relative">
-          <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <section className="text-white pt-24 pb-16 sm:pt-28 sm:pb-20 relative min-h-[calc(100vh-80px)]">
+          <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 w-full">
             {/* Header */}
             <div className="text-center mb-12 mt-12">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
@@ -99,15 +103,31 @@ const ContactPage: React.FC = () => {
                 Ready to start? We&apos;d love to hear from you.
               </p>
               <div className="mt-8 flex justify-center">
-                <button
-                  onClick={openCalendlyPopup}
-                  className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white"
-                >
-                  Schedule a Call
-                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
+                {isSubmitted ? (
+                  <div className="flex flex-col items-center justify-center p-6 glass-card rounded-3xl max-w-md">
+                    <div className="w-12 h-12 mb-4 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2 gradient-text-subtle text-center">
+                      Thank you for scheduling a call!
+                    </h3>
+                    <p className="text-center text-sm text-neutral-400">
+                      We have received your booking and look forward to speaking with you.
+                    </p>
+                  </div>
+                ) : (
+                  <button
+                    onClick={openCalendlyPopup}
+                    className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white"
+                  >
+                    Schedule a Call
+                    <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                )}
               </div>
             </div>
 
@@ -148,63 +168,6 @@ const ContactPage: React.FC = () => {
                 </dd>
               </div>
             </dl>
-          </div>
-        </section>
-
-        <section className="py-20 sm:py-28 relative">
-          <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-              {/* Left Column - Header Content */}
-              <div className="flex flex-col gap-6">
-                <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
-                  Work With Us
-                </span>
-                <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl text-white">
-                  Let&apos;s Build Something Amazing
-                </h2>
-                <p className="text-neutral-400 max-w-lg text-lg leading-relaxed">
-                  We&apos;d love to learn more about you and what we can build
-                  together. Schedule a call to get started.
-                </p>
-                <button
-                  onClick={openCalendlyPopup}
-                  className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white w-fit mt-4"
-                >
-                  Schedule a Call
-                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              </div>
-              <div>
-                {isSubmitted && (
-                  <div className="flex flex-col items-center justify-center p-10 glass-card rounded-3xl">
-                    <div className="w-16 h-16 mb-6 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center">
-                      <svg
-                        className="w-8 h-8 text-green-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-semibold mb-4 gradient-text-subtle">
-                      Thank you for reaching out!
-                    </h3>
-                    <p className="text-center text-lg text-neutral-400">
-                      Your message has been received. We&apos;ll respond to you
-                      soon.
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
           </div>
         </section>
       </div>
