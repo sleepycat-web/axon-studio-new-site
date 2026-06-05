@@ -213,7 +213,7 @@ const CollisionMechanism = React.forwardRef<
                     repeat: Infinity,
                     repeatType: "loop",
                     ease: "linear",
-                    delay: (beamOptions.delay || 0) + 2, // Added 2s delay
+                    delay: beamOptions.delay || 0,
                     repeatDelay: beamOptions.repeatDelay || 0,
                 }}
                 style={{
