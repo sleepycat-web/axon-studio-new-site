@@ -65,12 +65,12 @@ const ALL_PATHS = [
     "M19 -645C19 -645 87 -240 551 -113C1015 14 1083 419 1083 419"
 ];
 
-const MOBILE_PATHS = Array.from({ length: 25 }).map((_, i) => {
-    const c = -500 + i * 40;
+const MOBILE_PATHS = Array.from({ length: 40 }).map((_, i) => {
+    const c = -800 + i * 35;
     const xOffset = (i % 7) * 15 - 45; 
-    const startX = -100 + xOffset;
+    const startX = -300 + xOffset;
     const startY = startX + c;
-    const endX = 800 + xOffset;
+    const endX = 1000 + xOffset;
     const endY = endX + c;
     return `M${startX} ${startY} L${endX} ${endY}`;
 });
