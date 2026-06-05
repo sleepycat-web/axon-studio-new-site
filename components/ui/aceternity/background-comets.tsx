@@ -65,8 +65,31 @@ const ALL_PATHS = [
     "M19 -645C19 -645 87 -240 551 -113C1015 14 1083 419 1083 419"
 ];
 
+const MOBILE_PATHS = Array.from({ length: 25 }).map((_, i) => {
+    const c = -500 + i * 40;
+    const xOffset = (i % 7) * 15 - 45; 
+    const startX = -100 + xOffset;
+    const startY = startX + c;
+    const endX = 800 + xOffset;
+    const endY = endX + c;
+    return `M${startX} ${startY} L${endX} ${endY}`;
+});
+
 export const BackgroundComets = React.memo(
     ({ className }: { className?: string }) => {
+        const [activePaths, setActivePaths] = React.useState(ALL_PATHS);
+        const [mounted, setMounted] = React.useState(false);
+
+        React.useEffect(() => {
+            setMounted(true);
+            const checkMobile = () => {
+                setActivePaths(window.innerWidth < 768 ? MOBILE_PATHS : ALL_PATHS);
+            };
+            checkMobile();
+            window.addEventListener('resize', checkMobile);
+            return () => window.removeEventListener('resize', checkMobile);
+        }, []);
+
         return (
             <div
                 className={cn(
@@ -75,7 +98,7 @@ export const BackgroundComets = React.memo(
                 )}
             >
                 <svg
-                    className=" z-0 h-full w-full pointer-events-none absolute transform -scale-y-100 md:scale-y-100 "
+                    className=" z-0 h-full w-full pointer-events-none absolute transform -scale-x-100 md:scale-x-100 "
                     width="100%"
                     height="100%"
                     viewBox="0 0 696 316"
@@ -83,22 +106,26 @@ export const BackgroundComets = React.memo(
                     xmlns="http://www.w3.org/2000/svg"
                     preserveAspectRatio="none"
                 >
-                    <path
-                        d={ALL_PATHS.join("")}
-                        stroke="url(#paint0_radial_242_278)"
-                        strokeOpacity="0.05"
-                        strokeWidth="0.5"
-                    ></path>
+                    {mounted && (
+                        <>
+                            <path
+                                d={activePaths.join("")}
+                                stroke="url(#paint0_radial_242_278)"
+                                strokeOpacity="0.05"
+                                strokeWidth="0.5"
+                            ></path>
 
-                    {ALL_PATHS.map((path, index) => (
-                        <motion.path
-                            key={`path-` + index}
-                            d={path}
-                            stroke={`url(#linearGradient-${index})`}
-                            strokeOpacity="0.4"
-                            strokeWidth="0.5"
-                        ></motion.path>
-                    ))}
+                            {activePaths.map((path, index) => (
+                                <motion.path
+                                    key={`path-${activePaths === MOBILE_PATHS ? 'mobile' : 'desktop'}-${index}`}
+                                    d={path}
+                                    stroke={`url(#linearGradient-${index})`}
+                                    strokeOpacity="0.4"
+                                    strokeWidth="0.5"
+                                ></motion.path>
+                            ))}
+                        </>
+                    )}
                     <defs>
                         {ALL_PATHS.map((path, index) => {
                             // Using deterministic values to prevent hydration errors and reduce random calculations
