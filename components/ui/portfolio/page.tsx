@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY_METRICS } from "@/constants/metrics";
 import Process from "@/components/ui/home/process";
-import { FlipWords } from "@/components/ui/aceternity/flip-words";
+
 import { BackgroundBeamsWithCollision } from "@/components/ui/aceternity/background-beams";
 
 const ProjectPlaceholderSVG = ({ title }: { title: string }) => {
@@ -764,12 +764,7 @@ export default function PortfolioPage() {
             </div>
 
             <h1 className="max-w-6xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
-              Software that runs{" "}
-              <FlipWords
-                words={["businesses.", "startups.", "enterprises.", "franchises."]}
-                duration={2000}
-                className="text-white dark:text-white font-semibold inline-block w-[6.2em] text-left"
-              />
+              Software that runs businesses.
               <br />
               <span className="gradient-text-subtle">Websites that grow them.</span>
             </h1>
