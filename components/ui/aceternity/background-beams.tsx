@@ -171,6 +171,7 @@ const CollisionMechanism = React.forwardRef<
             }
         };
 
+        // Throttle interval on mobile if needed, or just use 50ms
         const animationInterval = setInterval(checkCollision, 50);
 
         return () => clearInterval(animationInterval);
@@ -212,14 +213,14 @@ const CollisionMechanism = React.forwardRef<
                     repeat: Infinity,
                     repeatType: "loop",
                     ease: "linear",
-                    delay: beamOptions.delay || 0,
+                    delay: (beamOptions.delay || 0) + 2, // Added 2s delay
                     repeatDelay: beamOptions.repeatDelay || 0,
                 }}
                 style={{
                     left: beamOptions.initialX || "0px",
                 }}
                 className={cn(
-                    "absolute top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
+                    "absolute top-20 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent will-change-transform",
                     beamOptions.className
                 )}
             />
@@ -243,7 +244,9 @@ const CollisionMechanism = React.forwardRef<
 CollisionMechanism.displayName = "CollisionMechanism";
 
 const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
-    const spans = Array.from({ length: 20 }, (_, index) => ({
+    // Reduce number of spans on mobile for performance
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    const spans = Array.from({ length: isMobile ? 8 : 20 }, (_, index) => ({
         id: index,
         initialX: 0,
         initialY: 0,
@@ -258,7 +261,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
-                className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
+                className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm will-change-transform"
             ></motion.div>
             {spans.map((span) => (
                 <motion.span
@@ -270,7 +273,7 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => {
                         opacity: 0,
                     }}
                     transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
-                    className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"
+                    className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500 will-change-transform"
                 />
             ))}
         </div>
