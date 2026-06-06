@@ -358,79 +358,79 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
 const showcaseItems = [
   {
     title: "Chai Mine",
-    src: "/assets/chaimine.png",
+    src: "/assets/screenshots/chaimine.png",
     isFiveFour: false,
     category: "Website"
   },
   {
     title: "Vista Haven",
-    src: "/assets/vhss.png",
+    src: "/assets/screenshots/vhss.png",
     isFiveFour: true,
     category: "Resort & Hotel Booking System"
   },
   {
     title: "Clayo AI",
-    src: "/assets/clss.png",
+    src: "/assets/screenshots/clss.png",
     isFiveFour: false,
     category: "Conversational AI Platform"
   },
   {
     title: "TablePro",
-    src: "/assets/tpss.png",
+    src: "/assets/screenshots/tpss.png",
     isFiveFour: true,
     category: "Restaurant Booking System"
   },
   {
     title: "Sona Hotels",
-    src: "/assets/sonass.png",
+    src: "/assets/screenshots/sonass.png",
     isFiveFour: true,
     category: "Hospitality Management Platform"
   },
   {
     title: "Axon Studio",
-    src: "/assets/axon.jpg",
+    src: "/assets/screenshots/axon.jpg",
     isFiveFour: false,
     category: "Agency Landing Page"
   },
   {
     title: "Andromeda",
-    src: "/assets/andromeda.jpg",
+    src: "/assets/screenshots/andromeda.jpg",
     isFiveFour: false,
     category: "Design Portfolio"
   },
   {
     title: "DocBox",
-    src: "/assets/docbox.png",
+    src: "/assets/screenshots/docbox.png",
     isFiveFour: true,
     category: "AI Document & Workflow Automation Platform"
   },
   {
     title: "Invoker Labs",
-    src: "/assets/invoker.png",
+    src: "/assets/screenshots/invoker.png",
     isFiveFour: false,
     category: "Developer Tool"
   },
   {
     title: "Inversiones Ibéricas",
-    src: "/assets/ibericass.png",
+    src: "/assets/screenshots/ibericass.png",
     isFiveFour: false,
     category: "Finance Firm"
   },
   {
     title: "Moonbeam",
-    src: "/assets/moonbeam.png",
+    src: "/assets/screenshots/moonbeam.png",
     isFiveFour: false,
     category: "SaaS Platform"
   },
   {
     title: "SmartBridge",
-    src: "/assets/smartbridge.png",
+    src: "/assets/screenshots/smartbridge.png",
     isFiveFour: false,
     category: "IoT Control Panel"
   },
   {
     title: "Alter",
-    src: "/assets/alss.png",
+    src: "/assets/screenshots/alss.png",
     isFiveFour: false,
     category: "Digital Agency"
   }
@@ -597,12 +597,12 @@ const projects = [
       "Centralized reporting for franchise-level decision making",
     ],
     images: [
-      "/pos/admin-panel-ss.png",
-      "/pos/pos-page-ss.png",
-      "/pos/booking-page-ss.png",
-      "/pos/order-panel-ss-1.png",
-      "/pos/aggregated-panel-ss.png",
-      "/pos/inventory-panel-ss.png"
+      "/assets/saas/restaurant/admin-panel-ss.png",
+      "/assets/saas/restaurant/pos-page-ss.png",
+      "/assets/saas/restaurant/booking-page-ss.png",
+      "/assets/saas/restaurant/order-panel-ss-1.png",
+      "/assets/saas/restaurant/aggregated-panel-ss.png",
+      "/assets/saas/restaurant/inventory-panel-ss.png"
     ]
   },
   {
@@ -618,8 +618,8 @@ const projects = [
       "Dynamic staff scheduling aligned to appointment load",
       "Staff performance and payroll tracking in one system",
     ],
-    previewImage: "/assets/aureass.png",
-    images: ["/Aurea.pdf"]
+    previewImage: "/assets/saas/aurea/aureass.png",
+    images: ["/assets/saas/aurea/Aurea.pdf"]
   },
   {
     title: "Manufacturing CRM & Supply Chain Suite",
@@ -635,11 +635,11 @@ const projects = [
       "Real-time operational reporting across sales, procurement, and logistics teams",
     ],
     images: [
-      "/supplier/crm.png",
-      "/supplier/vendors.png",
-      "/supplier/inventory.png",
-      "/supplier/logistics.png",
-      "/supplier/settings.png"
+      "/assets/saas/supplier/crm.png",
+      "/assets/saas/supplier/vendors.png",
+      "/assets/saas/supplier/inventory.png",
+      "/assets/saas/supplier/logistics.png",
+      "/assets/saas/supplier/settings.png"
     ]
   },
   // {
@@ -669,10 +669,10 @@ const projects = [
       "Central lab panel to coordinate technicians, routes, and report delivery",
     ],
     images: [
-      "/lab/staff.png",
-      "/lab/records.png",
-      "/lab/user.png",
-      "/lab/directory.png"
+      "/assets/saas/lab/staff.png",
+      "/assets/saas/lab/records.png",
+      "/assets/saas/lab/user.png",
+      "/assets/saas/lab/directory.png"
     ]
   },
 ];
@@ -750,7 +750,7 @@ export default function PortfolioPage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <BackgroundBeamsWithCollision className="pt-24 pb-6 sm:pt-28 sm:pb-20 relative overflow-hidden min-h-screen bg-transparent dark:bg-transparent bg-none dark:bg-none flex flex-col justify-start">
+      <BackgroundBeamsWithCollision className="pt-24 pb-6 sm:pt-28 sm:pb-20 relative overflow-hidden h-auto md:h-auto min-h-screen bg-transparent dark:bg-transparent bg-none dark:bg-none flex flex-col justify-start">
         {/* Background orbs */}
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-40 pointer-events-none"></div>
         <div className="absolute top-20 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30 pointer-events-none"></div>

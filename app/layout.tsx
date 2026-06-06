@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Axon Studio",
     images: [
       {
-        url: "https://axonstudio.in/assets/ogi.jpg",
+        url: "https://axonstudio.in/assets/screenshots/ogi.jpg",
         width: 1200,
         height: 630,
         alt: "Axon Studio preview image",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Axon Studio | Enterprise Software Solutions in Siliguri",
     description:
       "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
-    images: ["https://axonstudio.in/assets/ogi.jpg"],
+    images: ["https://axonstudio.in/assets/screenshots/ogi.jpg"],
   },
 };
 
@@ -71,7 +71,7 @@ export default function RootLayout({
   "url": "https://axonstudio.in/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://axonstudio.in/assets/axon-studio-logo.png",
+    "url": "https://axonstudio.in/assets/logos/axon-studio-logo.png",
     "width": "180",
     "height": "60"
   },
@@ -121,7 +121,7 @@ export default function RootLayout({
   "@type": "LocalBusiness",
   "name": "Axon Studio",
   "image": [
-    "https://axonstudio.in/assets/ogi.jpg"
+    "https://axonstudio.in/assets/screenshots/ogi.jpg"
   ],
   "description": "A leading software development firm in Siliguri specialising in web and mobile solutions for enterprises.",
   "address": {

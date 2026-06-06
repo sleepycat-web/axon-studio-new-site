@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
                 className="h-12 w-auto"
                 width={65}
                 height={40}
-                src="/assets/logo-inverted.png"
+                src="/assets/logos/logo-inverted.png"
                 alt="Axon Studio white logo - Software Engineering Firm"
               />
               <p className="text-neutral-400 text-base leading-relaxed">

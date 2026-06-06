@@ -33,7 +33,7 @@ const Registration = () => {
               <div className="glass-card rounded-2xl p-6">
                 <Image
                   className="h-auto w-full max-w-md rounded-sm"
-                  src="/assets/msme.png"
+                  src="/assets/logos/msme.png"
                   alt="Ministry of MSME, Government of India - Udyam Registration logo"
                   width={150}
                   height={200}

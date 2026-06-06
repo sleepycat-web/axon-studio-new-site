@@ -61,7 +61,7 @@ const Mission: React.FC = () => {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-accent-500/10 to-violet-500/10 blur-2xl"></div>
               <Image
                 className="relative mx-auto h-auto w-full max-w-xl rounded-3xl ring-1 ring-white/10"
-                src="/assets/about.webp"
+                src="/assets/screenshots/about.webp"
                 alt="Modern city skyline and business buildings representing scalable corporate infrastructure and growth"
                 width={576}
                 height={864}

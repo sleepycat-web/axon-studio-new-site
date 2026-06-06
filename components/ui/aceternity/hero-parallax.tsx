@@ -118,12 +118,12 @@ export const Header = () => {
       </div>
 
       <h1 className="text-4xl text-white font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1] pointer-events-auto">
-        Engineering the Technology
+        Helping Service Businesses
         <br />
-        <span className="gradient-text-subtle">That Powers Your Growth.</span>
+        <span className="gradient-text-subtle">Become Franchise Ready.</span>
       </h1>
       <p className="xl:ml-1.5 font-normal md:text-xl mt-8 text-neutral-400 text-lg sm:text-xl max-w-2xl leading-relaxed pointer-events-auto">
-        We craft platforms that scale with your ambition and establish you as an undeniable leader in your industry.
+        We help standardise operations through SOPs, automation and custom software built around your business.
       </p>
 
       {/* CTA Buttons */}
@@ -191,16 +191,16 @@ export function HeroParallaxDemo() {
 }
 export const products = [
   {
-    title: "Moonbeam",
+    title: "Restaurant POS Admin Console",
     link: "",
     thumbnail:
-      "/assets/moonbeam.png",
+      "/assets/saas/restaurant/admin-panel-ss.png",
   },
   {
     title: "Invoker Labs",
     link: "",
     thumbnail:
-      "/assets/invoker.png",
+      "/assets/screenshots/invoker.png",
   },
 
   {
@@ -208,77 +208,76 @@ export const products = [
     link: "",
     thumbnail:
 
-      "/assets/ibericass.png",
+      "/assets/screenshots/ibericass.png",
   },
   {
     title: "TablePro",
     link: "",
     thumbnail:
-      "/assets/tpss.png",
+      "/assets/screenshots/tpss.png",
   },
   {
     title: "Editrix AI",
     link: "",
     thumbnail:
-      "/assets/editrix.png",
+      "/assets/screenshots/editrix.png",
   }, {
     title: "Vista Haven",
     link: "",
     thumbnail:
 
-      "/assets/vhss.png",
+      "/assets/screenshots/vhss.png",
   },
   {
     title: "Clayo AI",
     link: "",
-    thumbnail:
-      "/assets/clss.png",
+    thumbnail: "/assets/screenshots/clss.png",
   },
   {
     title: "Andromeda",
     link: "",
-    thumbnail: "/assets/andromeda.jpg",
+    thumbnail: "/assets/screenshots/andromeda.jpg",
   },
 
   {
     title: "Buon Gusto",
     link: "",
-    thumbnail: "/assets/buon.jpg",
+    thumbnail: "/assets/screenshots/buon.jpg",
   },
   {
-    title: "SmartBridge",
+    title: "Manufacturing CRM Dashboard",
     link: "",
     thumbnail:
-      "/assets/smartbridge.png",
+      "/assets/saas/supplier/logistics.png",
   },
   {
-    title: "Alter",
+    title: "Diagnostic Centre App Dashboard",
     link: "",
-    thumbnail: "/assets/alss.png",
+    thumbnail: "/assets/saas/lab/records.png",
   },
   {
     title: "DocBox",
     link: "",
-    thumbnail: "/assets/docbox.png",
+    thumbnail: "/assets/screenshots/docbox.png",
   },
 
   {
     title: "Sona Hotels",
     link: "",
     thumbnail:
-      "/assets/sonass.png",
+      "/assets/screenshots/sonass.png",
   },
 
   {
-    title: "E Free Invoice",
+    title: "Salon Franchise Billing System",
     link: "",
     thumbnail:
-      "/assets/efreeinvoice.png",
+      "/assets/saas/aurea/billing.png",
   },
   {
     title: "Axon Studio",
     link: "",
-    thumbnail: "/assets/axon.jpg",
+    thumbnail: "/assets/screenshots/axon.jpg",
   },
 ];
 

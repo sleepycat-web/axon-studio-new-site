@@ -4,27 +4,27 @@ const testimonials = [
   // {
   //   name: "Government of Sikkim",
   //   description: "State Government, Sikkim",
-  //   image: "/assets/sikkimlogo.png",
+  //   image: "/assets/logos/sikkimlogo.png",
   //   message: "Axon Studio has been instrumental in modernizing our digital presence. Their expertise in web development and SEO has significantly improved our outreach and efficiency.",
   //   prominent: true,
   // },
   {
     name: "U First Coaching",
     description: "Life Coaching, United Kingdom",
-    image: "/assets/ufirstlogo.png",
+    image: "/assets/logos/ufirstlogo.png",
     message:
       "I had the pleasure of working with Axon Studio to redesign my coaching's landing page. The insights and the client acquisition funnel have been incredibly helpful for me.",
   },
   {
     name: "Clayo AI",
     description: "AI Call Screening Solutions, United States",
-    image: "/assets/clayologo.jpg",
+    image: "/assets/logos/clayologo.jpg",
     message:
       "We were able to draw in the right audience and improve our online visibility thanks to Axon Studio's SEO work. Real results, a well-defined plan and seamless execution.",
   }, {
     name: "Chai Mine",
     description: "Cafe, Siliguri",
-    image: "/assets/cmlogo.png",
+    image: "/assets/logos/cmlogo.png",
     message:
       "We got connected by fate and good deeds. Amlan has always been in the most understanding position during my journey and helped me in the technicality of my business. Axon Studio❤️",
   },
@@ -32,7 +32,7 @@ const testimonials = [
   {
     name: "Astita Media",
     description: "Content Agency, Noida",
-    image: "/assets/astitalogo.png",
+    image: "/assets/logos/astitalogo.png",
     message:
       "The Axon Studio team did a fantastic job with our website. Super easy to work with, quick delivery, and the end result fits our brand perfectly.",
   },
@@ -40,7 +40,7 @@ const testimonials = [
   {
     name: "3 Hour Creator",
     description: "Creative Studio, Noida",
-    image: "/assets/3hclogo.png",
+    image: "/assets/logos/3hclogo.png",
     message:
       "I had called Amlan one day before our opening and the very next morning our website is live. No one can match Team Axon's speed.",
   },
@@ -48,14 +48,14 @@ const testimonials = [
   {
     name: "Shree Shyam Mobile",
     description: "Mobile Store, Siliguri",
-    image: "/assets/ssmlogo.jpg",
+    image: "/assets/logos/ssmlogo.jpg",
     message:
       "Axon Studio brings your imagination to light with minimal follow ups, they do a great job and are open to further service and developments with no delay thats the best part.",
   },
   {
     name: "Tukuche",
     description: "Restaurant, Siliguri",
-    image: "/assets/tklogo.png",
+    image: "/assets/logos/tklogo.png",
     message:
       "Table Pro has streamlined our management and SOP. It's very user friendly and has helped our staff deliver exceptional service even during rush hours.",
   },
