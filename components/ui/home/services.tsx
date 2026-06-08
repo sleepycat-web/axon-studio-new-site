@@ -133,9 +133,9 @@ const Services: React.FC = () => {
             </div>
             <div className="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
               <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">
-                Welcome to Axon Studio, your premier Software Development firm in Siliguri. Having successfully launched over {COMPANY_METRICS.projectsNumeric} projects for our clients in the last {COMPANY_METRICS.years} years, our team has the expertise to turn your vision into systems that drive unimaginable growth for your business.
+                Axon Studio is a software development firm focused on building systems that help businesses scale efficiently..
               </p>
-              <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">We partner with businesses locally and globally, delivering tailored strategies and cutting-edge digital solutions. From foundational websites to sophisticated enterprise software, we engineer systems designed for growth. Let&apos;s unite your vision with our technology to create something extraordinary.</p>
+              <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">Having delivered{COMPANY_METRICS.projectsNumeric}+ projects over the last two years, we work with organisations locally and globally to transform processes into software, improve operational visibility, and create technology that supports sustainable growth. </p>
               <Link href="/about">
                 <button className="btn-premium inline-flex items-center justify-center rounded-full px-6 py-3.5 text-base font-semibold text-white">
                   Read about us
