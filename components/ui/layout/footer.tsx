@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
       {/* Top border accent line */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-accent-500/40 to-transparent"></div>
 
-      {/* Footer background — darker than body to visually separate */}
+      {/* Footer background - darker than body to visually separate */}
       <div className="absolute inset-0 bg-neutral-950"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/60 via-neutral-950 to-black"></div>
 
@@ -110,8 +110,7 @@ const Footer: React.FC = () => {
                 alt="Axon Studio white logo - Software Engineering Firm"
               />
               <p className="text-neutral-400 text-base leading-relaxed">
-                Axon Studio is a premier Software Development firm based in
-                Siliguri, building systems that power business growth.
+                Axon Studio builds custom software, automation and webs platforms for businesses ready to outgrow manual work.
               </p>
               <p className="text-neutral-600 text-sm">© 2024 Axon Studio. All rights reserved.</p>
             </div>

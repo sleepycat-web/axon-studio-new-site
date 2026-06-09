@@ -100,7 +100,7 @@ const ContactPage: React.FC = () => {
                 Let&apos;s <span className="gradient-text-subtle">Connect</span>
               </h1>
               <p className="text-neutral-400 mx-auto max-w-xl text-lg">
-                Ready to start? We&apos;d love to hear from you.
+                Tell us what you&apos;re building or what&apos;s slowing you down. Book a call and we&apos;ll take it from there.
               </p>
               <div className="mt-8 flex justify-center">
                 {isSubmitted ? (

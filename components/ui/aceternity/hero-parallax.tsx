@@ -114,13 +114,13 @@ export const Header = () => {
       {/* Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 pointer-events-auto">
         <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
-        <span className="text-sm text-neutral-300 font-medium">Enterprise Software Solutions</span>
+        <span className="text-sm text-neutral-300 font-medium">Custom Business Systems</span>
       </div>
 
       <h1 className="text-4xl text-white font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1] pointer-events-auto">
-        Helping Service Businesses
+        Engineering the Technology
         <br />
-        <span className="gradient-text-subtle">Become Franchise Ready.</span>
+        <span className="gradient-text-subtle">That Powers Your Growth.</span>
       </h1>
       <p className="xl:ml-1.5 font-normal md:text-xl mt-8 text-neutral-400 text-lg sm:text-xl max-w-2xl leading-relaxed pointer-events-auto">
         We help standardise operations through SOPs, automation and custom software built around your business.

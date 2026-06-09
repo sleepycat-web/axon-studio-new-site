@@ -3,6 +3,7 @@ export const COMPANY_METRICS = {
   projects: "29+",
   projectsNumeric: 29,
   ordersProcessed: "30K",
+  reservationsProcessed:"9.5K",
   usersManaged: "8.8K+",
   industriesServed: "7+",
   clientsWorldwide: "10+",

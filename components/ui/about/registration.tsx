@@ -25,8 +25,8 @@ const Registration = () => {
               Officially <span className="gradient-text-subtle">Registered</span>
             </h2>
             <p className="text-neutral-400 max-w-2xl text-base sm:text-lg leading-relaxed">
-              Axon Studio is proudly registered with the Ministry of MSME,
-              Government of India. Ensuring our commitment to legal compliance
+              Axon Studio is registered with the Ministry of MSME, Government of
+              India. Ensuring our commitment to legal compliance
               and business excellence.
             </p>
             <div className="flex flex-col items-center gap-8 mt-4">

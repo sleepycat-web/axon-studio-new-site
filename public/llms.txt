@@ -1,6 +1,6 @@
 # Axon Studio
 
-> Axon Studio is a premier custom software development and digital product design agency based in Siliguri, India. We engineer high-performance internal tools, customized ERPs, POS systems, web applications, and high-converting marketing sites that power business growth.
+> Axon Studio is a custom software development agency that helps growing businesses standardise and scale their operations. We engineer the systems each business runs on - custom software, automations, customized ERPs, POS systems, internal tools, web applications, and high-converting marketing sites - built around how the business actually works.
 
 ## Core Capabilities
 - **Revenue Infrastructure Systems**: Custom POS systems, multi-location franchise platforms, online ordering, reservation systems, and sales CRM development.

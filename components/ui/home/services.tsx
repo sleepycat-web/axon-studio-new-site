@@ -8,7 +8,7 @@ import { COMPANY_METRICS } from "@/constants/metrics";
 const iconMap: { [key: string]: JSX.Element } = {
   "01": (
     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
     </svg>
   ),
   "02": (
@@ -37,15 +37,15 @@ type Service = {
 const services: Service[] = [
   {
     step: "01",
-    name: "Enterprise Software",
+    name: "Custom Software",
     description:
-      "Every platform is built from scratch to fit your unique workflows. We help you scale, streamline, and gain a competitive edge by turning your boldest ideas into reality.",
+      "We build the systems that run your business. Software Platforms, Automations & Internal Tools designed around your SOPs, team, and operations.",
   },
   {
     step: "02",
-    name: "Web Development & SEO",
+    name: "Web Platforms",
     description:
-      "We craft captivating digital experiences that engage your audience and drive results. Our creative web design and proven SEO strategies help you build an unforgettable online presence.",
+      "High-converting websites and SEO infrastructure built to bring the right clients. Clean, fast and structured to rank so your online presence works as hard as you do.",
   },
   // {
   //   step: "03",
@@ -67,6 +67,9 @@ const Services: React.FC = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 grid-pattern opacity-50"></div>
 
+      {/* Gradient divider above What We Offer */}
+      <div className="section-divider mx-auto max-w-7xl"></div>
+
       <section className="text-white py-20 sm:py-28 relative">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="flex flex-col gap-16 sm:gap-20">
@@ -78,7 +81,7 @@ const Services: React.FC = () => {
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
                 Our Services
               </h2>
-              <p className="max-w-2xl text-neutral-400 text-lg">
+              <p className="max-w-5xl text-neutral-400 text-lg">
                 Premium solutions designed to transform your business operations and accelerate growth.
               </p>
             </div>
@@ -133,9 +136,9 @@ const Services: React.FC = () => {
             </div>
             <div className="flex flex-col items-start gap-8 sm:gap-10 lg:col-span-2">
               <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">
-                Axon Studio is a software development firm focused on building systems that help businesses scale efficiently..
+                Axon Studio is a software development firm focused on building systems that help businesses scale efficiently.
               </p>
-              <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">Having delivered{COMPANY_METRICS.projectsNumeric}+ projects over the last two years, we work with organisations locally and globally to transform processes into software, improve operational visibility, and create technology that supports sustainable growth. </p>
+              <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">Over the last two years we&apos;ve shipped {COMPANY_METRICS.projectsNumeric}+ projects for clients across India, the UK and the US. We learn how your business actually runs, then build the software that runs it better. </p>
               <Link href="/about">
                 <button className="btn-premium inline-flex items-center justify-center rounded-full px-6 py-3.5 text-base font-semibold text-white">
                   Read about us

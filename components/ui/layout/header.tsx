@@ -20,7 +20,7 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress, scrollY } = useScroll();
 
   const [visible, setVisible] = useState(true);
 
@@ -29,8 +29,11 @@ export const FloatingNav = ({
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.get() < 0) {
-        setVisible(false);
+      // Always show the navbar when at or very near the top of the page.
+      // This completely fixes the iOS Safari rubber-band effect where bouncing back
+      // from negative scroll positions was falsely interpreted as a "scroll down"
+      if (scrollY.get() < 50) {
+        setVisible(true);
       } else {
         if (direction < 0) {
           setVisible(true);

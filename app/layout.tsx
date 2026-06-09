@@ -5,9 +5,9 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Axon Studio | Enterprise Software Solutions in Siliguri",
+  title: "Axon Studio | Custom Software Solutions for Businesses",
   description:
-    "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
+    "Axon Studio builds custom software, automation and high-converting websites that help growing businesses standardise operations and scale.",
   authors: [{ name: "Axon Studio", url: "https://axonstudio.in/" }],
   alternates: {
     canonical: "https://axonstudio.in/",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Axon Studio | Enterprise Software Solutions in Siliguri",
+    title: "Axon Studio | Custom Software Solutions for Businesses",
     description:
-      "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
+      "Axon Studio builds custom software, automation and high-converting websites that help growing businesses standardise operations and scale.",
     url: "https://axonstudio.in/",
     siteName: "Axon Studio",
     images: [
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@WebAxon",
-    title: "Axon Studio | Enterprise Software Solutions in Siliguri",
+    title: "Axon Studio | Custom Software Solutions for Businesses",
     description:
-      "Welcome to Axon Studio! We are a team of experts who build powerful, tailored solutions that scale businesses beyond limits.",
+      "Axon Studio builds custom software, automation and high-converting websites that help growing businesses standardise operations and scale.",
     images: ["https://axonstudio.in/assets/screenshots/ogi.jpg"],
   },
 };
@@ -66,7 +66,7 @@ export default function RootLayout({
   "@type": "Organization",
   "name": "Axon Studio",
   "alternateName": "The Axon Studio",
-  "description": "A leading software development firm in Siliguri specialising in web and mobile solutions for enterprises.",
+  "description": "Axon Studio builds custom software, automation, and high-converting websites that help growing businesses standardise operations and scale. Headquartered in Siliguri, India, with clients across India, the UK, and the US.",
   "foundingDate": "2024-01-01", 
   "url": "https://axonstudio.in/",
   "logo": {
@@ -109,7 +109,7 @@ export default function RootLayout({
       "availableLanguage": ["English", "Hindi"]
     }
   ],
-  "slogan": "Building tailored solutions that scale businesses beyond limits."
+  "slogan": "Custom software, automation and websites for growing businesses."
 }
 `}
       </Script>
@@ -123,7 +123,7 @@ export default function RootLayout({
   "image": [
     "https://axonstudio.in/assets/screenshots/ogi.jpg"
   ],
-  "description": "A leading software development firm in Siliguri specialising in web and mobile solutions for enterprises.",
+  "description": "Axon Studio builds custom software, automation, and high-converting websites that help growing businesses standardise operations and scale. Headquartered in Siliguri, India, with clients across India, the UK, and the US.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Sevoke Road",
@@ -190,58 +190,58 @@ export default function RootLayout({
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Are there any hidden costs I should be aware of?",
+      "name": "How long does it take to build a custom system for my business?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Transparency is paramount to us. We strive to be upfront about all costs associated with our services. There are no hidden costs, and we'll provide a clear breakdown of pricing before any work begins."
+        "text": "Most projects take between 4 to 8 weeks from process mapping to deployment, depending on the scope and complexity of the system. After your discovery call, we'll give you a clear timeline based on what your business actually needs, not a generic package."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you offer discounts for long-term contracts or bundled services?",
+      "name": "Do I own the software once it's built?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, we offer discounts for clients who commit to long-term partnerships or opt for bundled services. Our goal is to reward loyalty and provide added value to our clients who choose to invest in ongoing collaboration."
+        "text": "Yes. The software we build is yours, your code, your data, nothing held hostage. Most clients keep us on for hosting, support and ongoing improvements since we know the system best, but that's a partnership you choose, not a contract that traps you."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I pay for your services?",
+      "name": "Our processes aren't documented yet. Can you still help us?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We accept various payment methods including online payments, bank transfers, and other convenient options. Our invoicing process is straightforward, and we will work with you to establish a payment schedule that suits your preferences."
+        "text": "That's actually where most engagements start. Process mapping is a core part of how we work. We document your workflows and define SOPs with you before writing a single line of code, so the system fits how your business actually runs."
       }
     },
     {
       "@type": "Question",
-      "name": "What happens if I need to make changes to my service package?",
+      "name": "Do you just build the software, or help us roll it out too?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We understand that business needs may evolve over time. If you need to make changes to your service package, simply reach out to us, and we'll discuss the best course of action. Depending on the nature of the changes, there may be adjustments to pricing or timelines."
+        "text": "Deployment and team training are part of every project. A system only creates value once your team is actually using it, so we stay involved through go-live and the weeks after to make sure adoption sticks."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you offer refunds if I'm not satisfied with the results?",
+      "name": "How is pricing structured for a custom software project?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We strive to provide high-quality services to our clients. However, we understand that sometimes a refund may be necessary. Please refer to the Refund Policy to understand about the refund process and the conditions under which refunds may be granted."
+        "text": "Pricing depends on the scope of the system, whether it's a single internal tool or a multi-location platform. We walk you through a clear, itemised estimate during your discovery call, with no hidden costs added later."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I upgrade or downgrade my service package as my needs change?",
+      "name": "Can the system grow with us if we open new branches or franchise?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, you can upgrade or downgrade your service package as needed. We understand that business priorities may shift, and we're here to accommodate changes to your service level. We'll work with you to make the transition smooth and seamless."
+        "text": "Yes, that's exactly what we design for. Our platforms are built with multi-location and franchise growth in mind from day one, so adding a new branch means switching on a new outlet, not rebuilding your operations from scratch."
       }
     },
     {
       "@type": "Question",
-      "name": "How soon can I expect to see results from your services?",
+      "name": "What happens after launch? Do you offer ongoing support?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "While the timeline for seeing results may vary depending on the nature of the project and other factors, we're committed to delivering tangible outcomes in a timely manner. During our initial consultation, we'll discuss realistic expectations and provide insights into typical timelines for achieving results."
+        "text": "Yes. We offer post-launch support and are available to extend or adjust the system as your business evolves. A number of our clients started with a single project and have grown with us into long-term partnerships."
       }
     }
   ]

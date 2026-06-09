@@ -771,9 +771,9 @@ export default function PortfolioPage() {
             <p className="mt-8 max-w-2xl text-lg text-neutral-400 sm:text-xl leading-relaxed">
               We partner with businesses across industries to design and build software platforms, internal systems and high-converting websites engineered to deliver real, measurable results.
             </p>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
-                <button className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white">
+            <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+              <Link href="/contact" className="w-full sm:w-auto">
+                <button className="btn-premium w-full sm:w-auto inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white">
                   Start a project
                   <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -782,7 +782,7 @@ export default function PortfolioPage() {
               </Link>
               <button
                 onClick={() => setScrollToWork(true)}
-                className="btn-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white"
+                className="btn-secondary w-full sm:w-auto inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white"
               >
                 View our work
               </button>

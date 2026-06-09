@@ -29,29 +29,29 @@ const values = [
   [
     {
       ref: "01",
-      name: "Excellence",
+      name: "Operations First",
       description:
-        "Excellence is the cornerstone of our ethos. At our core, we are driven by an unwavering commitment to surpassing expectations. Our relentless pursuit of excellence ensures that every project we undertake is executed with the highest standards of quality, setting new benchmarks and exceeding the aspirations of our clients.",
+        "We don't start with code, we start with how your business actually runs. Before we design or build anything, we map your workflows, document your SOPs, and find where time and money are being lost. That's what makes the systems we build fit your business, instead of forcing your business to fit the software.",
     },
     {
       ref: "02",
-      name: "Innovation",
+      name: "Built to Grow",
       description:
-        "Innovation propels our journey forward. Embracing creativity and cutting-edge technology, we constantly push boundaries to pioneer new solutions. Through experimentation and forward thinking, we challenge the status quo and spark transformative change.",
+        "Every system we ship is engineered with growth in mind. Whether you're handling ten times the volume or opening your next location, our platforms are structured to expand with you, not buckle or need rebuilding when things take off.",
     },
   ],
   [
     {
       ref: "03",
-      name: "Teamwork",
+      name: "Long-Term Partnership",
       description:
-        "Teamwork is the bedrock of our success. United in purpose, we collaborate seamlessly to achieve shared goals. Each team member brings unique strengths, fostering creativity and innovation. Through open communication and mutual support, we overcome challenges and celebrate victories together.",
+        "We don't disappear after launch day. We stay close through deployment, train your team, and remain available as your business evolves. Many of our client relationships started with a single project and have grown into ongoing, long-term collaborations.",
     },
     {
       ref: "04",
-      name: "Respect",
+      name: "Reliability & Ownership",
       description:
-        "Respect is our guiding principle. We honor diverse perspectives, valuing each team member's contributions. By fostering a culture of empathy and understanding, we cultivate a supportive environment where everyone feels heard and valued.",
+        "Businesses run on the systems we build, billing, bookings, inventory, daily operations. We treat that responsibility seriously, engineering for stability and long-term performance rather than just a clean demo on launch day.",
     },
   ],
 ];
@@ -71,7 +71,7 @@ export default function Values() {
               Our Values
             </h2>
             <p className="mt-4 text-neutral-400 max-w-2xl">
-              The principles that guide every decision we make and every solution we build.
+              How we work, and what we won&apos;t compromise on.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">

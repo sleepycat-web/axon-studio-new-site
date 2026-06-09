@@ -9,6 +9,8 @@ import Cta1 from "../components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
 import Registration from "@/components/ui/about/registration";
 import Faq from "@/components/ui/about/faq";
+import Results from "@/components/ui/home/results";
+
 export default function Main() {
   return (
     <div className="bg-neutral-950 relative">
@@ -16,6 +18,7 @@ export default function Main() {
 
       <HeroParallaxDemo />
       <Navbar />
+      <Results />
       <Services />
       <Process />
       <Reviews />

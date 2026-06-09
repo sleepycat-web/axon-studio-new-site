@@ -9,46 +9,45 @@ interface Question {
 const questions: Question[] = [
   {
     id: "faq-1",
-    title: "Are there any hidden costs I should be aware of?",
+    title: "How long does it take to build a custom system for my business?",
     answer:
-      "Transparency is paramount to us. We strive to be upfront about all costs associated with our services. There are no hidden costs, and we'll provide a clear breakdown of pricing before any work begins.",
+      "Most projects take between 4 to 8 weeks from process mapping to deployment, depending on the scope and complexity of the system. After your discovery call, we'll give you a clear timeline based on what your business actually needs, not a generic package.",
   },
   {
     id: "faq-2",
-    title:
-      "Do you offer discounts for long-term contracts or bundled services?",
+    title: "Do I own the software once it's built?",
     answer:
-      "Yes, we offer discounts for clients who commit to long-term partnerships or opt for bundled services. Our goal is to reward loyalty and provide added value to our clients who choose to invest in ongoing collaboration.",
+      "Yes. The software we build is yours, your code, your data, nothing held hostage. Most clients keep us on for hosting, support and ongoing improvements since we know the system best, but that's a partnership you choose, not a contract that traps you.",
   },
   {
     id: "faq-3",
-    title: "How do I pay for your services?",
+    title: "Our processes aren't documented yet. Can you still help us?",
     answer:
-      "We accept various payment methods including online payments, bank transfers, and other convenient options. Our invoicing process is straightforward, and we will work with you to establish a payment schedule that suits your preferences.",
+      "That's actually where most engagements start. Process mapping is a core part of how we work. We document your workflows and define SOPs with you before writing a single line of code, so the system fits how your business actually runs.",
   },
   {
     id: "faq-4",
-    title: "What happens if I need to make changes to my service package?",
+    title: "Do you just build the software, or help us roll it out too?",
     answer:
-      "We understand that business needs may evolve over time. If you need to make changes to your service package, simply reach out to us, and we'll discuss the best course of action. Depending on the nature of the changes, there may be adjustments to pricing or timelines.",
+      "Deployment and team training are part of every project. A system only creates value once your team is actually using it, so we stay involved through go-live and the weeks after to make sure adoption sticks.",
   },
   {
     id: "faq-5",
-    title: "Do you offer refunds if I'm not satisfied with the results?",
+    title: "How is pricing structured for a custom software project?",
     answer:
-      "We strive to provide high-quality services to our clients. However, we understand that sometimes a refund may be necessary. Please refer to the Refund Policy to understand about the refund process and the conditions under which refunds may be granted.",
+      "Pricing depends on the scope of the system, whether it's a single internal tool or a multi-location platform. We walk you through a clear, itemised estimate during your discovery call, with no hidden costs added later.",
   },
   {
     id: "faq-6",
-    title: "Can I upgrade or downgrade my service package as my needs change?",
+    title: "Can the system grow with us if we open new branches or franchise?",
     answer:
-      "Yes, you can upgrade or downgrade your service package as needed. We understand that business priorities may shift, and we're here to accommodate changes to your service level. We'll work with you to make the transition smooth and seamless.",
+      "Yes, that's exactly what we design for. Our platforms are built with multi-location and franchise growth in mind from day one, so adding a new branch means switching on a new outlet, not rebuilding your operations from scratch.",
   },
   {
     id: "faq-7",
-    title: "How soon can I expect to see results from your services?",
+    title: "What happens after launch? Do you offer ongoing support?",
     answer:
-      "While the timeline for seeing results may vary depending on the nature of the project and other factors, we're committed to delivering tangible outcomes in a timely manner. During our initial consultation, we'll discuss realistic expectations and provide insights into typical timelines for achieving results.",
+      "Yes. We offer post-launch support and are available to extend or adjust the system as your business evolves. A number of our clients started with a single project and have grown with us into long-term partnerships.",
   },
 ];
 

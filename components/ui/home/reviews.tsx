@@ -23,7 +23,7 @@ const testimonials = [
       "We were able to draw in the right audience and improve our online visibility thanks to Axon Studio's SEO work. Real results, a well-defined plan and seamless execution.",
   }, {
     name: "Chai Mine",
-    description: "Cafe, Siliguri",
+    description: "Cafe Chain, India",
     image: "/assets/logos/cmlogo.png",
     message:
       "We got connected by fate and good deeds. Amlan has always been in the most understanding position during my journey and helped me in the technicality of my business. Axon Studio❤️",
@@ -47,18 +47,18 @@ const testimonials = [
 
   {
     name: "Shree Shyam Mobile",
-    description: "Mobile Store, Siliguri",
+    description: "Mobile Retail Franchise, India",
     image: "/assets/logos/ssmlogo.jpg",
     message:
       "Axon Studio brings your imagination to light with minimal follow ups, they do a great job and are open to further service and developments with no delay thats the best part.",
   },
-  {
-    name: "Tukuche",
-    description: "Restaurant, Siliguri",
-    image: "/assets/logos/tklogo.png",
-    message:
-      "Table Pro has streamlined our management and SOP. It's very user friendly and has helped our staff deliver exceptional service even during rush hours.",
-  },
+  // {
+  //   name: "Tukuche",
+  //   description: "Restaurant Chain, India",
+  //   image: "/assets/logos/tklogo.png",
+  //   message:
+  //     "Table Pro has streamlined our management and SOP. It's very user friendly and has helped our staff deliver exceptional service even during rush hours.",
+  // },
 ];
 
 const Reviews = () => {
@@ -80,10 +80,10 @@ const Reviews = () => {
               Testimonials
             </span>
             <h2 className="mt-4 mx-auto max-w-3xl text-center text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-              Trusted by <span className="gradient-text-subtle">Industry Leaders</span>
+              What our clients <span className="gradient-text-subtle">actually say</span>
             </h2>
             <p className="mt-4 text-neutral-400 text-lg max-w-2xl mx-auto">
-              See what our clients have to say about working with us.
+              The people we&apos;ve built for, in their own words.
             </p>
           </div>
 
@@ -92,7 +92,7 @@ const Reviews = () => {
             {testimonials.map((testimonial, index) => (
               <figure
                 key={index}
-                className="glass-card glass-card-hover rounded-3xl p-8 flex flex-col gap-6 group"
+                className="glass-card glass-card-hover rounded-3xl p-6 sm:p-8 flex flex-col gap-6 group"
               >
                 {/* Quote */}
                 <blockquote className="text-neutral-300 text-base sm:text-lg leading-relaxed flex-1">
@@ -100,32 +100,30 @@ const Reviews = () => {
                 </blockquote>
 
                 {/* Author */}
-                <figcaption className="flex items-center justify-between pt-4 border-t border-white/5">
-                  <div className="flex items-center gap-4">
-                    <Image
-                      className="rounded-full ring-2 ring-accent-500/20"
-                      src={testimonial.image}
-                      alt={`Company logo for ${testimonial.name} - Axon Studio client (${testimonial.description})`}
-                      width={48}
-                      height={48}
-                    />
-                    <div>
-                      <div className="text-base font-semibold group-hover:text-accent-300 transition-colors">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-sm text-neutral-500">
-                        {testimonial.description}
-                      </div>
+                <figcaption className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-white/5">
+                  <Image
+                    className="rounded-full ring-2 ring-accent-500/20 shrink-0"
+                    src={testimonial.image}
+                    alt={`Company logo for ${testimonial.name} - Axon Studio client (${testimonial.description})`}
+                    width={48}
+                    height={48}
+                  />
+                  <div className="flex-1 min-w-0">
+                    <div className="text-base font-semibold group-hover:text-accent-300 transition-colors">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-neutral-500 mt-0.5 leading-snug">
+                      {testimonial.description}
                     </div>
                   </div>
                   <div
-                    className="flex flex-row gap-1 pl-2"
+                    className="flex flex-row gap-0.5 shrink-0"
                     aria-label="5 out of 5 stars"
                   >
                     {[...Array(5)].map((_, starIndex) => (
                       <svg
                         key={starIndex}
-                        className="h-5 w-5 text-amber-400"
+                        className="h-4 w-4 text-amber-400"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="currentColor"

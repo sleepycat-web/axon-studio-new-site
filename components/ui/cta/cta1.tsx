@@ -14,15 +14,15 @@ export default function Cta1() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-500/10 border border-accent-500/20">
             <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
-            <span className="text-sm text-accent-300 font-medium">Let&apos;s Build Together</span>
+            <span className="text-sm text-accent-300 font-medium">Start the conversation</span>
           </div>
 
           <div className="flex flex-col gap-6">
-            <h2 className="text-white mx-auto max-w-lg text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl leading-tight">
-              Ready to Transform Your Business?
+            <h2 className="text-white mx-auto max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl leading-tight">
+              Got a process that should be software?
             </h2>
             <p className="text-neutral-400 mx-auto max-w-xl text-lg">
-              Start your journey with Axon Studio and build something extraordinary.
+              Tell us how your business runs today. We&apos;ll show you what to build, what to automate, and what it takes to get there.  
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export default function Cta1() {
             </Link>
             <Link href="/portfolio#work">
               <button className="btn-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-medium text-white">
-                View Portfolio
+                View Our Work
               </button>
             </Link>
           </div>

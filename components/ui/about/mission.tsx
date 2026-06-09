@@ -13,14 +13,14 @@ const stats = [
     name: "Projects",
     value: COMPANY_METRICS.projects,
   },
-  {
-    name: "Orders Processed",
-    value: COMPANY_METRICS.ordersProcessed,
-  },
-  {
-    name: "Users",
-    value: COMPANY_METRICS.usersManaged,
-  },
+  // {
+  //   name: "Orders Processed",
+  //   value: COMPANY_METRICS.ordersProcessed,
+  // },
+  // {
+  //   name: "Users",
+  //   value: COMPANY_METRICS.usersManaged,
+  // },
 ];
 
 const Mission: React.FC = () => {
@@ -45,7 +45,7 @@ const Mission: React.FC = () => {
               <br />Digital Infrastructure
             </h1>
             <p className="text-neutral-400 mx-auto max-w-xl text-lg sm:text-xl">
-              Creating  solutions that scale businesses beyond limits.
+              Creating solutions that scale businesses beyond limits.
             </p>
           </div>
         </div>
@@ -80,28 +80,16 @@ const Mission: React.FC = () => {
                 </div>
                 <div className="space-y-6">
                   <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">
-                    Welcome to Axon Studio, where creativity meets innovation to
-                    forge exceptional digital experiences. We are a dynamic team
-                    of forward-thinkers, dedicated to shaping the digital
-                    landscape with our passion for design and technology.
+                    We believe growing businesses shouldn&apos;t be held back by broken systems. Too many teams waste time fighting spreadsheets, manual workflows, and disconnected tools when they should be focused on growth.
                   </p>
                   <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">
-                    We believe in the power of imagination to transform ideas
-                    into reality. With a keen eye for aesthetics and a mastery
-                    of the latest digital tools, we craft immersive experiences
-                    that resonate with audiences on a profound level.
-                  </p>
-                  <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">
-                    Driven by our commitment to excellence we are more than just
-                    a creative agency; we are pioneers of possibility, pushing
-                    the boundaries of what&apos;s conceivable to deliver
-                    unparalleled results for our clients.
+                    Our mission is simple: turn operational chaos into streamlined systems that let businesses scale without friction. We do this by building technology purpose-built for how you actually work, not forcing your team to adapt to generic software.
                   </p>
                 </div>
               </div>
 
               {/* Stats */}
-              <dl className="grid text-white grid-cols-2 gap-4 sm:grid-cols-4">
+              <dl className="grid text-white grid-cols-2 gap-4 sm:grid-cols-2">
                 {stats.map((stat) => (
                   <div
                     key={stat.name}
