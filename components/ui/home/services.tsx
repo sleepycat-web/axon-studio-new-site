@@ -13,17 +13,12 @@ const iconMap: { [key: string]: JSX.Element } = {
   ),
   "02": (
     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
     </svg>
   ),
   "03": (
     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-    </svg>
-  ),
-  "04": (
-    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
     </svg>
   ),
 };
@@ -39,26 +34,20 @@ const services: Service[] = [
     step: "01",
     name: "Custom Software",
     description:
-      "We build the systems that run your business. Software Platforms, Automations & Internal Tools designed around your SOPs, team, and operations.",
+      "We build the systems that run your business. Software platforms and internal tools designed around your SOPs, team, and operations.",
   },
   {
     step: "02",
+    name: "AI Automation Systems",
+    description:
+      "We connect your tools and rebuild manual processes into automated workflows,so your team can focus on what actually grows the business.",
+  },
+  {
+    step: "03",
     name: "Web Platforms",
     description:
-      "High-converting websites and SEO infrastructure built to bring the right clients. Clean, fast and structured to rank so your online presence works as hard as you do.",
+      "High-converting websites and SEO infrastructure that turn your online presence into a measurable growth channel that drives leads."
   },
-  // {
-  //   step: "03",
-  //   name: "TablePro (SaaS)",
-  //   description:
-  //     "Transform your restaurant workflow with an exceptional platform, empowering your business to boost operational efficiency and maximise staff productivity.",
-  // },
-  // {
-  //   step: "04",
-  //   name: "Aurea (SaaS)",
-  //   description:
-  //     "Streamline your salon and wellness center operations with our comprehensive management software, designed to enhance client experiences, optimize scheduling, and drive business growth.",
-  // },
 ];
 
 const Services: React.FC = () => {
@@ -87,7 +76,7 @@ const Services: React.FC = () => {
             </div>
 
             {/* Services grid */}
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 lg:grid-cols-3">
               {services.map((service, index) => (
                 <div
                   key={service.step}

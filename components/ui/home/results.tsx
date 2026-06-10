@@ -55,7 +55,7 @@ const Results = () => {
               <dt className="text-sm sm:text-base text-neutral-400 group-hover:text-neutral-300 transition-colors">
                 {stat.name}
               </dt>
-              <dd className="order-first text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight gradient-text-subtle group-hover:scale-105 transition-transform duration-500">
+              <dd className="order-first text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight gradient-text-subtle group-hover:scale-105 transition-transform duration-500">
                 {stat.value}{stat.suffix}
               </dd>
             </div>
