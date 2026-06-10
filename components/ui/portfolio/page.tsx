@@ -440,7 +440,23 @@ const WebShowcase = () => {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [hasEnteredView, setHasEnteredView] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
+  const stripRef = useRef<HTMLDivElement>(null);
+
+  const updateScrollState = () => {
+    const el = stripRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  };
+
+  const scrollStrip = (dir: "left" | "right") => {
+    const el = stripRef.current;
+    if (!el) return;
+    el.scrollBy({ left: dir === "left" ? -160 : 160, behavior: "smooth" });
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -563,20 +579,52 @@ const WebShowcase = () => {
         </div>
       </div>
 
-      {/* Thumbnail strip */}
-      <div className="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-        {showcaseItems.map((item, idx) => (
+      {/* Thumbnail strip with edge arrows */}
+      <div className="mt-4 relative">
+        {/* Left arrow — only when scrolled right */}
+        {canScrollLeft && (
           <button
-            key={item.src}
-            onClick={() => goTo(idx)}
-            className={`relative shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${idx === current
-              ? "border-accent-400 ring-2 ring-accent-400/30 scale-105"
-              : "border-white/10 hover:border-white/30 opacity-60 hover:opacity-100"
-              }`}
+            onClick={() => scrollStrip("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-neutral-900/90 text-white hover:bg-neutral-800 border border-white/10 transition-all"
+            aria-label="Scroll thumbnails left"
           >
-            <Image src={item.src} alt={`Thumbnail navigation for ${item.title} project`} fill className="object-cover object-top" />
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
           </button>
-        ))}
+        )}
+
+        <div
+          ref={stripRef}
+          onScroll={updateScrollState}
+          className="flex gap-2 overflow-x-auto overflow-y-visible py-2 scrollbar-hide"
+        >
+          {showcaseItems.map((item, idx) => (
+            <button
+              key={item.src}
+              onClick={() => goTo(idx)}
+              className={`relative shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${idx === current
+                ? "border-accent-400 ring-2 ring-accent-400/30 scale-105"
+                : "border-white/10 hover:border-white/30 opacity-60 hover:opacity-100"
+                }`}
+            >
+              <Image src={item.src} alt={`Thumbnail navigation for ${item.title} project`} fill className="object-cover object-top" />
+            </button>
+          ))}
+        </div>
+
+        {/* Right arrow — only when more content to the right */}
+        {canScrollRight && (
+          <button
+            onClick={() => scrollStrip("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-1.5 rounded-full bg-neutral-900/90 text-white hover:bg-neutral-800 border border-white/10 transition-all"
+            aria-label="Scroll thumbnails right"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        )}
       </div>
     </div>
   );

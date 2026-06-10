@@ -1,9 +1,9 @@
 "use client";
 import Navbar from "@/components/ui/layout/header";
 import Footer from "@/components/ui/layout/footer";
-import { useState, FormEvent } from "react";
+import { useState } from "react";
 import React, { useEffect } from "react";
-import { MapPin, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { BackgroundComets } from "@/components/ui/aceternity/background-comets";
 
 const ContactPage: React.FC = () => {
@@ -17,15 +17,6 @@ const ContactPage: React.FC = () => {
       script.src = "https://assets.calendly.com/assets/external/widget.js";
       script.async = true;
       document.body.appendChild(script);
-
-      script.onload = () => {
-        if (window.Calendly) {
-          window.Calendly.initPopupWidget({
-            url: "https://calendly.com/axon-studio/meet?hide_gdpr_banner=1",
-          });
-          setIsWidgetOpen(true);
-        }
-      };
     }
 
     const handleMessage = (e: MessageEvent) => {
@@ -128,24 +119,6 @@ const ContactPage: React.FC = () => {
             </div>
 
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Address */}
-              <div className="glass-card glass-card-hover rounded-3xl px-6 py-8 w-full">
-                <dd className="flex flex-col lg:flex-row lg:items-center items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-accent-400" />
-                  </div>
-                  <div className="text-base font-medium">
-                    <div className="flex flex-col">
-                      <span className="text-sm text-neutral-500 mb-1">Our Location</span>
-                      <span className="text-base">Sevoke Road,</span>
-                      <span className="text-base text-neutral-300">
-                        Siliguri - 734001
-                      </span>
-                    </div>
-                  </div>
-                </dd>
-              </div>
-
               {/* Email */}
               <div className="glass-card glass-card-hover rounded-3xl px-6 py-8 w-full">
                 <dd className="flex flex-col lg:flex-row lg:items-center items-start gap-4">
@@ -159,6 +132,28 @@ const ContactPage: React.FC = () => {
                       className="text-base hover:text-accent-400 transition-colors"
                     >
                       info@axonstudio.in
+                    </a>
+                  </div>
+                </dd>
+              </div>
+
+              {/* LinkedIn */}
+              <div className="glass-card glass-card-hover rounded-3xl px-6 py-8 w-full">
+                <dd className="flex flex-col lg:flex-row lg:items-center items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center">
+                    <svg className="h-5 w-5 text-accent-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </div>
+                  <div className="text-base font-medium">
+                    <span className="text-sm text-neutral-500 block mb-1">Connect on LinkedIn</span>
+                    <a
+                      href="https://www.linkedin.com/company/the-axon-studio/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base hover:text-accent-400 transition-colors"
+                    >
+                      Axon Studio
                     </a>
                   </div>
                 </dd>

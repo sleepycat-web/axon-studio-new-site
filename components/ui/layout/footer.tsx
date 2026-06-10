@@ -110,9 +110,9 @@ const Footer: React.FC = () => {
                 alt="Axon Studio white logo - Software Engineering Firm"
               />
               <p className="text-neutral-400 text-base leading-relaxed">
-                Axon Studio builds custom software, automation and webs platforms for businesses ready to outgrow manual work.
+                Axon Studio builds custom software, automation and web platforms for businesses ready to outgrow manual work.
               </p>
-              <p className="text-neutral-600 text-sm">© 2024 Axon Studio. All rights reserved.</p>
+              <p className="text-neutral-600 text-sm">© {new Date().getFullYear()} Axon Studio. All rights reserved.</p>
             </div>
 
             <div className="text-center block lg:hidden">
