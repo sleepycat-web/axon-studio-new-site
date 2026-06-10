@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Registration from "./registration";
 import { COMPANY_METRICS } from "@/constants/metrics";
 
 const stats = [
@@ -32,13 +31,8 @@ const Mission: React.FC = () => {
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] orb-gradient orb-primary opacity-40"></div>
         <div className="absolute top-0 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30"></div>
 
-        <div className="mx-auto mt-12 max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8 relative">
+        <div className="mx-auto mt-20 max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8 relative">
           <div className="flex flex-col gap-6">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mx-auto">
-              <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
-              <span className="text-sm text-neutral-300 font-medium">About Axon Studio</span>
-            </div>
 
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
               Building <span className="gradient-text-subtle">Tomorrow&apos;s</span>
@@ -106,7 +100,6 @@ const Mission: React.FC = () => {
           </div>
         </div>
       </section>
-      <Registration />
     </section>
   );
 };

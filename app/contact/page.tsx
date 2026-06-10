@@ -91,11 +91,7 @@ const ContactPage: React.FC = () => {
         <section className="text-white pt-24 pb-16 sm:pt-28 sm:pb-20 relative min-h-[calc(100vh-80px)]">
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 w-full">
             {/* Header */}
-            <div className="text-center mb-12 mt-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
-                <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
-                <span className="text-sm text-neutral-300 font-medium">Get in Touch</span>
-              </div>
+            <div className="text-center mb-12 mt-20">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
                 Let&apos;s <span className="gradient-text-subtle">Connect</span>
               </h1>

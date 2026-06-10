@@ -756,13 +756,7 @@ export default function PortfolioPage() {
         <div className="absolute top-20 -right-40 w-[400px] h-[400px] orb-gradient orb-secondary opacity-30 pointer-events-none"></div>
 
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative z-20">
-          <div className="flex flex-col items-center text-center mt-6">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
-              <span className="text-sm text-neutral-300 font-medium">Our Work</span>
-            </div>
-
+          <div className="flex flex-col items-center text-center mt-12">
             <h1 className="max-w-6xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
               Software that runs businesses.
               <br />
