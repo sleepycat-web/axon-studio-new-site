@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Axon Studio | Software, Automation & Web Platforms",
+  title: "About Axon Studio | Our Story & Approach",
   description:
-    "Meet Axon Studio. We build custom software, automation and websites for businesses ready to outgrow manual work. 29+ projects delivered worldwide.",
+    "Learn how Axon Studio works, what drives us, and the thinking behind the systems we build for businesses worldwide.",
   alternates: {
     canonical: "https://axonstudio.in/about",
   },

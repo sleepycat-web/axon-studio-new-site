@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Axon Studio | Custom Software Solutions for Businesses",
   description:
-    "Axon Studio builds custom software, automation and high-converting websites that help growing businesses standardise operations and scale.",
+    "Axon Studio builds software platforms, automation and high-converting websites that help growing businesses standardise operations and scale.",
   authors: [{ name: "Axon Studio", url: "https://axonstudio.in/" }],
   alternates: {
     canonical: "https://axonstudio.in/",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Axon Studio | Custom Software Solutions for Businesses",
     description:
-      "Axon Studio builds custom software, automation and high-converting websites that help growing businesses standardise operations and scale.",
+      "Software platforms, automation and high-converting websites that help growing businesses scale.",
     url: "https://axonstudio.in/",
     siteName: "Axon Studio",
     images: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     creator: "@WebAxon",
     title: "Axon Studio | Custom Software Solutions for Businesses",
     description:
-      "Axon Studio builds custom software, automation and high-converting websites that help growing businesses standardise operations and scale.",
+      "Software platforms, automation and high-converting websites that help growing businesses scale.",
     images: ["https://axonstudio.in/assets/screenshots/ogi.jpg"],
   },
 };
