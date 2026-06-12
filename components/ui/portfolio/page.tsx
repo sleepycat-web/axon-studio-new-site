@@ -90,7 +90,7 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
         }
         return filename.replace(".pdf", "").replace("-", " ");
       }
-      if (filename.includes("admin-panel-ss")) return "Admin Panel";
+      if (filename.includes("admin-panel-ss")) return "Admin Console";
       if (filename.includes("booking-page-ss")) return "Booking Page";
       if (filename.includes("pos-page-ss")) return "POS Terminal";
       if (filename.includes("order-panel-ss")) return "Kitchen Display System (KDS)";
