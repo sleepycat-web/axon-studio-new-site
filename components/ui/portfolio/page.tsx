@@ -654,6 +654,25 @@ const projects = [
     ]
   },
   {
+    title: "Diagnostic Centre Booking & Home Sample Collection App",
+    industry: "Healthcare & Diagnostics",
+    tag: "Healthcare Operations Platform",
+    mobileTag: "Healthcare Operations Platform",
+    description:
+      "Online booking and payment system built for diagnostic centres to manage lab test scheduling, home sample collection logistics, digital reports, and staff coordination through a unified platform.",
+    results: [
+      "Secure online test booking with integrated payment processing",
+      "Field staff dashboard for viewing assigned home collections and updating status in real time",
+      "Central lab panel to coordinate technicians, routes, and report delivery",
+    ],
+    images: [
+      "/assets/saas/lab/staff.png",
+      "/assets/saas/lab/records.png",
+      "/assets/saas/lab/user.png",
+      "/assets/saas/lab/directory.png"
+    ]
+  },
+  {
     title: "Salon Chain Appointment & Workforce Management Platform",
     industry: "Salon & Wellness",
     tag: "Franchise Operations System",
@@ -704,25 +723,7 @@ const projects = [
   //   ],
   //   images: ["placeholder-1", "placeholder-2"]
   // },
-  {
-    title: "Diagnostic Centre Booking & Home Sample Collection App",
-    industry: "Healthcare & Diagnostics",
-    tag: "Healthcare Operations Platform",
-    mobileTag: "Healthcare Operations Platform",
-    description:
-      "Online booking and payment system built for diagnostic centres to manage lab test scheduling, home sample collection logistics, digital reports, and staff coordination through a unified platform.",
-    results: [
-      "Secure online test booking with integrated payment processing",
-      "Field staff dashboard for viewing assigned home collections and updating status in real time",
-      "Central lab panel to coordinate technicians, routes, and report delivery",
-    ],
-    images: [
-      "/assets/saas/lab/staff.png",
-      "/assets/saas/lab/records.png",
-      "/assets/saas/lab/user.png",
-      "/assets/saas/lab/directory.png"
-    ]
-  },
+
 ];
 
 const capabilities = [
