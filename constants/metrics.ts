@@ -1,10 +1,10 @@
 export const COMPANY_METRICS = {
   years: "2",
-  projects: "29+",
-  projectsNumeric: 29,
-  ordersProcessed: "30K",
-  reservationsProcessed:"9.5K",
-  usersManaged: "8.8K+",
-  industriesServed: "7+",
-  clientsWorldwide: "10+",
+  projects: "31+",
+  projectsNumeric: 31,
+  ordersProcessed: "32.5K",
+  reservationsProcessed: "13.3K",
+  usersManaged: "9.4K+",
+  industriesServed: "8+",
+  clientsWorldwide: "11+",
 };

@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY_METRICS } from "@/constants/metrics";
 import Process from "@/components/ui/home/process";
+import HospitalityCaseStudy from "@/components/ui/portfolio/hospitality-case-study";
 
 import { BackgroundBeamsWithCollision } from "@/components/ui/aceternity/background-beams";
 
@@ -363,10 +364,10 @@ const showcaseItems = [
     category: "Website"
   },
   {
-    title: "Vista Haven",
-    src: "/assets/screenshots/vhss.png",
-    isFiveFour: true,
-    category: "Resort & Hotel Booking System"
+    title: "Blackmont Academy",
+    src: "/assets/screenshots/blackmontss.png",
+    isFiveFour: false,
+    category: "Website"
   },
   {
     title: "Clayo AI",
@@ -405,10 +406,10 @@ const showcaseItems = [
     category: "AI Document & Workflow Automation Platform"
   },
   {
-    title: "Invoker Labs",
-    src: "/assets/screenshots/invoker.png",
+    title: "Astita Media",
+    src: "/assets/screenshots/astitass.png",
     isFiveFour: false,
-    category: "Developer Tool"
+    category: "Content Agency"
   },
   {
     title: "Inversiones Ibéricas",
@@ -417,10 +418,10 @@ const showcaseItems = [
     category: "Finance Firm"
   },
   {
-    title: "Moonbeam",
-    src: "/assets/screenshots/moonbeam.png",
+    title: "3 Hour Creator",
+    src: "/assets/screenshots/3hcreatorss.png",
     isFiveFour: false,
-    category: "SaaS Platform"
+    category: "Creative Studio"
   },
   {
     title: "SmartBridge",
@@ -428,13 +429,8 @@ const showcaseItems = [
     isFiveFour: false,
     category: "IoT Control Panel"
   },
-  {
-    title: "Alter",
-    src: "/assets/screenshots/alss.png",
-    isFiveFour: false,
-    category: "Digital Agency"
-  }
 ];
+
 
 const WebShowcase = () => {
   const [current, setCurrent] = useState(0);
@@ -638,6 +634,7 @@ const projects = [
     mobileTag: "Restaurant Operations Infrastructure",
     description:
       "Centralized POS and operations system built for restaurant franchises to manage billing, table flow, kitchen coordination, self-ordering, and performance tracking across multiple outlets.",
+
 
     results: [
       "Unified billing and kitchen operations across outlets",
@@ -964,6 +961,7 @@ export default function PortfolioPage() {
                     </li>
                   ))}
                 </ul>
+
               </article>
             ))}
           </div>
@@ -1011,6 +1009,9 @@ export default function PortfolioPage() {
           <WebShowcase />
         </div>
       </section>
+
+      {/* ── Case Study ── */}
+      <HospitalityCaseStudy />
 
       <Process />
 

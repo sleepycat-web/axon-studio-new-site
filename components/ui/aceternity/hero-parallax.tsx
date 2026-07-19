@@ -197,10 +197,10 @@ export const products = [
       "/assets/saas/restaurant/admin-panel-ss.png",
   },
   {
-    title: "Invoker Labs",
+    title: "Blackmont Academy",
     link: "",
     thumbnail:
-      "/assets/screenshots/invoker.png",
+      "/assets/screenshots/blackmont.png",
   },
 
   {
@@ -217,16 +217,14 @@ export const products = [
       "/assets/screenshots/tpss.png",
   },
   {
-    title: "Editrix AI",
+    title: "Andromeda",
     link: "",
-    thumbnail:
-      "/assets/screenshots/editrix.png",
-  }, {
-    title: "Vista Haven",
+    thumbnail: "/assets/screenshots/andromeda.jpg",
+  },
+  {
+    title: "Astita Media",
     link: "",
-    thumbnail:
-
-      "/assets/screenshots/vhss.png",
+    thumbnail: "/assets/screenshots/astita.png",
   },
   {
     title: "Clayo AI",
@@ -234,9 +232,9 @@ export const products = [
     thumbnail: "/assets/screenshots/clss.png",
   },
   {
-    title: "Andromeda",
+    title: "3 Hour Creator",
     link: "",
-    thumbnail: "/assets/screenshots/andromeda.jpg",
+    thumbnail: "/assets/screenshots/3hc.png",
   },
 
   {
