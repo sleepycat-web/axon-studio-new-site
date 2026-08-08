@@ -5,7 +5,7 @@ export const COMPANY_METRICS = {
   ordersProcessed: "32.5K",
   reservationsProcessed: "13.3K",
   usersManaged: "9.4K+",
-  industriesServed: "8+",
-  clientsWorldwide: "11+",
+  industriesServed: "8",
+  clientsWorldwide: "11",
   countriesServed: "10",
 };
