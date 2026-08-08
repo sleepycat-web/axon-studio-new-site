@@ -140,7 +140,7 @@ export const consultingSlides: CaseStudySlide[] = [
         </h3>
         <div className="mt-8 sm:mt-6 grid gap-4 sm:gap-3 sm:grid-cols-3">
           {[
-            { l: "Type", v: "Multi-branch consulting firm" },
+            { l: "Type", v: "Global consulting firm" },
             { l: "Stage", v: "20 branches live, 9 countries" },
             { l: "Model", v: "Centralized branch operations" },
           ].map((c) => (
