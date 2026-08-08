@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY_METRICS } from "@/constants/metrics";
 import Process from "@/components/ui/home/process";
-import HospitalityCaseStudy from "@/components/ui/portfolio/hospitality-case-study";
+import CaseStudiesSection from "@/components/ui/portfolio/case-studies-section";
 
 import { BackgroundBeamsWithCollision } from "@/components/ui/aceternity/background-beams";
 
@@ -836,7 +836,7 @@ export default function PortfolioPage() {
                 key={stat.label}
                 className="glass-card glass-card-hover rounded-2xl p-6 text-center"
               >
-                <p className="text-3xl font-semibold tracking-tight gradient-text-subtle sm:text-4xl">
+                <p className="text-4xl font-semibold tracking-tight gradient-text-subtle">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
@@ -1011,7 +1011,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* ── Case Study ── */}
-      <HospitalityCaseStudy />
+      <CaseStudiesSection />
 
       <Process />
 

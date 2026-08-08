@@ -9,6 +9,7 @@ import Cta1 from "../components/ui/cta/cta1";
 import Reviews from "@/components/ui/home/reviews";
 import Faq from "@/components/ui/about/faq";
 import Results from "@/components/ui/home/results";
+import CaseStudiesSection from "@/components/ui/portfolio/case-studies-section";
 
 export default function Main() {
   return (
@@ -20,6 +21,7 @@ export default function Main() {
       <Results />
       <Services />
       <Process />
+      <CaseStudiesSection />
       <Reviews />
       <Faq />
       <Cta1 />

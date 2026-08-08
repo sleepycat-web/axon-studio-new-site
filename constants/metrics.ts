@@ -7,4 +7,5 @@ export const COMPANY_METRICS = {
   usersManaged: "9.4K+",
   industriesServed: "8+",
   clientsWorldwide: "11+",
+  countriesServed: "10",
 };

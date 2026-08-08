@@ -1,10 +1,11 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { COMPANY_METRICS } from "@/constants/metrics";
+import type { CaseStudySlide } from "@/components/ui/portfolio/case-study-deck";
 
 /* ── Lightbox for case-study screenshots ── */
 const CaseStudyLightbox = ({
@@ -158,7 +159,7 @@ const SlideKicker = ({ children }: { children: React.ReactNode }) => (
   </span>
 );
 
-const slides = [
+export const hospitalitySlides: CaseStudySlide[] = [
   {
     key: "intro",
     content: (
@@ -328,7 +329,7 @@ const slides = [
         <div className="mt-8 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
             { v: "2 → 4", l: "New outlets launched in 9 months" },
-            { v: "2x", l: "Monthly revenue doubled (April → January)" },
+            { v: "2x", l: "Monthly revenue doubled (April 2025 → January 2026)" },
           ].map((s) => (
             <div
               key={s.l}
@@ -371,156 +372,5 @@ const slides = [
       </div>
     ),
   },
-  {
-    key: "testimonial",
-    content: (
-      <div className="flex flex-col items-center justify-center text-center h-full w-full max-w-2xl mx-auto">
-        <SlideKicker>Client Testimonial</SlideKicker>
-
-        {/* Large decorative quote mark */}
-        <svg className="mt-6 w-10 h-10 sm:w-12 sm:h-12 text-accent-400/40" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C9.591 11.69 11 13.166 11 15c0 1.933-1.567 3.5-3.5 3.5-1.172 0-2.177-.502-2.917-1.179zM15.583 17.321C14.553 16.227 14 15 14 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311C20.591 11.69 22 13.166 22 15c0 1.933-1.567 3.5-3.5 3.5-1.172 0-2.177-.502-2.917-1.179z" />
-        </svg>
-
-        <blockquote className="mt-5 text-lg sm:text-xl lg:text-2xl font-medium leading-relaxed text-neutral-200 italic">
-          &ldquo;We got connected by fate and good deeds. Amlan has always been in the most understanding position during my journey and helped me in the technicality of my business. Axon Studio❤️&rdquo;
-        </blockquote>
-
-
-      </div>
-    ),
-  },
 ];
 
-const swipeThreshold = 60;
-
-export default function HospitalityCaseStudy() {
-  const [[index, direction], setSlide] = useState<[number, number]>([0, 0]);
-
-  const paginate = useCallback((dir: number) => {
-    setSlide(([i]) => {
-      const next = i + dir;
-      if (next < 0 || next >= slides.length) return [i, dir];
-      return [next, dir];
-    });
-  }, []);
-
-  return (
-    <section id="case-study" className="relative py-24 sm:py-24 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 section-divider"></div>
-
-      {/* Background orbs */}
-      <div className="absolute top-1/4 -left-40 w-96 h-96 orb-gradient orb-primary opacity-20"></div>
-      <div className="absolute bottom-1/4 -right-40 w-80 h-80 orb-gradient orb-secondary opacity-20"></div>
-
-      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
-        <div className="flex flex-col gap-4">
-          <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
-            Case Study
-          </span>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-            Inside a Real Client Transformation
-          </h2>
-          <p className="max-w-2xl text-base text-neutral-400 sm:text-lg">
-            Swipe through how a multi-outlet cafe chain went from manual operations to
-            a fully systemised platform, and doubled revenue along the way.
-          </p>
-        </div>
-
-        {/* Slide deck */}
-        <div
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "ArrowRight") {
-              e.preventDefault();
-              paginate(1);
-            } else if (e.key === "ArrowLeft") {
-              e.preventDefault();
-              paginate(-1);
-            }
-          }}
-          aria-label="Case study slides. Use left and right arrow keys to navigate."
-          className="mt-12 sm:mt-8 relative rounded-3xl overflow-hidden glass-card focus:outline-none focus:ring-[1px] focus:ring-accent-400"
-        >
-          <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
-
-          {/* Progress segments */}
-          <div className="relative z-20 flex gap-1.5 px-4 sm:px-8 pt-5">
-            {slides.map((s, i) => (
-              <button
-                key={s.key}
-                onClick={() => setSlide([i, i > index ? 1 : -1])}
-                aria-label={`Go to slide ${i + 1}`}
-                className="flex-1 h-1 rounded-full overflow-hidden bg-white/10"
-              >
-                <div
-                  className={`h-full rounded-full transition-all duration-300 ${
-                    i <= index ? "bg-accent-400 w-full" : "w-0"
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-
-          {/* Slide area */}
-          <div className="relative z-10 h-[560px] sm:h-[500px] overflow-hidden">
-            <AnimatePresence initial={false} custom={direction} mode="popLayout">
-              <motion.div
-                key={slides[index].key}
-                custom={direction}
-                variants={{
-                  enter: (dir: number) => ({ x: dir >= 0 ? 80 : -80, opacity: 0 }),
-                  center: { x: 0, opacity: 1 },
-                  exit: (dir: number) => ({ x: dir >= 0 ? -80 : 80, opacity: 0 }),
-                }}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
-                onDragEnd={(_, info) => {
-                  if (info.offset.x < -swipeThreshold) paginate(1);
-                  else if (info.offset.x > swipeThreshold) paginate(-1);
-                }}
-                className="absolute inset-0 overflow-y-auto px-5 sm:px-10 py-6 sm:py-4 cursor-grab active:cursor-grabbing"
-              >
-                <div className="min-h-full flex flex-col justify-center">
-                  {slides[index].content}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Bottom nav */}
-          <div className="relative z-20 flex items-center justify-between px-4 sm:px-8 pb-5">
-            <button
-              onClick={() => paginate(-1)}
-              disabled={index === 0}
-              className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors disabled:opacity-30 disabled:pointer-events-none"
-              aria-label="Previous slide"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <span className="text-xs text-neutral-600">
-              {index + 1} / {slides.length}
-            </span>
-            <button
-              onClick={() => paginate(1)}
-              disabled={index === slides.length - 1}
-              className="p-2.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white transition-colors disabled:opacity-30 disabled:pointer-events-none"
-              aria-label="Next slide"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
