@@ -117,7 +117,7 @@ export const Header = () => {
         <span className="text-sm text-neutral-300 font-medium">Custom Business Systems</span>
       </div>
 
-      <h1 className="text-4xl text-white font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1] pointer-events-auto">
+      <h1 className="text-4xl text-white font-normal tracking-tight sm:text-5xl lg:text-7xl leading-[1.1] pointer-events-auto">
         Engineering the Technology
         <br />
         <span className="gradient-text-subtle">That Powers Your Growth.</span>

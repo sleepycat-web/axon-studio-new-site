@@ -31,7 +31,7 @@ module.exports = {
         "gradient-subtle": "linear-gradient(135deg, #818cf8 0%, #c084fc 100%)",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["var(--font-geist-sans)"],
       },
       colors: {
         primat: "rgba(231, 229, 228, 0.75)",

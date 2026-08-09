@@ -33,7 +33,7 @@ const Results = () => {
           <span className="text-sm font-medium uppercase tracking-widest text-accent-400 mb-4 block">
             Impact & Results
           </span>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
             Software built for <span className="gradient-text-subtle">Scale</span>
           </h2>
           <p className="mt-4 text-neutral-400 text-lg">

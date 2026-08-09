@@ -21,7 +21,7 @@ const Registration = () => {
               <span className="text-sm text-neutral-300 font-medium">Government Verified</span>
             </div>
 
-            <h2 className="text-white text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="text-white text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
               Officially <span className="gradient-text-subtle">Registered</span>
             </h2>
             <p className="text-neutral-400 max-w-2xl text-base sm:text-lg leading-relaxed">

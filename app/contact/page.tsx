@@ -83,7 +83,7 @@ const ContactPage: React.FC = () => {
           <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 w-full">
             {/* Header */}
             <div className="text-center mb-12 mt-20">
-              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
+              <h1 className="text-4xl font-normal tracking-tight sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
                 Let&apos;s <span className="gradient-text-subtle">Connect</span>
               </h1>
               <p className="text-neutral-400 mx-auto max-w-xl text-lg">
@@ -97,7 +97,7 @@ const ContactPage: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 gradient-text-subtle text-center">
+                    <h3 className="text-xl font-normal mb-2 gradient-text-subtle text-center">
                       Thank you for scheduling a call!
                     </h3>
                     <p className="text-center text-sm text-neutral-400">

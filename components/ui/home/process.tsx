@@ -34,7 +34,7 @@ export default function Process() {
           <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
             How We Work
           </span>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
             Our Process
           </h2>
         </div>
@@ -52,7 +52,7 @@ export default function Process() {
               <span className="text-2xl font-bold gradient-text-subtle">
                 {s.step}
               </span>
-              <h3 className="mt-4 text-lg font-semibold group-hover:text-accent-300 transition-colors">{s.title}</h3>
+              <h3 className="mt-4 text-lg font-normal group-hover:text-accent-300 transition-colors">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-400    ">
                 {s.text}
               </p>

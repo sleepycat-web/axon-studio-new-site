@@ -67,7 +67,7 @@ export default function Values() {
             <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               What We Stand For
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl mt-4">
+            <h2 className="text-3xl font-normal tracking-tight sm:text-4xl mt-4">
               Our Values
             </h2>
             <p className="mt-4 text-neutral-400 max-w-2xl">
@@ -92,7 +92,7 @@ export default function Values() {
                       <span className="text-sm font-medium text-neutral-500">{value.ref}</span>
                     </div>
                     <div className="flex flex-col gap-3">
-                      <h3 className="text-xl font-semibold group-hover:text-accent-300 transition-colors">{value.name}</h3>
+                      <h3 className="text-xl font-normal group-hover:text-accent-300 transition-colors">{value.name}</h3>
                       <p className="text-neutral-400 text-base leading-relaxed">
                         {value.description}
                       </p>

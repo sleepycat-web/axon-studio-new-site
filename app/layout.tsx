@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Script from "next/script";
-
-const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Axon Studio | Custom Software Solutions for Businesses",
   description:
@@ -247,7 +245,7 @@ export default function RootLayout({
   ]
 }`}
       </Script>
-      <body className={inter.className}>
+      <body className={`${GeistSans.variable} font-sans`}>
         {/* global grid texture - sits behind all content */}
         <div className="fixed inset-0 grid-pattern opacity-30 pointer-events-none -z-m10" />
         {children}

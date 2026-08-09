@@ -38,7 +38,7 @@ export default function CaseStudiesSection() {
           <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
             Case Studies
           </span>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
             Real Client Transformations
           </h2>
         </div>

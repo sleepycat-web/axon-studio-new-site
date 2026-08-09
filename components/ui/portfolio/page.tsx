@@ -343,7 +343,7 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
                   className="absolute bottom-6 left-0 right-0 flex flex-col items-center pointer-events-none z-10"
                 >
                   <div className="bg-neutral-100 border border-white/10 px-6 py-3 rounded-2xl text-center shadow-2xl">
-                    <h4 className="text-neutral-900 font-semibold text-base sm:text-lg">{getPlaceholderTitle()}</h4>
+                    <h4 className="text-neutral-900 font-normal text-base sm:text-lg">{getPlaceholderTitle()}</h4>
                   </div>
                 </motion.div>
               )}
@@ -546,7 +546,7 @@ const WebShowcase = () => {
               {/* Title overlay - positioned bottom-left */}
               <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 z-10 pointer-events-none">
                 <div className="max-w-xl">
-                  <h3 className="text-base sm:text-2xl lg:text-3xl font-semibold text-white tracking-tight">
+                  <h3 className="text-base sm:text-2xl lg:text-3xl font-normal text-white tracking-tight">
                     {item.title}
                   </h3>
                 </div>
@@ -803,7 +803,7 @@ export default function PortfolioPage() {
 
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative z-20">
           <div className="flex flex-col items-center text-center mt-12">
-            <h1 className="max-w-6xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
+            <h1 className="max-w-6xl text-4xl font-normal tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
               Software that runs businesses.
               <br />
               <span className="gradient-text-subtle">Websites that grow them.</span>
@@ -855,7 +855,7 @@ export default function PortfolioPage() {
             <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               What We Do
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
               Our Capabilities
             </h2>
             <p className="max-w-2xl text-base text-neutral-400 sm:text-lg">
@@ -872,7 +872,7 @@ export default function PortfolioPage() {
                 <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors">
                   <span className="text-accent-400 font-semibold">{String(index + 1).padStart(2, '0')}</span>
                 </div>
-                <h3 className="text-xl font-semibold group-hover:text-accent-300 transition-colors">{cap.title}</h3>
+                <h3 className="text-xl font-normal group-hover:text-accent-300 transition-colors">{cap.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-400">
                   {cap.description}
                 </p>
@@ -907,7 +907,7 @@ export default function PortfolioPage() {
             <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               Portfolio
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
               Featured Projects
             </h2>
             <p className="max-w-2xl text-base text-neutral-400 sm:text-lg">
@@ -932,7 +932,7 @@ export default function PortfolioPage() {
                       {project.industry}
                     </span>
                   </div>
-                  <h3 className="mt-6 text-xl font-semibold group-hover:text-accent-300 transition-colors sm:text-2xl">{project.title}</h3>
+                  <h3 className="mt-6 text-xl font-normal group-hover:text-accent-300 transition-colors sm:text-2xl">{project.title}</h3>
                   <p className="mt-4 text-base leading-relaxed text-neutral-400">
                     {project.description}
                   </p>
@@ -981,7 +981,7 @@ export default function PortfolioPage() {
             <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               Web Development & SEO
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
               High-Converting Business Websites & Lead Systems
             </h2>
             <p className="max-w-3xl text-base text-neutral-400 sm:text-lg">

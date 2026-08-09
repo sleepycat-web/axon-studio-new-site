@@ -67,7 +67,7 @@ const Services: React.FC = () => {
               <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
                 What We Offer
               </span>
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              <h2 className="text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
                 Our Services
               </h2>
               <p className="max-w-5xl text-neutral-400 text-lg">
@@ -89,7 +89,7 @@ const Services: React.FC = () => {
                     <span className="text-sm font-medium text-neutral-500">{service.step}</span>
                   </div>
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-xl font-semibold group-hover:text-accent-300 transition-colors">{service.name}</h3>
+                    <h3 className="text-xl font-normal group-hover:text-accent-300 transition-colors">{service.name}</h3>
                     <p className="text-neutral-400 text-base leading-relaxed">
                       {service.description}
                     </p>
@@ -119,7 +119,7 @@ const Services: React.FC = () => {
               <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
                 Who We Are
               </span>
-              <h2 className="text-white text-3xl font-semibold tracking-tight sm:text-4xl mt-4">
+              <h2 className="text-white text-3xl font-normal tracking-tight sm:text-4xl mt-4">
                 About Axon Studio
               </h2>
             </div>

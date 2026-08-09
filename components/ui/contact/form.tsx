@@ -160,7 +160,7 @@ const ContactForm = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-normal mb-4">
                 Thank you for reaching out!
               </h3>
               <p className="text-center text-lg text-primary-200/70">

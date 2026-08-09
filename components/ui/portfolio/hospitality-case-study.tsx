@@ -90,7 +90,7 @@ const CaseStudyLightbox = ({
       {/* Caption */}
       <div className="absolute bottom-6 left-0 right-0 flex justify-center pointer-events-none z-10">
         <div className="bg-neutral-100 border border-white/10 px-6 py-3 rounded-2xl text-center shadow-2xl">
-          <h4 className="text-neutral-900 font-semibold text-base sm:text-lg">{images[idx].label}</h4>
+          <h4 className="text-neutral-900 font-normal text-base sm:text-lg">{images[idx].label}</h4>
         </div>
       </div>
     </motion.div>,
@@ -165,7 +165,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col items-center justify-center text-center h-full">
         <SlideKicker>Hospitality</SlideKicker>
-        <h3 className="mt-5 sm:mt-4 max-w-2xl text-2xl sm:text-4xl font-semibold tracking-tight leading-[1.15]">
+        <h3 className="mt-5 sm:mt-4 max-w-2xl text-2xl sm:text-4xl font-normal tracking-tight leading-[1.15]">
           How we helped our client
           <br />
          manage  <span className="gradient-text-subtle">13K+</span> bookings
@@ -196,7 +196,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>01 / Context</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Business overview
         </h3>
         <div className="mt-8 sm:mt-6 grid gap-4 sm:gap-3 sm:grid-cols-3">
@@ -221,7 +221,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>02 / Operational Gaps</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           What was holding them back
         </h3>
         <p className="mt-3 text-base font-semibold text-accent-300">
@@ -250,7 +250,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>03 / The System</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Core components
         </h3>
         <ul className="mt-8 sm:mt-6 space-y-3 sm:space-y-2.5">
@@ -274,7 +274,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>03 / The System</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Self ordering
         </h3>
         <p className="mt-2 text-sm sm:text-base text-neutral-400">
@@ -300,7 +300,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>03 / The System</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           One platform, every workflow
         </h3>
         <div className="mt-6 sm:mt-5 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
@@ -323,7 +323,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>04 / Impact</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Performance metrics
         </h3>
         <div className="mt-8 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">

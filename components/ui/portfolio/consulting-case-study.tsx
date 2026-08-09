@@ -157,7 +157,7 @@ export const consultingSlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col items-center justify-center text-center h-full">
         <SlideKicker>Consulting</SlideKicker>
-        <h3 className="mt-5 sm:mt-4 max-w-2xl text-2xl sm:text-4xl font-semibold tracking-tight leading-[1.15]">
+        <h3 className="mt-5 sm:mt-4 max-w-2xl text-2xl sm:text-4xl font-normal tracking-tight leading-[1.15]">
           Standardised employee training, across{" "}
           <span className="gradient-text-subtle">20 branches</span> in{" "}
           <span className="gradient-text-subtle">9 countries</span>
@@ -188,7 +188,7 @@ export const consultingSlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>01 / Context</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Business overview
         </h3>
         <div className="mt-8 sm:mt-6 grid gap-4 sm:gap-3 sm:grid-cols-3">
@@ -213,7 +213,7 @@ export const consultingSlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>02 / Training Gaps</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           What was holding them back
         </h3>
         <p className="mt-3 text-base font-semibold text-accent-300">
@@ -242,7 +242,7 @@ export const consultingSlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>03 / Realisation</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           The real problem
         </h3>
         <div className="mt-8 sm:mt-6 grid gap-4 sm:gap-3 sm:grid-cols-2">
@@ -251,7 +251,7 @@ export const consultingSlides: CaseStudySlide[] = [
             { h: "No shared backbone", p: "Local strength existed, but nothing tied it together at the firm level" },
           ].map((c) => (
             <div key={c.h} className="glass-card glass-card-hover rounded-3xl p-6 sm:p-5">
-              <h4 className="text-base sm:text-lg font-semibold leading-tight">{c.h}</h4>
+              <h4 className="text-base sm:text-lg font-normal leading-tight">{c.h}</h4>
               <p className="mt-2 text-sm text-neutral-400 leading-relaxed">{c.p}</p>
             </div>
           ))}
@@ -264,7 +264,7 @@ export const consultingSlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>04 / The System</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Core components
         </h3>
         <ul className="mt-6 sm:mt-4 space-y-2.5 sm:space-y-2">
@@ -288,7 +288,7 @@ export const consultingSlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>04 / The System</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           System architecture
         </h3>
         <div className="mt-5 sm:mt-4">
@@ -302,7 +302,7 @@ export const consultingSlides: CaseStudySlide[] = [
     content: (
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>05 / Impact</SlideKicker>
-        <h3 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight">
+        <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Performance metrics
         </h3>
         <div className="mt-8 sm:mt-6 grid grid-cols-2 gap-3">

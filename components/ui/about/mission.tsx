@@ -34,7 +34,7 @@ const Mission: React.FC = () => {
         <div className="mx-auto mt-20 max-w-2xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8 relative">
           <div className="flex flex-col gap-6">
 
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
+            <h1 className="text-4xl font-normal tracking-tight sm:text-5xl lg:text-7xl leading-[1.1]">
               Building <span className="gradient-text-subtle">Tomorrow&apos;s</span>
               <br />Digital Infrastructure
             </h1>
@@ -68,7 +68,7 @@ const Mission: React.FC = () => {
                   <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
                     Our Story
                   </span>
-                  <h2 className="text-white text-3xl font-semibold tracking-tight sm:text-4xl mt-4">
+                  <h2 className="text-white text-3xl font-normal tracking-tight sm:text-4xl mt-4">
                     Our Mission
                   </h2>
                 </div>

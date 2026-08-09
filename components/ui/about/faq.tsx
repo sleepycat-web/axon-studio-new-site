@@ -70,7 +70,7 @@ const Faq = () => {
             <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               FAQ
             </span>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-normal tracking-tight sm:text-4xl">
               Frequently Asked Questions
             </h2>
             <p className="mt-4 text-neutral-400">

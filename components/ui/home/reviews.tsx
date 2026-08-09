@@ -79,7 +79,7 @@ const Reviews = () => {
             <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
               Testimonials
             </span>
-            <h2 className="mt-4 mx-auto max-w-3xl text-center text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 mx-auto max-w-3xl text-center text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl">
               What our clients <span className="gradient-text-subtle">actually say</span>
             </h2>
             <p className="mt-4 text-neutral-400 text-lg max-w-2xl mx-auto">

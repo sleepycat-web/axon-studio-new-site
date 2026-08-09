@@ -18,7 +18,7 @@ export default function Cta1() {
           </div>
 
           <div className="flex flex-col gap-6">
-            <h2 className="text-white mx-auto max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl leading-tight">
+            <h2 className="text-white mx-auto max-w-xl text-3xl font-normal tracking-tight sm:text-4xl lg:text-5xl leading-tight">
               Got a process that should be software?
             </h2>
             <p className="text-neutral-400 mx-auto max-w-xl text-lg">
