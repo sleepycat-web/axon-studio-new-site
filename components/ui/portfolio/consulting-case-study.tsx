@@ -1,6 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import type { CaseStudySlide } from "@/components/ui/portfolio/case-study-deck";
 
 const SlideKicker = ({ children }: { children: React.ReactNode }) => (
@@ -10,8 +12,8 @@ const SlideKicker = ({ children }: { children: React.ReactNode }) => (
 );
 
 /* ── Architecture diagram (converted from static SVG) ── */
-const SystemDiagram = () => (
-  <div className="glass-card rounded-2xl p-4 sm:p-5 border border-white/10">
+const SystemDiagram = ({ className = "" }: { className?: string }) => (
+  <div className={`glass-card rounded-2xl p-4 sm:p-5 border border-white/10 ${className}`}>
     <svg viewBox="0 0 1000 590" className="w-full h-auto block" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <marker id="cc-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -97,6 +99,57 @@ const SystemDiagram = () => (
     </svg>
   </div>
 );
+
+/* ── Fullscreen lightbox for the architecture diagram ── */
+const DiagramLightbox = ({ onClose }: { onClose: () => void }) => {
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onClose]);
+
+  return createPortal(
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-all z-[10000]"
+      >
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div className="relative w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+        <SystemDiagram />
+      </div>
+    </motion.div>,
+    document.body
+  );
+};
+
+/* ── Clickable diagram thumbnail ── */
+const ClickableDiagram = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <div
+        className="cursor-pointer group/shot"
+        onClick={() => setOpen(true)}
+      >
+        <SystemDiagram className="group-hover/shot:border-accent-400 transition-colors" />
+      </div>
+      {open && <DiagramLightbox onClose={() => setOpen(false)} />}
+    </>
+  );
+};
 
 export const consultingSlides: CaseStudySlide[] = [
   {
@@ -239,7 +292,7 @@ export const consultingSlides: CaseStudySlide[] = [
           System architecture
         </h3>
         <div className="mt-5 sm:mt-4">
-          <SystemDiagram />
+          <ClickableDiagram />
         </div>
       </div>
     ),
