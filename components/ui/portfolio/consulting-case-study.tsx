@@ -195,7 +195,7 @@ export const consultingSlides: CaseStudySlide[] = [
           {[
             { l: "Type", v: "Global consulting firm" },
             { l: "Stage", v: "20 branches live, 9 countries" },
-            { l: "Size", v: "2,800 employees" },
+            { l: "Size", v: "2,800+ employees" },
             { l: "Model", v: "Centralized branch operations" },
           ].map((c) => (
             <div key={c.l} className="glass-card glass-card-hover rounded-3xl p-6 sm:p-5">
@@ -310,7 +310,7 @@ export const consultingSlides: CaseStudySlide[] = [
           {[
             { v: "9", l: "Countries covered" },
             { v: "20", l: "Branches operating to one standard" },
-            { v: "2,800", l: "Employees across the organization" },
+            { v: "2,800+", l: "Employees managed through one platform" },
           ].map((s) => (
             <div
               key={s.l}
