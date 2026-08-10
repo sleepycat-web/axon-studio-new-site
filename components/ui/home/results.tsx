@@ -48,7 +48,7 @@ const Results = () => {
               className={`${i === 2 ? "col-span-2 sm:col-span-1" : ""} flex justify-center`}
             >
               <div className={`${i === 2 ? "w-1/2 sm:w-full" : "w-full"} glass-card glass-card-hover rounded-2xl p-6 text-center group`}>
-                <p className="text-4xl font-semibold tracking-tight gradient-text-subtle group-hover:scale-105 transition-transform duration-500">
+                <p className="text-4xl font-medium tracking-tight gradient-text-subtle group-hover:scale-105 transition-transform duration-500">
                   {stat.value}{stat.suffix}
                 </p>
                 <p className="mt-2 text-sm text-neutral-400 group-hover:text-neutral-300 transition-colors">

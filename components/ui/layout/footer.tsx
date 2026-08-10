@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
             <div className="text-center block lg:hidden">
               <div className="flex items-center justify-center">
-                <p className="text-base text-white pb-4 font-semibold flex items-center">
+                <p className="text-base text-white pb-4 font-normal flex items-center">
                   Subscribe to our Newsletter
                 </p>
               </div>
@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
             <div className="text-white grid max-w-xl flex-1 grid-cols-2  sm:grid-cols-2">
               {bottomLinks.map((group) => (
                 <div key={group.header} className="flex flex-col gap-5">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-accent-400">{group.header}</p>
+                  <p className="text-sm font-normal uppercase tracking-wider text-accent-400">{group.header}</p>
                   <ul role="list" className="flex flex-col gap-4">
                     {group.links.map((link) => (
                       <li key={link.name}>
@@ -169,7 +169,7 @@ const Footer: React.FC = () => {
 
             <div className="hidden lg:block max-w-xs">
               <div className="relative">
-                <p className="text-base text-white pb-4 font-semibold">
+                <p className="text-base text-white pb-4 font-normal">
                   Subscribe to our Newsletter
                 </p>
                 <p className="text-sm text-neutral-500 pb-6">

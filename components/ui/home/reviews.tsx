@@ -109,7 +109,7 @@ const Reviews = () => {
                     height={48}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className="text-base font-semibold group-hover:text-accent-300 transition-colors">
+                    <div className="text-base font-normal group-hover:text-accent-300 transition-colors">
                       {testimonial.name}
                     </div>
                     <div className="text-sm text-neutral-500 mt-0.5 leading-snug">

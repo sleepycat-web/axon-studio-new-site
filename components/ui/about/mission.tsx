@@ -89,7 +89,7 @@ const Mission: React.FC = () => {
                     key={stat.name}
                     className="glass-card glass-card-hover rounded-2xl p-6"
                   >
-                    <dd className="text-3xl font-semibold tracking-tight gradient-text-subtle">
+                    <dd className="text-3xl font-medium tracking-tight gradient-text-subtle">
                       {stat.value}
                     </dd>
                     <dt className="text-sm text-neutral-400 mt-1">{stat.name}</dt>

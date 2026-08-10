@@ -224,7 +224,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
         <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           What was holding them back
         </h3>
-        <p className="mt-3 text-base font-semibold text-accent-300">
+        <p className="mt-3 text-base font-normal text-accent-300">
           Growth = more chaos
         </p>
         <div className="mt-5 sm:mt-4 flex flex-col divide-y divide-white/5">
@@ -235,7 +235,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
             "No centralised control across multiple outlets",
           ].map((t, i) => (
             <div key={t} className="flex items-baseline gap-4 py-3.5 sm:py-2.5">
-              <span className="text-lg font-semibold text-accent-400 min-w-[2rem]">
+              <span className="text-lg font-medium text-accent-400 min-w-[2rem]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="text-sm sm:text-base text-neutral-300">{t}</span>
@@ -335,7 +335,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
               key={s.l}
               className="glass-card glass-card-hover rounded-2xl p-5 sm:p-4 text-center flex flex-col items-center justify-center"
             >
-              <p className="font-semibold tracking-tight text-2xl sm:text-3xl gradient-text-subtle">
+              <p className="font-medium tracking-tight text-2xl sm:text-3xl gradient-text-subtle">
                 {s.v}
               </p>
               <p className="mt-1.5 text-xs sm:text-sm text-neutral-400">{s.l}</p>
@@ -352,7 +352,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
               key={s.l}
               className="glass-card glass-card-hover rounded-2xl p-5 sm:p-4 text-center flex flex-col items-center justify-center"
             >
-              <p className="font-semibold tracking-tight text-xl sm:text-2xl text-neutral-100">
+              <p className="font-medium tracking-tight text-xl sm:text-2xl text-neutral-100">
                 {s.v}
               </p>
               <p className="mt-1.5 text-xs sm:text-sm text-neutral-400">{s.l}</p>

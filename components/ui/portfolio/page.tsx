@@ -29,7 +29,7 @@ const ProjectPlaceholderSVG = ({ title }: { title: string }) => {
           </svg>
         </div>
         <div>
-          <span className="text-[9px] text-accent-400 uppercase tracking-widest font-semibold">System Interface Mockup</span>
+          <span className="text-[9px] text-accent-400 uppercase tracking-widest font-normal">System Interface Mockup</span>
           <h4 className="mt-1 text-[11px] text-neutral-400 font-medium max-w-[220px] mx-auto leading-tight">{title}</h4>
         </div>
       </div>
@@ -197,7 +197,7 @@ const ProjectGallery = ({ title, images, previewImage }: { title: string; images
           </div>
         )}
         {currentImage.toLowerCase().endsWith(".pdf") && (
-          <div className="absolute bottom-4 right-4 z-20 px-3 py-1.5 bg-black text-white text-xs font-semibold rounded-full shadow-lg flex items-center gap-1.5 border border-white/10 pointer-events-none">
+          <div className="absolute bottom-4 right-4 z-20 px-3 py-1.5 bg-black text-white text-xs font-normal rounded-full shadow-lg flex items-center gap-1.5 border border-white/10 pointer-events-none">
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
@@ -836,7 +836,7 @@ export default function PortfolioPage() {
                 key={stat.label}
                 className="glass-card glass-card-hover rounded-2xl p-6 text-center"
               >
-                <p className="text-4xl font-semibold tracking-tight gradient-text-subtle">
+                <p className="text-4xl font-medium tracking-tight gradient-text-subtle">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm text-neutral-400">{stat.label}</p>
@@ -870,7 +870,7 @@ export default function PortfolioPage() {
                 className="glass-card glass-card-hover flex flex-col rounded-3xl p-8 group"
               >
                 <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors">
-                  <span className="text-accent-400 font-semibold">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-accent-400 font-medium">{String(index + 1).padStart(2, '0')}</span>
                 </div>
                 <h3 className="text-xl font-normal group-hover:text-accent-300 transition-colors">{cap.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-neutral-400">

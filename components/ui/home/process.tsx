@@ -49,7 +49,7 @@ export default function Process() {
                   </svg>
                 </div>
               )}
-              <span className="text-2xl font-bold gradient-text-subtle">
+              <span className="text-2xl font-medium gradient-text-subtle">
                 {s.step}
               </span>
               <h3 className="mt-4 text-lg font-normal group-hover:text-accent-300 transition-colors">{s.title}</h3>

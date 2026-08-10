@@ -191,10 +191,11 @@ export const consultingSlides: CaseStudySlide[] = [
         <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           Business overview
         </h3>
-        <div className="mt-8 sm:mt-6 grid gap-4 sm:gap-3 sm:grid-cols-3">
+        <div className="mt-8 sm:mt-6 grid grid-cols-2 gap-4 sm:gap-3 sm:grid-cols-4">
           {[
             { l: "Type", v: "Global consulting firm" },
             { l: "Stage", v: "20 branches live, 9 countries" },
+            { l: "Size", v: "2,800 employees" },
             { l: "Model", v: "Centralized branch operations" },
           ].map((c) => (
             <div key={c.l} className="glass-card glass-card-hover rounded-3xl p-6 sm:p-5">
@@ -216,7 +217,7 @@ export const consultingSlides: CaseStudySlide[] = [
         <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
           What was holding them back
         </h3>
-        <p className="mt-3 text-base font-semibold text-accent-300">
+        <p className="mt-3 text-base font-normal text-accent-300">
           Manual didn&apos;t scale
         </p>
         <div className="mt-5 sm:mt-4 flex flex-col divide-y divide-white/5">
@@ -227,7 +228,7 @@ export const consultingSlides: CaseStudySlide[] = [
             "Every update meant duplicating effort across the entire firm",
           ].map((t, i) => (
             <div key={t} className="flex items-baseline gap-4 py-3.5 sm:py-2.5">
-              <span className="text-lg font-semibold text-accent-400 min-w-[2rem]">
+              <span className="text-lg font-medium text-accent-400 min-w-[2rem]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span className="text-sm sm:text-base text-neutral-300">{t}</span>
@@ -265,7 +266,7 @@ export const consultingSlides: CaseStudySlide[] = [
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>04 / The System</SlideKicker>
         <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
-          Core components
+          Built to close every gap
         </h3>
         <ul className="mt-6 sm:mt-4 space-y-2.5 sm:space-y-2">
           {[
@@ -303,27 +304,22 @@ export const consultingSlides: CaseStudySlide[] = [
       <div className="flex flex-col justify-center h-full w-full max-w-3xl mx-auto">
         <SlideKicker>05 / Impact</SlideKicker>
         <h3 className="mt-3 text-2xl sm:text-3xl font-normal tracking-tight">
-          Performance metrics
+          Reach and Scale
         </h3>
-        <div className="mt-8 sm:mt-6 grid grid-cols-2 gap-3">
+        <div className="mt-8 sm:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
           {[
             { v: "9", l: "Countries covered" },
             { v: "20", l: "Branches operating to one standard" },
+            { v: "2,800", l: "Employees across the organization" },
           ].map((s) => (
             <div
               key={s.l}
               className="glass-card glass-card-hover rounded-2xl p-6 sm:p-5 text-center flex flex-col items-center justify-center"
             >
-              <p className="font-semibold tracking-tight text-3xl sm:text-4xl gradient-text-subtle">{s.v}</p>
+              <p className="font-medium tracking-tight text-3xl sm:text-4xl gradient-text-subtle">{s.v}</p>
               <p className="mt-1.5 text-xs sm:text-sm text-neutral-400">{s.l}</p>
             </div>
           ))}
-        </div>
-        <div className="mt-3">
-          <div className="glass-card glass-card-hover rounded-2xl p-6 sm:p-5 text-center flex flex-col items-center justify-center">
-            <p className="font-semibold tracking-tight text-3xl sm:text-4xl gradient-text-subtle">6</p>
-            <p className="mt-1.5 text-xs sm:text-sm text-neutral-400">Departments, one access layer</p>
-          </div>
         </div>
         <div className="mt-8 sm:mt-6 flex justify-center">
           <Link href="/contact">
