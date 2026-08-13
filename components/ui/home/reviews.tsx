@@ -26,7 +26,7 @@ const testimonials = [
     description: "Cafe Chain, India",
     image: "/assets/logos/cmlogo.png",
     message:
-      "We got connected by fate and good deeds. Amlan has always been in the most understanding position during my journey and helped me in the technicality of my business. Axon Studio❤️",
+      "We got connected by fate and good deeds. Amlan has always been in the most understanding position during my journey and helped me in the technicality of my business. Axon Studio👍",
   },
 
   {
@@ -42,7 +42,7 @@ const testimonials = [
     description: "Creative Studio, India",
     image: "/assets/logos/3hclogo.png",
     message:
-      "I had called Amlan one day before our opening and the very next morning our website is live. No one can match Team Axon's speed.",
+      "I called Amlan just one day before our opening and the very next morning our website is live. No one can match Team Axon's speed!",
   },
 
   {
