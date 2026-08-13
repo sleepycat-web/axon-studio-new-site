@@ -346,7 +346,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
           {[
             { v: COMPANY_METRICS.ordersProcessed, l: "Orders processed" },
             { v: COMPANY_METRICS.reservationsProcessed, l: "Reservations handled" },
-            { v: COMPANY_METRICS.usersManaged, l: "Users" },
+            { v: "9.4K", l: "Users" },
           ].map((s) => (
             <div
               key={s.l}
