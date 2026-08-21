@@ -27,8 +27,8 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gradient-premium": "linear-gradient(135deg, rgb(var(--accent-primary)) 0%, #a855f7 50%, #ec4899 100%)",
-        "gradient-subtle": "linear-gradient(135deg, rgb(var(--accent-primary)) 0%, #c084fc 100%)",
+        "gradient-premium": "linear-gradient(135deg, rgb(var(--accent-primary)) 0%, rgb(var(--accent-secondary)) 50%, rgb(var(--accent-tertiary)) 100%)",
+        "gradient-subtle": "linear-gradient(135deg, rgb(var(--accent-primary)) 0%, rgb(var(--accent-secondary)) 100%)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],

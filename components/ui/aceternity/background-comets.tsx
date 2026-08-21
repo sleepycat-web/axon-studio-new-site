@@ -157,10 +157,10 @@ export const BackgroundComets = React.memo(
                                         delay: delay,
                                     }}
                                 >
-                                    <stop stopColor="#6366f1" stopOpacity="0"></stop>
-                                    <stop stopColor="#6366f1"></stop>
-                                    <stop offset="32.5%" stopColor="#a855f7"></stop>
-                                    <stop offset="100%" stopColor="#a855f7" stopOpacity="0"></stop>
+                                    <stop stopColor="rgb(var(--accent-primary))" stopOpacity="0"></stop>
+                                    <stop stopColor="rgb(var(--accent-primary))"></stop>
+                                    <stop offset="32.5%" stopColor="rgb(var(--accent-secondary))"></stop>
+                                    <stop offset="100%" stopColor="rgb(var(--accent-secondary))" stopOpacity="0"></stop>
                                 </motion.linearGradient>
                             );
                         })}

@@ -17,10 +17,10 @@ html {
   --background-start-rgb: 10, 10, 10;
   --background-end-rgb: 10, 10, 10;
 
-  /* Premium accent colors */
-  --accent-primary: 35, 35, 255;
-  --accent-secondary: 35, 35, 255;
-  --accent-tertiary: 35, 35, 255;
+  /* Premium accent colors - Neon Cyberpunk SaaS theme */
+  --accent-primary: 255, 0, 85; /* Neon Red */
+  --accent-secondary: 255, 120, 0; /* Orange */
+  --accent-tertiary: 255, 200, 0; /* Yellow */
 }
 
 body {
