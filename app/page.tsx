@@ -12,6 +12,14 @@ import Results from "@/components/ui/home/results";
 import CaseStudiesSection from "@/components/ui/portfolio/case-studies-section";
 
 export default function Main() {
+  React.useEffect(() => {
+    const target = sessionStorage.getItem("scrollTarget");
+    if (target) {
+      sessionStorage.removeItem("scrollTarget");
+      document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   return (
     <div className="bg-neutral-950 relative">
       {/* global grid handled by root layout */}

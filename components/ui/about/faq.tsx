@@ -52,85 +52,80 @@ const questions: Question[] = [
 ];
 
 const Faq = () => {
-  const [selected, setSelected] = useState<number | null>(null); // Explicitly typing selected as number or null
+  const [selected, setSelected] = useState<number | null>(null);
 
   const toggle = (index: number) => {
-    // Explicitly typing index as number
     setSelected(selected === index ? null : index);
   };
 
   return (
-    <section className="py-20 sm:py-28 text-white relative">
-      {/* Gradient divider */}
+    <section id="faq" className="py-20 sm:py-28 text-white relative">
       <div className="absolute top-0 left-0 right-0 section-divider"></div>
+      
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-12">
+          <div className="grid grid-cols-1 items-start gap-8 md:gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="flex flex-col gap-4 lg:sticky lg:top-8 lg:col-span-4">
+              <span className="text-accent-400 text-xs font-semibold uppercase tracking-widest">
+                FAQ
+              </span>
+              <h2 className="text-white text-3xl font-medium tracking-tight md:text-4xl">
+                Frequently Asked Questions
+              </h2>
+              <div className="text-neutral-400 text-base leading-relaxed md:text-lg">
+                Find answers to common questions about our services and processes.
+              </div>
+            </div>
 
-      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className="grid gap-16 lg:grid-cols-3 lg:gap-12">
-          <div>
-            <span className="text-sm font-medium uppercase tracking-widest text-accent-400">
-              FAQ
-            </span>
-            <h2 className="mt-4 text-3xl font-normal tracking-tight sm:text-4xl">
-              Frequently Asked Questions
-            </h2>
-            <p className="mt-4 text-neutral-400">
-              Find answers to common questions about our services and processes.
-            </p>
-          </div>
-          <div className="lg:col-span-2">
-            <dl className="space-y-2">
-              {questions.map((question, index) => (
-                <div
-                  key={question.id}
-                  className={`glass-card rounded-2xl transition-all duration-300 ${selected === index
-                      ? "border-accent-500/30 bg-accent-500/5"
-                      : ""
-                    }`}
-                >
-                  <dt>
+            <div className="lg:col-span-8">
+              <div className="w-full">
+                {questions.map((faq, index) => (
+                  <div
+                    key={faq.id}
+                    className="border-b border-white/10 px-0 last:border-b-0 group"
+                  >
                     <button
                       type="button"
-                      className="group block w-full px-6 py-5 text-left transition focus-visible:outline-none"
-                      aria-controls={question.id}
+                      className="flex items-center w-full py-5 text-left transition focus-visible:outline-none"
+                      aria-controls={faq.id}
                       onClick={() => toggle(index)}
                       aria-expanded={selected === index}
                     >
-                      <div className="flex items-center justify-between">
-                        <span className="font-medium text-base group-hover:text-accent-300 transition-colors">{question.title}</span>
-                        <span className="ml-6 flex h-8 w-8 items-center justify-center rounded-full bg-white/5 group-hover:bg-accent-500/20 transition-colors">
-                          <svg
-                            className={`text-accent-400 h-5 w-5 transform transition duration-300 ease-out ${selected === index ? "rotate-180" : "rotate-0"
-                              }`}
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            aria-hidden="true"
-                          >
-                            <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z" />
-                          </svg>
+                      <div className="flex flex-1 items-center gap-6">
+                        <span className="text-white text-left text-lg font-medium transition-colors group-hover:text-accent-300 md:text-xl">
+                          {faq.title}
                         </span>
                       </div>
+                      <div className="text-neutral-500 ml-auto flex h-6 w-6 shrink-0 items-center justify-center transition-transform duration-200 group-hover:text-accent-400">
+                        {selected === index ? (
+                          <svg className="block h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                          </svg>
+                        ) : (
+                          <svg className="block h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                          </svg>
+                        )}
+                      </div>
                     </button>
-                  </dt>
-                  <dd
-                    className="overflow-hidden transition-all duration-300"
-                    id={question.id}
-                    style={{
-                      maxHeight: selected === index ? "500px" : "0",
-                      opacity: selected === index ? 1 : 0
-                    }}
-                  >
-                    <div className="px-6 pb-5 pr-12">
-                      <p className="text-neutral-400 text-base leading-relaxed">
-                        {question.answer}
-                      </p>
+                    <div
+                      className="overflow-hidden transition-all duration-300"
+                      id={faq.id}
+                      style={{
+                        maxHeight: selected === index ? "500px" : "0",
+                        opacity: selected === index ? 1 : 0
+                      }}
+                    >
+                      <div className="pb-6 lg:pr-12 max-w-3xl">
+                        <p className="text-neutral-400 text-base leading-relaxed md:text-lg">
+                          {faq.answer}
+                        </p>
+                      </div>
                     </div>
-                  </dd>
-                </div>
-              ))}
-            </dl>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 "use client";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/ui/layout/header";
 import Footer from "@/components/ui/layout/footer";
 import { useState } from "react";
@@ -107,13 +108,13 @@ const ContactPage: React.FC = () => {
                 ) : (
                   <button
                     onClick={openCalendlyPopup}
-                    className="btn-premium inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white"
+                    className="btn-premium group inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold text-white"
                   >
-                    Schedule a Call
-                    <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
+                  <span>Schedule a Call</span>
+                  <span className="ml-2 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-1">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </button>
                 )}
               </div>
             </div>

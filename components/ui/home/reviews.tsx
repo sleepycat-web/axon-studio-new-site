@@ -63,7 +63,7 @@ const testimonials = [
 
 const Reviews = () => {
   return (
-    <section className="py-20 sm:py-28 relative text-white overflow-hidden">
+    <section id="testimonials" className="py-20 sm:py-28 relative text-white overflow-hidden">
       {/* Gradient dividers */}
       <div className="absolute top-0 left-0 right-0 section-divider"></div>
       <div className="absolute bottom-0 left-0 right-0 section-divider"></div>
@@ -102,7 +102,7 @@ const Reviews = () => {
                 {/* Author */}
                 <figcaption className="flex items-center gap-3 sm:gap-4 pt-4 border-t border-white/5">
                   <Image
-                    className="rounded-full ring-2 ring-accent-500/20 shrink-0"
+                    className="rounded-full shrink-0"
                     src={testimonial.image}
                     alt={`Company logo for ${testimonial.name} - Axon Studio client (${testimonial.description})`}
                     width={48}

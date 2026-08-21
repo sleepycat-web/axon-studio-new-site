@@ -1,70 +1,77 @@
-"use client"; // components/Footer.tsx
+"use client";
 import React from "react";
 import Image from "next/image";
-import { PlaceholdersAndVanishInput } from "../aceternity/placeholders-and-vanish-input";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { PlaceholdersAndVanishInput } from "../aceternity/placeholders-and-vanish-input";
 
-interface FooterLink {
-  name: string;
-  href: string;
-  isExternal: boolean;
-}
 
-interface LinkGroup {
-  header: string;
-  links: FooterLink[];
-}
-
-const bottomLinks: LinkGroup[] = [
+const linkGroups = [
   {
-    header: "Social",
+    title: "Pages",
     links: [
-      {
-        name: "LinkedIn",
-        href: "https://www.linkedin.com/company/the-axon-studio/",
-        isExternal: true,
-      },
-      {
-        name: "Instagram",
-        href: "https://www.instagram.com/theaxonstudio/",
-        isExternal: true,
-      },
-      {
-        name: "Twitter",
-        href: "https://twitter.com/WebAxon",
-        isExternal: true,
-      },
-      {
-        name: "Facebook",
-        href: "https://www.facebook.com/people/Axon-Studio/61557992653296/",
-        isExternal: true,
-      },
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Portfolio", href: "/portfolio" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
-    header: "Legal",
+    title: "Explore",
     links: [
-      {
-        name: "Privacy Policy",
-        href: "/privacy",
-        isExternal: false,
-      },
-      {
-        name: "Refund Policy",
-        href: "/refund",
-        isExternal: false,
-      },
-      {
-        name: "Terms and Conditions",
-        href: "/terms",
-        isExternal: false,
-      },
+      { label: "Case Studies", href: "/", sectionId: "case-study" },
+      { label: "FAQs", href: "/", sectionId: "faq" },
+      { label: "Testimonials", href: "/", sectionId: "testimonials" },
+      { label: "Projects", href: "/portfolio" },
     ],
   },
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Refund Policy", href: "/refund" },
+];
+
+const socialLinks = [
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+      </svg>
+    ),
+    href: "https://www.linkedin.com/company/the-axon-studio/",
+  },
+  {
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+      </svg>
+    ),
+    href: "https://www.instagram.com/theaxonstudio/",
+  },
+];
+
+
+
 const Footer: React.FC = () => {
   const placeholders = ["Enter your email"];
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleSectionClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId?: string
+  ) => {
+    if (!sectionId) return;
+    e.preventDefault();
+    if (pathname === "/") {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      sessionStorage.setItem("scrollTarget", sectionId);
+      router.push("/");
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.value);
@@ -75,116 +82,105 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer
-      className="relative mt-20 lg:mt-24 overflow-hidden"
-      aria-labelledby="footer-heading"
-    >
-      {/* Top border accent line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-accent-500/40 to-transparent"></div>
-
-      {/* Footer background - darker than body to visually separate */}
-      <div className="absolute inset-0 bg-neutral-950"></div>
-      <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/60 via-neutral-950 to-black"></div>
-
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-30"></div>
-
-      {/* Decorative orbs */}
-      <div className="absolute bottom-0 -left-32 w-96 h-96 orb-gradient orb-primary opacity-10"></div>
-      <div className="absolute top-0 -right-32 w-80 h-80 orb-gradient orb-secondary opacity-10"></div>
-
-      <div className="relative py-16 lg:py-20">
-
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 relative">
-          <div className="flex flex-col justify-between gap-16 sm:gap-20 lg:flex-row">
-            <div className="flex max-w-sm flex-col items-start gap-8">
-              <Image
-                className="h-12 w-auto"
-                width={65}
-                height={40}
-                src="/assets/logos/logo-inverted.png"
-                alt="Axon Studio white logo - Software Engineering Firm"
-              />
-              <p className="text-neutral-400 text-base leading-relaxed">
-                Axon Studio builds custom software, automation and web platforms for businesses ready to outgrow manual work.
-              </p>
-              <p className="text-neutral-600 text-sm">© {new Date().getFullYear()} Axon Studio. All rights reserved.</p>
-            </div>
-
-            <div className="text-center block lg:hidden">
-              <div className="flex items-center justify-center">
-                <p className="text-base text-white pb-4 font-normal flex items-center">
-                  Subscribe to our Newsletter
-                </p>
-              </div>
-
-              <div className="relative flex flex-col items-center">
-                <PlaceholdersAndVanishInput
-                  placeholders={placeholders}
-                  onChange={handleChange}
-                  onSubmit={onSubmit}
-                />
-              </div>
-            </div>
-
-            {/* Bottom links */}
-            <div className="text-white grid max-w-xl flex-1 grid-cols-2  sm:grid-cols-2">
-              {bottomLinks.map((group) => (
-                <div key={group.header} className="flex flex-col gap-5">
-                  <p className="text-sm font-normal uppercase tracking-wider text-accent-400">{group.header}</p>
-                  <ul role="list" className="flex flex-col gap-4">
-                    {group.links.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="inline-flex items-center gap-1.5 text-base text-neutral-400 hover:text-white transition-colors duration-200"
-                          target={link.isExternal ? "_blank" : undefined}
-                          rel={
-                            link.isExternal ? "noopener noreferrer" : undefined
-                          }
-                        >
-                          {link.name}
-                          {link.isExternal && (
-                            <svg
-                              className="h-3.5 w-3.5 opacity-50"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                              aria-hidden="true"
-                            >
-                              <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
-                            </svg>
-                          )}
-                        </Link>
-                      </li>
+    <footer className="w-full px-4 py-12 md:px-6 mt-20 lg:mt-24">
+      <div className="border border-white/10 bg-neutral-900/50 mx-auto max-w-7xl overflow-hidden rounded-[2rem]">
+        <div className="p-1">
+          <div className="bg-neutral-950/80 rounded-[1.75rem] shadow-sm">
+            <div className="px-8 py-12 md:px-16 lg:px-24 md:py-16">
+              <div className="flex flex-col gap-12 lg:flex-row lg:flex-wrap lg:items-start lg:justify-between lg:gap-x-16 lg:gap-y-12">
+                {/* Brand column */}
+                <div className="flex max-w-sm flex-col items-start">
+                  <div className="mb-6 flex items-center gap-3">
+                    <span className="text-xl font-bold text-white">Axon Studio</span>
+                  </div>
+                  <p className="text-neutral-400 mb-8 max-w-[325px] text-sm leading-relaxed">
+                    Axon Studio builds custom software, automation and web platforms for businesses ready to outgrow manual work.
+                  </p>
+                  <div className="flex items-center gap-3">
+                    {socialLinks.map((link, index) => (
+                      <a
+                        key={index}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-neutral-500 bg-white/5 hover:text-accent-300 hover:bg-white/10 h-10 w-10 rounded-xl flex items-center justify-center border border-white/10 transition-colors"
+                      >
+                        {link.icon}
+                      </a>
                     ))}
-                  </ul>
+                  </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="hidden lg:block max-w-xs">
-              <div className="relative">
-                <p className="text-base text-white pb-4 font-normal">
-                  Subscribe to our Newsletter
-                </p>
-                <p className="text-sm text-neutral-500 pb-6">
-                  Get the latest updates on our projects and industry insights.
-                </p>
+                {/* Link groups */}
+                <div className="grid max-w-xl flex-1 grid-cols-2 gap-8 sm:gap-12">
+                  {linkGroups.map((group, index) => (
+                    <div key={index} className="flex flex-col gap-4">
+                      <h4 className="text-white mb-1 text-sm font-semibold">
+                        {group.title}
+                      </h4>
+                      <ul className="flex flex-col gap-3">
+                        {group.links.map((link, linkIndex) => (
+                          <li key={linkIndex}>
+                            <Link
+                              href={link.href}
+                              target={(link as any).external ? "_blank" : undefined}
+                              onClick={(e) => handleSectionClick(e, (link as any).sectionId)}
+                              className="text-neutral-400 hover:text-accent-300 text-sm transition-colors"
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Newsletter */}
+                <div className="flex w-full max-w-xs flex-col gap-4">
+                  <h4 className="text-white mb-1 text-sm font-semibold">
+                    Subscribe to our Newsletter
+                  </h4>
+                  <p className="text-neutral-400 text-sm leading-relaxed">
+                    Get the latest updates on our projects and industry insights.
+                  </p>
+                  <div className="mt-2 w-full">
+                    <PlaceholdersAndVanishInput
+                      placeholders={placeholders}
+                      onChange={handleChange}
+                      onSubmit={onSubmit}
+                    />
+                  </div>
+                </div>
               </div>
-              <PlaceholdersAndVanishInput
-                placeholders={placeholders}
-                onChange={handleChange}
-                onSubmit={onSubmit}
-              />
             </div>
           </div>
         </div>
 
+        {/* Bottom bar */}
+        <div className="bg-neutral-900/30 px-8 py-6 md:px-16 lg:px-24">
+          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+            <p className="text-neutral-500 text-sm">
+              © {new Date().getFullYear()} Axon Studio. All rights reserved.
+            </p>
+
+            <div className="text-neutral-500 flex items-center gap-4 text-sm">
+              {legalLinks.map((link, index) => (
+                <React.Fragment key={index}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                  {index < legalLinks.length - 1 && (
+                    <span className="bg-white/10 h-4 w-px"></span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

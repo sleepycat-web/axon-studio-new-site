@@ -1,4 +1,5 @@
 "use client";
+import { ArrowRight } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
@@ -323,12 +324,12 @@ export const consultingSlides: CaseStudySlide[] = [
         </div>
         <div className="mt-8 sm:mt-6 flex justify-center">
           <Link href="/contact">
-            <button className="btn-premium inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white">
-              Build something like this
-              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
+            <button className="btn-premium group inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm sm:text-base font-semibold text-white">
+                  <span>Build something like this</span>
+                  <span className="ml-2 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-1">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </button>
           </Link>
         </div>
       </div>

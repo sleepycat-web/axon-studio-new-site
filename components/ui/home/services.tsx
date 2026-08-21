@@ -1,4 +1,5 @@
 "use client";
+import { ArrowRight } from "lucide-react";
 import React from "react";
 import Link from "next/link";
 // Define the type for the services
@@ -40,7 +41,7 @@ const services: Service[] = [
     step: "02",
     name: "AI Automation Systems",
     description:
-      "We connect your tools and rebuild manual processes into automated workflows,so your team can focus on what actually grows the business.",
+      "We connect your tools and rebuild manual processes into automated workflows, so your team can focus on what  grows the business.",
   },
   {
     step: "03",
@@ -75,36 +76,27 @@ const Services: React.FC = () => {
               </p>
             </div>
 
-            {/* Services grid */}
-            <div className="grid gap-6 lg:grid-cols-3">
+            {/* Services rows */}
+            <ul className="flex flex-col w-full border-t border-white/10 mt-8">
               {services.map((service, index) => (
-                <div
+                <li
                   key={service.step}
-                  className="glass-card glass-card-hover flex flex-col gap-6 rounded-3xl p-8 group"
+                  className="group flex flex-col md:flex-row items-start md:items-center justify-between border-b border-white/10 py-10 px-4 md:px-8 hover:bg-white/5 transition-colors cursor-pointer gap-6 md:gap-12"
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-400 group-hover:bg-accent-500/20 transition-colors">
-                      {iconMap[service.step]}
-                    </div>
-                    <span className="text-sm font-medium text-neutral-500">{service.step}</span>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <h3 className="text-xl font-normal group-hover:text-accent-300 transition-colors">{service.name}</h3>
-                    <p className="text-neutral-400 text-base leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                  {/* <div className="mt-auto pt-4">
-                    <span className="inline-flex items-center text-sm font-medium text-accent-400 group-hover:text-accent-300 transition-colors">
-                      Learn more
-                      <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
+                  <div className="flex items-center gap-6 md:gap-12 w-full md:w-auto">
+                    <span className="text-xl md:text-2xl text-neutral-600 font-medium group-hover:text-accent-primary transition-colors">
+                      {service.step}
                     </span>
-                  </div> */}
-                </div>
+                    <h3 className="text-2xl md:text-3xl font-medium text-white group-hover:text-accent-300 transition-colors">
+                      {service.name}
+                    </h3>
+                  </div>
+                  <div className="max-w-xl text-neutral-400 text-base md:text-lg leading-relaxed text-left md:text-right">
+                    {service.description}
+                  </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
@@ -129,11 +121,11 @@ const Services: React.FC = () => {
               </p>
               <p className="text-neutral-400 text-base sm:text-lg leading-relaxed">Over the last two years we&apos;ve shipped {COMPANY_METRICS.projectsNumeric}+ projects for clients across India, the UK and the US. We learn how your business actually runs, then build the software that runs it better. </p>
               <Link href="/about">
-                <button className="btn-premium inline-flex items-center justify-center rounded-full px-6 py-3.5 text-base font-semibold text-white">
-                  Read about us
-                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                <button className="btn-premium group inline-flex items-center justify-center rounded-full px-6 py-3.5 text-base font-semibold text-white">
+                  <span>Read about us</span>
+                  <span className="ml-2 flex items-center justify-center transition-transform duration-200 group-hover:translate-x-1">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 </button>
               </Link>
             </div>
