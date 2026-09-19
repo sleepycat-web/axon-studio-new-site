@@ -63,6 +63,7 @@ const description =
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://axonstudio.in/#organization",
   name: "Axon Studio",
   alternateName: "The Axon Studio",
   description,

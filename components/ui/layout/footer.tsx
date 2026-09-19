@@ -139,7 +139,17 @@ const Footer: React.FC = () => {
                 {/* Newsletter */}
                 <div className="flex w-full max-w-xs flex-col gap-4">
                   <h4 className="text-white mb-1 text-sm font-semibold">
-                    Subscribe to our Newsletter
+                    <a
+                      href="https://grow.axonstudio.in/"
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-flex items-center gap-1 underline-offset-4 hover:underline hover:text-accent-300 transition-colors"
+                    >
+                      Subscribe to our Newsletter
+                      <svg className="h-4 w-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
+                    </svg>
+                    </a>
                   </h4>
                   <p className="text-neutral-400 text-sm leading-relaxed">
                     Get the latest updates on our projects and industry insights.

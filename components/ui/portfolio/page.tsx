@@ -630,6 +630,7 @@ const WebShowcase = () => {
 const projects = [
   {
     title: "Multi-Outlet Restaurant POS & Franchise Control System",
+    link: "https://launch.axonstudio.in/",
     industry: "Restaurant & Hospitality",
     tag: "Operations Infrastructure",
     mobileTag: "Restaurant Operations Infrastructure",
@@ -933,7 +934,23 @@ export default function PortfolioPage() {
                       {project.industry}
                     </span>
                   </div>
-                  <h3 className="mt-6 text-xl font-normal group-hover:text-accent-300 transition-colors sm:text-2xl">{project.title}</h3>
+                  <h3 className="mt-6 text-xl font-normal group-hover:text-accent-300 transition-colors sm:text-2xl">
+                    {"link" in project && project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener"
+                        className="underline-offset-4 hover:underline"
+                      >
+                        {project.title}
+                        <svg className="ml-2 inline-block h-5 w-5 align-[-0.125em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z" />
+                      </svg>
+                      </a>
+                    ) : (
+                      project.title
+                    )}
+                  </h3>
                   <p className="mt-4 text-base leading-relaxed text-neutral-400">
                     {project.description}
                   </p>
