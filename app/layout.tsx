@@ -46,6 +46,7 @@ const sameAs = [
   "https://www.linkedin.com/company/the-axon-studio/",
   "https://www.facebook.com/people/Axon-Studio/61557992653296/",
   "https://www.crunchbase.com/organization/axon-studio",
+  "https://g.page/r/CfEpER7CROrLEBM/",
 ];
 
 const address = {
@@ -115,6 +116,7 @@ const localBusinessSchema = {
   address,
   email: "info@axonstudio.in",
   url: "https://axonstudio.in/",
+  hasMap: "https://g.page/r/CfEpER7CROrLEBM/",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
