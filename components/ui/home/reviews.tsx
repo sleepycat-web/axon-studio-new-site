@@ -28,7 +28,13 @@ const testimonials = [
     message:
       "We got connected by fate and good deeds. Amlan has always been in the most understanding position during my journey and helped me in the technicality of my business. Axon Studio👍",
   },
-
+  {
+    name: "Opinion: International Journal of Business Management",
+    description: "Academic Journal, Australia",
+    image: "/assets/logos/opinionlogo.png",
+    message:
+      "Dear Axon Studio Team, On behalf of Opinion and Wordsmith Strategy, I extend our sincere appreciation for designing and developing the journal. We value your commitment, technical expertise and attention to the requirements of the project.",
+  },
   {
     name: "Astita Media",
     description: "Content Agency, India",
@@ -52,6 +58,7 @@ const testimonials = [
     message:
       "Axon Studio brings your imagination to light with minimal follow ups, they do a great job and are open to further service and developments with no delay thats the best part.",
   },
+
   // {
   //   name: "Tukuche",
   //   description: "Restaurant Chain, India",
