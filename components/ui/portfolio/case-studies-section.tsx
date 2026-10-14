@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import CaseStudyDeck from "@/components/ui/portfolio/case-study-deck";
 import { hospitalitySlides } from "@/components/ui/portfolio/hospitality-case-study";
 import { consultingSlides } from "@/components/ui/portfolio/consulting-case-study";
+import { coachingSlides } from "@/components/ui/portfolio/coaching-case-study";
+import { journalSlides } from "@/components/ui/portfolio/journal-case-study";
 
 const tabs = [
   {
@@ -18,6 +20,20 @@ const tabs = [
     slides: hospitalitySlides,
     description:
       "How a multi-outlet cafe chain went from manual operations to a fully systemised platform, and doubled revenue along the way.",
+  },
+  {
+    key: "coaching",
+    label: "Coaching",
+    slides: coachingSlides,
+    description:
+      "How a GP and sports doctor turned expertise into booked discovery calls with a landing page, newsletter and sales funnel.",
+  },
+  {
+    key: "journal",
+    label: "Education",
+    slides: journalSlides,
+    description:
+      "How an international business journal moved off email onto one system that runs every manuscript from submission to publication.",
   },
 ] as const;
 
