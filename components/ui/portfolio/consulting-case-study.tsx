@@ -160,8 +160,8 @@ export const consultingSlides: CaseStudySlide[] = [
         <SlideKicker>Consulting</SlideKicker>
         <h3 className="mt-5 sm:mt-4 max-w-2xl text-2xl sm:text-4xl font-normal tracking-tight leading-[1.15]">
           Standardised employee training, across{" "}
-          <span className="gradient-text-subtle">20 branches</span> in{" "}
-          <span className="gradient-text-subtle">9 countries</span>
+          <span className="gradient-text-subtle">23 branches</span> in{" "}
+          <span className="gradient-text-subtle">11 countries</span>
         </h3>
         <p className="mt-5 sm:mt-4 max-w-xl text-sm sm:text-base text-neutral-400 leading-relaxed">
           How we replaced fragmented, branch-led training with one custom platform for a
@@ -195,8 +195,8 @@ export const consultingSlides: CaseStudySlide[] = [
         <div className="mt-8 sm:mt-6 grid grid-cols-2 gap-4 sm:gap-3 sm:grid-cols-4">
           {[
             { l: "Type", v: "Global consulting firm" },
-            { l: "Stage", v: "20 branches live, 9 countries" },
-            { l: "Size", v: "2,800+ employees" },
+            { l: "Stage", v: "23 branches live, 11 countries" },
+            { l: "Size", v: "480+ employees" },
             { l: "Model", v: "Centralized branch operations" },
           ].map((c) => (
             <div key={c.l} className="glass-card glass-card-hover rounded-3xl p-6 sm:p-5">
@@ -309,9 +309,9 @@ export const consultingSlides: CaseStudySlide[] = [
         </h3>
         <div className="mt-8 sm:mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
           {[
-            { v: "9", l: "Countries covered" },
-            { v: "20", l: "Branches operating to one standard" },
-            { v: "2,800+", l: "Employees managed through one platform" },
+            { v: "11", l: "Countries covered" },
+            { v: "23", l: "Branches operating to one standard" },
+            { v: "480+", l: "Employees managed through one platform" },
           ].map((s) => (
             <div
               key={s.l}

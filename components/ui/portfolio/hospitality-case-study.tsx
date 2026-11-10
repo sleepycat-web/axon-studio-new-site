@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { COMPANY_METRICS } from "@/constants/metrics";
 import type { CaseStudySlide } from "@/components/ui/portfolio/case-study-deck";
 
 /* ── Lightbox for case-study screenshots ── */
@@ -169,7 +168,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
         <h3 className="mt-5 sm:mt-4 max-w-2xl text-2xl sm:text-4xl font-normal tracking-tight leading-[1.15]">
           How we helped our client
           <br />
-         manage  <span className="gradient-text-subtle">13K+</span> bookings
+         manage <span className="gradient-text-subtle">17K+</span> bookings
         </h3>
         <p className="mt-5 sm:mt-4 max-w-xl text-sm sm:text-base text-neutral-400 leading-relaxed">
           From manual chaos to fully systemised operations, where customers self-order
@@ -178,7 +177,7 @@ export const hospitalitySlides: CaseStudySlide[] = [
         <div className="mt-8 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-3">
           {[
             { l: "Service", v: "Custom operations platform" },
-            { l: "Timeline", v: "9 months, ongoing" },
+            { l: "Timeline", v: "2 years, ongoing" },
             { l: "Industry", v: "Hospitality" },
           ].map((m) => (
             <div key={m.l} className="glass-card rounded-2xl px-4 py-2.5 text-left">
@@ -329,31 +328,18 @@ export const hospitalitySlides: CaseStudySlide[] = [
         </h3>
         <div className="mt-8 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
-            { v: "2 → 4", l: "New outlets launched in 9 months" },
+            { v: "2 → 4", l: "2 new outlets launched in 9 months" },
             { v: "2x", l: "Monthly revenue doubled (April 2025 → January 2026)" },
+            { v: "58%", l: "Net margin sustained" },
+            { v: "37,000+", l: "Orders processed" },
+            { v: "17K+", l: "Reservations handled" },
+            { v: "11,000+", l: "Users" },
           ].map((s) => (
             <div
               key={s.l}
               className="glass-card glass-card-hover rounded-2xl p-5 sm:p-4 text-center flex flex-col items-center justify-center"
             >
               <p className="font-medium tracking-tight text-2xl sm:text-3xl gradient-text-subtle">
-                {s.v}
-              </p>
-              <p className="mt-1.5 text-xs sm:text-sm text-neutral-400">{s.l}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-3 grid grid-cols-3 gap-3">
-          {[
-            { v: COMPANY_METRICS.ordersProcessed, l: "Orders processed" },
-            { v: COMPANY_METRICS.reservationsProcessed, l: "Reservations handled" },
-            { v: "9.4K", l: "Users" },
-          ].map((s) => (
-            <div
-              key={s.l}
-              className="glass-card glass-card-hover rounded-2xl p-5 sm:p-4 text-center flex flex-col items-center justify-center"
-            >
-              <p className="font-medium tracking-tight text-xl sm:text-2xl text-neutral-100">
                 {s.v}
               </p>
               <p className="mt-1.5 text-xs sm:text-sm text-neutral-400">{s.l}</p>

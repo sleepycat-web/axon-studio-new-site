@@ -12,7 +12,7 @@ const tabs = [
     label: "Consulting",
     slides: consultingSlides,
     description:
-      "How a consulting firm replaced fragmented, branch-led training with one unified platform spanning 20 branches in 9 countries.",
+      "How a consulting firm replaced fragmented, branch-led training with one unified platform spanning 23 branches in 11 countries.",
   },
   {
     key: "hospitality",
